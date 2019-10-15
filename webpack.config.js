@@ -29,6 +29,8 @@ fs.readdirSync(dataFolder)
 data.projectSliderCount = 4;
 data.advantageSliderCount = 3;
 
+
+
 module.exports = function (env, argv) {
   return {
     entry: {
@@ -39,6 +41,9 @@ module.exports = function (env, argv) {
       path: path.resolve(__dirname),
       filename: argv.mode === 'development' ? 'js/[name].js' : 'js/[name].[hash:8].js',
     },
+	optimization: {
+     //minimize: false
+   },
     module: {
       rules: [
         {
@@ -132,7 +137,7 @@ module.exports = function (env, argv) {
       }),
     ],
     devServer: {
-      host: '0.0.0.0',
+      // host: '0.0.0.0',
       setup(app) {
         app.post('*', (req, res) => {
           res.send('POST res sent from webpack dev server');

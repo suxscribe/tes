@@ -1,0 +1,13 @@
+import Component from '../../common/js/component';
+
+class ${componentClassName} extends Component {
+  constructor(nRoot) {
+    super(nRoot, '${componentName}');
+  }
+
+  destroy() {
+
+  }
+}
+
+export default ${componentClassName};

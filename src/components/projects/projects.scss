@@ -47,7 +47,10 @@
         &__swiper-container {
             &:nth-child(3),
             &:nth-child(4) {
-                display: none;
+                opacity: 0 !important;
+                flex: 0 0 0px;
+                position: absolute;
+
             }
         }
     }

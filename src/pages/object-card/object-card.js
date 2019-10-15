@@ -5,6 +5,7 @@ import Subscribe from '../../components/subscribe/subscribe';
 import InfoBlock8 from '../../components/info-block-8/info-block-8';
 import Gallery from '../../components/gallery/gallery';
 import VidoBlock from '../../components/video-block/video-block';
+import NewsPreview from '../../components/news-preview/news-preview';
 import { prepareForShiftBottomAnim, destroyShiftBottomAnim } from '../../components/header/animations';
 import ScrollingMobile from '../../components/full-height/scrolling-mobile';
 
@@ -26,6 +27,9 @@ Barba.BaseView.extend({
 
     if(nFindComponent('info-block-8', this.nRoot)) {
         this.infoBlock8 = new InfoBlock8(nFindComponent('info-block-8', this.nRoot));
+    }
+    if(nFindComponent('news-preview', this.nRoot)) {
+      this.newsPreview = new NewsPreview(nFindComponent('news-preview', this.nRoot));
     }
 
     if(nFindComponent('gallery', this.nRoot)) {
@@ -53,6 +57,9 @@ Barba.BaseView.extend({
     }
     if (this.videoBlock) {
       this.videoBlock.destroy();
+    }
+    if (this.newsPreview) {
+      this.newsPreview.destroy();
     }
   },
   onLeaveCompleted() {

@@ -331,5 +331,8 @@
   },
   {
     "name": "news-card-grid"
+  },
+  {
+    "name": "news-modal"
   }
 ]

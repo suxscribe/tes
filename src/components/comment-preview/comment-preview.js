@@ -10,8 +10,8 @@ class CommentPreview extends Component {
   constructor(nRoot) {
     super(nRoot, 'comment-preview');
 
-    this.nModal = document.querySelector('.comment-preview__modal');
-    this.nModalImg = nFindComponent('comment-modal__content-img', this.nModal);
+    this.nModal = document.querySelector('.comment-preview__modal'); //modal window layout
+    this.nModalImg = nFindComponent('comment-modal__content-img', this.nModal); //img inside modal layout
     this.setSrcModal = this.setSrcModal.bind(this);
 
     this.nRoot.addEventListener('click', this.setSrcModal);
