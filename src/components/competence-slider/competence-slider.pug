@@ -1,0 +1,21 @@
+include ../competence-item/competence-item
+
+mixin competence-slider(args)
+    .competence-slider&attributes(attributes)
+        .swiper-container.competence-slider__swiper
+            .swiper-wrapper
+                -var index = 1;
+                if args.small
+                    each competence in args.slides
+                        .swiper-slide
+                            +competence-item({
+                              text: competence.text,
+                              index: index
+                            }).competence-slider__item
+                        - index++
+                else
+                    each competencesChunk in chunks(args.slides, 3)
+                        .swiper-slide
+                            each competence in competencesChunk
+                                +competence-item({ text: competence.text, index: index }).competence-slider__item
+                                - index++

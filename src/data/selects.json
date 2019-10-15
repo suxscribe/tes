@@ -1,0 +1,89 @@
+[
+  {
+    "item": [
+      {
+        "name":"year",
+        "options": [
+          {
+            "value":"all",
+            "text":"Год выполнения"
+          },
+          {
+            "value": "value-2",
+            "text": "text-2"
+          },
+          {
+            "value": "value-3",
+            "text": "text-3"
+          },
+          {
+            "value": "value-4",
+            "text": "text-4"
+          },
+          {
+            "value": "value-5",
+            "text": "text-5"
+          },
+          {
+            "value": "value-6",
+            "text": "text-6"
+          },
+          {
+            "value": "value-7",
+            "text": "text-7"
+          },
+          {
+            "value": "value-8",
+            "text": "text-8"
+          },
+          {
+            "value": "value-8",
+            "text": "text-8"
+          }
+        ]
+      },
+      {
+        "name":"typeWork",
+        "options": [
+          {
+            "value":"all",
+            "text":"Вид работ"
+          },
+          {
+            "value": "value-2",
+            "text": "text-2"
+          },
+          {
+            "value": "value-3",
+            "text": "text-3"
+          },
+          {
+            "value": "value-4",
+            "text": "text-4"
+          }
+        ]
+      },
+      {
+        "name":"solutions",
+        "options": [
+          {
+            "value":"all",
+            "text":"Применяемые решения"
+          },
+          {
+            "value": "value-2",
+            "text": "text-2"
+          },
+          {
+            "value": "value-3",
+            "text": "text-3"
+          },
+          {
+            "value": "value-4",
+            "text": "text-4"
+          }
+        ]
+      }
+    ]
+  }
+]

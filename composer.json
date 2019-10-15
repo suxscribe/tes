@@ -1,0 +1,5 @@
+{
+    "require": {
+        "andreyryabin/sprint.migration": "^3.0"
+    }
+}

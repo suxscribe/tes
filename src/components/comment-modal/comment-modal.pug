@@ -1,0 +1,6 @@
+include ../modal/modal
+mixin comment-modal(args)
+    +modal.comment-modal&attributes(attributes)
+        .comment-modal__content
+            +img({path: args.dataSrc})(data-object-fit='cover').comment-modal__content-img
+        

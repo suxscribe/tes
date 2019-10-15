@@ -1,0 +1,23 @@
+include ../project/project
+include ../slider-navigation/slider-navigation
+include ../link/link
+include ../mobile-slider-navigation/mobile-slider-navigation
+
+mixin projects(args)
+    .projects&attributes(attributes)
+        +mobile-slider-navigation({ total: '04' }).mobile-slider-navigation_dark
+        .container-fluid.container-fluid_fix-right
+            .row
+                .projects__title.col-8.col-md-7.offset-md-1 Проекты
+                .d-none.d-md-flex.col-1.projects__navigation-col
+                    +slider-navigation({"class": "projects"})
+                    +link(href='#').projects__all Все проекты
+                .col-8.col-md-7
+                    .col__fix-right.d-md-flex.justify-content-between
+                        each i in range(data.projectSliderCount)
+                            .swiper-container.projects__swiper-container
+                                .swiper-wrapper.projects__swiper-wrapper
+                                    each project in data.projects
+                                        +project(project).swiper-slide.projects__swiper-slide
+                                    each project in data.projects
+                                        +project(project).swiper-slide.projects__swiper-slide

@@ -1,0 +1,24 @@
+include ../mobile-slider-navigation/mobile-slider-navigation
+
+mixin advantage-slider(args)
+    .advantage-slider&attributes(attributes)
+        +mobile-slider-navigation({ total: '03' }).mobile-slider-navigation_advantage.mobile-slider-navigation_dark
+        .advantage-slider__content.d-flex.justify-content-between.col__fix-left.col__fix-right
+            each i in range(data.advantageSliderCount)
+                .swiper-container.advantage-slider__swiper-container
+                    .swiper-wrapper.advantage-slider__swiper-wrapper
+                        .swiper-slide.advantage-slider__swiper-slide
+                            .advantage-slider__space
+                            .advantage-slider__wrapper
+                                .advantage-slider__bg-wrapper
+                                    +img({ path: '../../components/advantage-slider/images/1.jpg' }).advantage-slider__bg
+                        .swiper-slide.advantage-slider__swiper-slide
+                            .advantage-slider__space
+                            .advantage-slider__wrapper
+                                .advantage-slider__bg-wrapper
+                                    +img({ path: '../../components/advantage-slider/images/2.jpg' }).advantage-slider__bg
+                        .swiper-slide.advantage-slider__swiper-slide
+                            .advantage-slider__space
+                            .advantage-slider__wrapper
+                                .advantage-slider__bg-wrapper
+                                    +img({ path: '../../components/advantage-slider/images/3.jpg' }).advantage-slider__bg

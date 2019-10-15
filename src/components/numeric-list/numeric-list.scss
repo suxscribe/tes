@@ -1,0 +1,25 @@
+.numeric-list {
+    list-style-type: none;
+    padding-inline-start: 0;
+
+    &__item {
+        @include font-4;
+        color: $color-2;
+        padding-left: 64px;
+        position: relative;
+        margin-bottom: 17px;
+        line-height: 1.75;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__number {
+        @include font-7;
+        color: $color-1;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+}

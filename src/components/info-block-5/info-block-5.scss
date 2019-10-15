@@ -1,0 +1,131 @@
+.info-block-5 {
+    $root: &;
+    overflow: hidden;
+    margin-bottom: 82px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    &__img {
+        width: 100%;
+
+        &_fit {
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__title {
+        @include font-7;
+        color: $color-2;
+        text-transform: uppercase;
+        margin-bottom: 32px;
+    }
+
+    &__text {
+        @include font-9;
+        color: $color-2;
+        line-height: 1.875;
+        position: relative;
+        margin-bottom: 35px;
+
+        &_large-font {
+            @include font-29;
+        }
+
+        &_no-offset {
+            margin-bottom: 0;
+        }
+
+        &:last-child::after {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 1px;
+            bottom: -44px;
+            background-color: $color-1;
+        }
+    }
+
+    @include media-breakpoint-down(lg) {
+        margin-bottom: 40px;
+        &__col-1 {
+            margin-bottom: 60px;
+        }
+    }
+
+    @include media-breakpoint-between(md, lg) {
+        &__col-1,
+        &__col-2 {
+            @include make-col-offset(1);
+        }
+    }
+
+    @include media-breakpoint-up(xl) {
+        &:nth-child(2n + 1) {
+            #{$root}__col-1 {
+                padding-right: calc(#{$col-width} * 0.125);
+                @include make-col-offset(1);
+            }
+
+            #{$root}__col-2 {
+                padding-left: calc(#{$col-width} * 0.125);
+            }
+        }
+
+        &:nth-child(2n) {
+            #{$root}__col-1 {
+                order: 1;
+                padding-left: calc(#{$col-width} * 0.125);
+            }
+
+            #{$root}__col-2 {
+                order: 0;
+                padding-right: calc(#{$col-width} * 0.125);
+                @include make-col-offset(1);
+            }
+        }
+    }
+}
+.info-block-5_detail {
+    & ~ & {
+        margin-top: 35px;
+    }
+
+    margin-bottom: 0;
+
+    .info-block-5__text:last-child::after {
+        display: none;
+    }
+
+    .info-block-5__col-2 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    @include media-breakpoint-up(xl) {
+
+        &-reverse.info-block-5 {
+            .info-block-5__col-1 {
+                padding-right: calc(#{$col-width} * 0.125);
+                order: 0;
+                @include make-col-offset(1);
+                padding-left: 0;
+
+            }
+
+            .info-block-5__col-2 {
+                padding-left: calc(#{$col-width} * 0.125);
+                order: 1;
+                padding-right: 0;
+                margin-left: 0;
+            }
+        }
+    }
+
+}
+

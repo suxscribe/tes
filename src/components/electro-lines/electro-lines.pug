@@ -1,0 +1,7 @@
+mixin electro-lines(args)
+    .electro-lines
+        +img(
+            { path: '../../components/electro-lines/images/static-bg.jpg' }
+        ).electro-lines__static-bg(data-object-fit='cover')
+        .electro-lines__canvas-wrapper
+            canvas.electro-lines__canvas&attributes(attributes)

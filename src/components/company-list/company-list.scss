@@ -1,0 +1,17 @@
+.company-list {
+    margin-bottom: 114px;
+
+    &__title {
+        @include font-3;
+        color: $color-2;
+        margin-bottom: 66px;
+    }
+
+    @include media-breakpoint-down(sm) {
+        margin-bottom: 66px;
+
+        &__title {
+            margin-bottom: 21px;
+        }
+    }
+}

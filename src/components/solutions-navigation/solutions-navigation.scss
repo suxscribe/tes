@@ -1,0 +1,109 @@
+.solutions-navigation {
+    $root: &;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    pointer-events: none;
+
+    &__container-fluid,
+    &__row,
+    &__col {
+        height: 100%;
+    }
+
+    &__col {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        flex-direction: column;
+    }
+
+    &__progress {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%) scaleX(0);
+        right: calc(-1 * #{$grid-side-offset});
+        height: 1px;
+        width: calc(#{$grid-side-offset} - 2.2vw);
+        will-change: transform;
+        transform-origin: right center;
+        background-color: white;
+        transition: transform .5s;
+    }
+
+    &__item {
+        @include font-7;
+        color: white;
+        cursor: pointer;
+        padding: 1.5vh 0;
+        position: relative;
+        white-space: nowrap;
+        pointer-events: all;
+        will-change: color;
+
+        &:hover {
+            color: rgba(white, $link-hover-opacity);
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &:hover #{$root}__progress {
+            transform: translateY(-50%) scaleX(1);
+        }
+
+        &.active #{$root}__progress {
+            animation: progress-anim 10.6s linear;
+        }
+
+        @include media-breakpoint-down(lg) {
+            top: 10vh;
+        }
+    }
+
+    &_applied-performances {
+        position: relative;
+        left: auto;
+        bottom: auto;
+        right: auto;
+        top: auto;
+        #{$root}__container-fluid {
+            padding: 0;
+        }
+        #{$root}__col {
+            flex: 0 0 100%;
+            align-items: flex-start;
+            max-width: 100%;
+        }
+        #{$root}__item {
+            white-space: normal;
+            color: white;
+            color: rgba(white, $link-hover-opacity);
+            transition: color $link-hover-transition-duration, opacity $link-hover-transition-duration;
+            &.active {
+                color: white;
+            }
+            &:hover {
+                color: white;
+            }
+            &::after {
+                left: calc(-1 * #{$grid-side-offset});
+                right: auto;
+                transform-origin: left center;
+            }
+
+            @include media-breakpoint-down(lg) {
+                top: 0;
+            }
+        }
+    }
+}
+
+@keyframes progress-anim {
+    from { transform: translateY(-50%) scaleX(0); }
+    to { transform: translateY(-50%) scaleX(1); }
+}

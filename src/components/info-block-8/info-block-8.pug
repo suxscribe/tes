@@ -1,0 +1,8 @@
+mixin info-block-8(args)
+    .info-block-8.container-fluid&attributes(attributes)(class=`${args.detailData ? 'info-block-8_data-detail' : ''}`)
+        .col-8.col-md-6.offset-md-1.info-block-8__title.tpg__title!= args.title
+            if(args.detailData)
+                .info-block-8__data!= args.detailData
+        if (args.image)
+            .info-block-8__bg-wrapper
+                +img({ path: args.image }).info-block-8__bg(data-object-fit='cover')

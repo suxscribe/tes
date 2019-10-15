@@ -1,0 +1,26 @@
+include ../mobile-slider-navigation/mobile-slider-navigation
+include ../gallery-navigation/gallery-navigation
+include ../video/video
+
+mixin video-slider(args)
+    .video-slider&attributes(attributes)
+        +gallery-navigation
+        .container-fluid
+            .row
+                .col-8
+                    .video-slider__slider
+                        +mobile-slider-navigation({ total: args.total }).mobile-slider-navigation_video-slider.mobile-slider-navigation_dark
+                        .video-slider__content.d-flex.justify-content-between.col__fix-left.col__fix-right
+                            each i in range(data.advantageSliderCount)
+                                .swiper-container.video-slider__swiper-container
+                                    .swiper-wrapper.video-slider__swiper-wrapper
+                                        each item, i in args.data
+                                            .swiper-slide.video-slider__swiper-slide
+                                                .video-slider__space
+                                                .video-slider__wrapper
+                                                    .video-slider__bg-wrapper
+                                                        +video({
+                                                          path: item.video,
+                                                          type: item.type,
+                                                          id: item.id
+                                                        }).video-slider__item

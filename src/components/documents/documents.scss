@@ -1,0 +1,130 @@
+.documents {
+  $root: &;
+  position: relative;
+  padding-top: $header-height;
+  margin-bottom: $footer-height;
+  background-color: #fff;
+
+  &__main {
+    padding-top: 4vh;
+    padding-right: calc(#{$col-width} / 4);
+    margin-bottom: calc(#{$col-width} / 4);
+    margin-left: $col-width;
+
+    &_single {
+      padding-top: 0;
+    }
+  }
+
+  &_trust {
+    padding-bottom: 4.5vh;
+
+    .documents__text-1 {
+      padding-right: 40px;
+
+      @include media-breakpoint-down(sm) {
+        display: none;
+      }
+    }
+    .documents__main {
+      padding-top: 2.7vh;
+      @include media-breakpoint-down(sm) {
+        margin-bottom: 25px;
+      }
+    }
+
+  }
+
+  &__title-1 {
+    margin-bottom: 3.5vh;
+    @include font-3;
+    line-height: 1.5;
+    color: $color-2;
+  }
+
+  &__text-1 {
+    @include font-23;
+    line-height: 1.75;
+  }
+
+  &__text-2 {
+    display: none;
+    margin-top: 5.5vh;
+    @include font-24;
+    line-height: 1.4;
+  }
+
+  @include media-breakpoint-down(lg) {
+    &__row {
+      padding: 0 $col-width;
+    }
+    &__main {
+      margin-left: 0;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding-top: 0;
+    padding-bottom: 10.5;
+
+    &__row {
+      padding: 0;
+    }
+
+    &__main {
+      padding: 0;
+      margin-bottom: 5.5vh;
+    }
+
+    &__title-1 {
+      margin-bottom: 16px;
+    }
+
+
+    &__text-2 {
+      display: block;
+    }
+  }
+
+  &_3-doc {
+    padding-top: 80px;
+    @include media-breakpoint-down(sm) {
+      padding-top: 0;
+    }
+
+    #{$root}__document {
+      &:nth-child(3n+1) {
+        margin-left: 0;
+      }
+
+      &:nth-child(3n) {
+        margin-left: $col-width;
+      }
+    }
+
+    #{$root}__title-1 {
+      margin-bottom: 0;
+    }
+
+    #{$root}__title-1,
+    #{$root}__text-1 {
+      margin-bottom: 64px;
+
+      @include media-breakpoint-down(sm) {
+        margin-bottom: 14px;
+      }
+    }
+
+    @include media-breakpoint-down(lg) {
+      #{$root}__document {
+        &:nth-child(n) {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+
+  &_no-offset {
+    padding-top: 0;
+  }
+}

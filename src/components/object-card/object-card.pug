@@ -1,0 +1,6 @@
+mixin object-card(args)
+    a(href!=args.href data-year!=args.year data-type-work!=args.typeWork data-solutions!= args.solutions).object-card&attributes(attributes)
+        +img({path: args.src}).object-card__img(data-object-fit='cover')
+        .object-card__head
+            .object-card__title!= args.title
+            .object-card__data!= args.data

@@ -1,0 +1,23 @@
+include ../services/services
+include ../projects/projects
+include ../subscribe-to-news/subscribe-to-news
+include ../news/news
+include ../clock/clock
+include ../contacts/contacts
+include ../static-footer/static-footer
+include ../header/header
+
+
+mixin index-section-3(args)
+    .index-section-3&attributes(attributes)
+        .index-section-3__wrapper
+            +header.d-none.d-md-block
+            +services
+            +projects
+            +subscribe-to-news({
+              indexPage: true
+            })
+            +news
+            +clock
+            +contacts
+            +static-footer

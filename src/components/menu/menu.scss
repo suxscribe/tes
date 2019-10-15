@@ -1,0 +1,45 @@
+.menu {
+    $root: &;
+    display: flex;
+
+    &__item {
+        color: rgba($color-2, $link-hover-opacity);
+        will-change: color;
+        transition: color $link-hover-transition-duration;
+
+        &:hover,
+        &_active {
+            color: $color-2;
+        }
+
+        @include font-10;
+        text-transform: uppercase;
+        margin-right: smooth-value(10px, 40px, $screen-sm-min, $fhd-width, 'w');
+        white-space: nowrap;
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        #{$root}.contrast & {
+            color: white;
+
+            &:hover {
+                color: rgba(white, $link-hover-opacity);
+            }
+        }
+    }
+}
+
+.page-inner .menu {
+
+    &__item {
+        &.contrast {
+            color: $color-2;
+
+            &:hover {
+                color: rgba(46, 46, 67, .7);
+            }
+        }
+    }
+}

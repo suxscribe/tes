@@ -1,0 +1,239 @@
+.specifications-list {
+  $root: &;
+  border: 2px solid $color-1;
+  border-bottom: none;
+
+  &__table {
+    margin-bottom: 0;
+    display: block;
+
+    & thead {
+      display: block;
+      th {
+        padding: 28px 0;
+        &:first-child {
+          padding: 28px 37px;
+        }
+      }
+    }
+
+    & tbody {
+      display: block;
+      @include font-9;
+      & th {
+        padding: 22px 0;
+      }
+    }
+    & tfoot {
+      @include font-9;
+    }
+    & th {
+      @include font-7;
+    }
+  }
+
+  &__row {
+    display: flex;
+    border-top: 1px solid $color-7;
+
+    & td {
+      padding: 21px 0 25px;
+      &:first-child {
+        padding: 21px 19px 25px 38px;
+      }
+    }
+
+    &_title-list {
+      & td {
+        padding: 27px 0 0;
+        &:first-child {
+          padding: 27px 37px 0;
+        }
+      }
+    }
+
+    &_border {
+      border-top: 2px solid $color-7;
+      border-bottom: 2px solid $color-7;
+    }
+
+    &_list {
+      border-top: none;
+
+      td {
+        padding: 5px 0 0;
+        &:first-child {
+          padding: 5px 78px 0;
+          position: relative;
+
+          &::before {
+            content: '\00b7';
+            position: absolute;
+            left: 38px;
+          }
+        }
+      }
+    }
+
+    &_right-list {
+      border-top: none;
+
+      td {
+        &:first-child {
+          padding-top: 0 !important;
+          padding-bottom: 0 !important;
+        }
+        &:last-child {
+          padding: 5px 40px 0;
+          position: relative;
+
+          &::before {
+            content: '\00b7';
+            position: absolute;
+            left: 0;
+          }
+        }
+      }
+    }
+
+    &_right-last-list {
+      td {
+        &:first-child,
+        &:last-child {
+          padding-bottom: 28px !important;
+        }
+      }
+    }
+
+    &_right-title-list {
+      border-top: 1px solid $color-7;
+      td {
+        &,
+        &:first-child {
+          padding-top: 27px !important;
+        }
+      }
+    }
+
+    &_last-list {
+      td {
+        padding: 5px 0 28px;
+        &:first-child {
+          padding: 5px 78px 28px;
+        }
+      }
+    }
+    &_no-border {
+      border: none;
+    }
+  }
+
+  &_columns-3 {
+    #{$root}__col-1 {
+      width: calc(#{$col-width} * 1.49);
+    }
+  }
+  &_columns-4 {
+    #{$root}__col-1 {
+      width: calc(#{$col-width} * 1.33);
+    }
+  }
+  &__col-2 {
+    width: calc(#{$col-width} * 2);
+  }
+  &__col-4 {
+    width: calc(#{$col-width} * 3);
+  }
+  &__col-6 {
+    width: calc(#{$col-width} * 4);
+  }
+  &__col-8 {
+    width: 100%;
+  }
+
+  &__add-content {
+    display: block;
+  }
+
+  @include media-breakpoint-down(sm) {
+    border: none;
+    &__table {
+      width: 650px;
+
+      & thead {
+        th {
+          padding: 21px 37px 35px 0;
+          &:first-child {
+            padding: 21px 37px 35px 0;
+          }
+        }
+      }
+
+      & tbody {
+        th {
+          padding: 19px 0 15px;
+          &:first-child {
+            padding: 19px 0 15px;
+          }
+        }
+      }
+    }
+    &__row {
+
+      & td {
+        padding: 21px 19px 23px 0;
+        &:first-child {
+          padding: 21px 19px 23px 0;
+        }
+      }
+
+      &_list {
+        line-height: 1;
+        td {
+          padding: 5px 78px 4px 0;
+          &:first-child {
+            padding: 5px 78px 4px 15px;
+            &::before {
+              left: 0;
+            }
+          }
+        }
+      }
+      &_title-list {
+        & td {
+          padding: 20px 37px 0 0;
+          &:first-child {
+            padding: 20px 37px 0 0;
+          }
+        }
+      }
+      &_last-list {
+        & td {
+          padding: 5px 78px 19px 0;
+          &:first-child {
+            padding: 5px 78px 19px 15px;
+          }
+        }
+      }
+    }
+    &_columns-3 {
+      #{$root}__col-1 {
+        width: 25%;
+      }
+    }
+    &_columns-4 {
+      #{$root}__col-1 {
+        width: 17%;
+      }
+    }
+    &__col-2 {
+      width: 50%;
+    }
+    &__col-4 {
+      width: 50%;
+    }
+    &__col-6 {
+      width: 50%;
+    }
+  }
+}

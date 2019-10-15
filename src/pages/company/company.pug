@@ -1,0 +1,70 @@
+extends ../../layout/layout
+include ../../components/page-navigation/page-navigation
+include ../../components/info-block-8/info-block-8
+include ../../components/info-block-1/info-block-1
+include ../../components/company-inner/company-inner
+include ../../components/video-slider/video-slider
+include ../../components/competence/competence
+include ../../components/competence-mobile/competence-mobile
+include ../../components/advantages/advantages
+include ../../components/company-map/company-map
+include ../../components/partners/partners
+include ../../components/structure/structure
+include ../../components/construct/construct
+include ../../components/static-footer/static-footer
+block content
+    div#barba-wrapper
+        .barba-container(data-namespace='company')
+            +page-navigation
+            +info-block-8({
+              title: 'О&nbsp;компании',
+              image: './images/head.jpg'
+            })
+            +info-block-1({
+              title: 'О&nbsp;нас',
+              text1: 'Группа компаний &laquo;Таврида Энерго Строй&raquo;&nbsp;&mdash; структурное подразделение &laquo;Таврида Электрик&raquo;. Мы&nbsp;занимаемся проектированием и&nbsp;строительством под ключ объектов электроэнергетики в&nbsp;классе напряжений до&nbsp;500&nbsp;кВ.',
+              text2: 'При решении комплексных задач в&nbsp;энергетике мы&nbsp;применяем собственные сертифицированные продукты, а&nbsp;также оборудование и&nbsp;комплектующие ведущих производителей.'
+            })(class='info-block-1_offset-vertical-top' data-page-nav-item='О&nbsp;нас' data-navigation-trigger)
+            +company-inner.company-inner_offset-vertical-top
+            +video-slider({
+              total: '03',
+              data: data.company.videos
+            })
+            +competence({
+              title: 'В&nbsp;состав организации входят',
+              bgText: 'Ресурсы',
+              slides: data.company.kit,
+            }).competence_offset-top
+            +competence-mobile({
+              title: 'В&nbsp;состав организации входят',
+              bgText: 'Ресурсы',
+              slides: data.company.kit,
+              total: '03'
+            })
+            +advantages({
+              title: 'Преимущества',
+              total: '04',
+              data: data.advantages.company,
+              white: true
+            })
+            +company-map({
+              title: 'География работы',
+              text: 'Реализуем проекты на&nbsp;всей территории России. Для удобства заказчиков в&nbsp;14&nbsp;регионах работают представительства',
+              bg: './images/map1.png',
+              pageNavItem: 'География'
+            })
+            .container-fluid.company__text-1
+                .row
+                    .col-md-6.offset-md-1.tpg__p1 С&nbsp;нами сотрудничают крупнейшие российские компании из&nbsp;различных отраслей: электроэнергетика, нефтегазовая и&nbsp;тяжелая промышленности, строительство
+            +partners({
+              data: data.company.partners,
+              pageNavItem: 'Клиенты'
+            })
+            +structure(data-page-nav-item='Структура')
+            +construct({
+              title1: 'Открытые вакансии',
+              title2: 'Если вас заинтересовали вакансии, отправьте нам резюме на&nbsp;<a href="mailto:info@tec.com">info@tec.com</a>',
+              data: data.construct.company,
+              name: 'vacancy',
+            })(data-page-nav-item='Вакансии').construct_vacancy
+            +static-footer

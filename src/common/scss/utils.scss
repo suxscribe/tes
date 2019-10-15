@@ -1,0 +1,43 @@
+.smooth-hide {
+    animation-name: smooth-hide-anim;
+    animation-duration: .5s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes smooth-hide-anim {
+    from { opacity: 1; visibility: visible; }
+    to {opacity: 0; visibility: hidden; }
+}
+
+.smooth-show {
+    animation: smooth-show-anim .5s linear forwards;
+}
+
+@keyframes smooth-show-anim {
+    from { opacity: 0; visibility: hidden; }
+    to {opacity: 1; visibility: visible; }
+}
+
+.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.invisible {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.no-transition {
+    transition: all 0s !important;
+}
+
+@mixin project-slider-footer {
+    position: absolute;
+    bottom: 10%;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}

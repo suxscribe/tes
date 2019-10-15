@@ -1,0 +1,65 @@
+[
+  {
+    "title" : "Реконструкция ГПП 110/6 кВ «Чермет» для ООО «Зефс-Энерго»",
+    "href" : "#",
+    "src" : "../../components/object-card/images/card1.jpg",
+    "data" : "2018",
+    "year" : "2018",
+    "typeWork" : "typeWork-1",
+    "solutions" : "solutions-1"
+  },
+  {
+    "title" : "Электроснабжение новой газотурбинной электростанции ОАО «Маяк» г. Пенза",
+    "href" : "#",
+    "src" : "../../components/object-card/images/card2.jpg",
+    "data" : "2018",
+    "year" : "2018",
+    "typeWork" : "typeWork-2",
+    "solutions" : "solutions-2"
+  },
+  {
+    "title" : "ЗРУ 10 кВ и ОПУ в быстровозводимом здании на ПС 110/10 кВ «Алексеевка»",
+    "href" : "#",
+    "src" : "../../components/object-card/images/card3.jpg",
+    "data" : "2018",
+    "year" : "2018",
+    "typeWork" : "typeWork-3",
+    "solutions" : "solutions-3"
+  },
+  {
+    "title" : "Энергоснабжение стадиона «Мордовия Арена», строящегося для проведения Чемпионата мира по футболу FIFA 2018",
+    "href" : "#",
+    "src" : "../../components/object-card/images/card4.jpg",
+    "data" : "2018",
+    "year" : "2018",
+    "typeWork" : "typeWork-4",
+    "solutions" : "solutions-4"
+  },
+  {
+    "title" : "Замена панелей защит в ОПУ ГПП-2 110 кВ “Пропилен”",
+    "href" : "#",
+    "src" : "../../components/object-card/images/card5.jpg",
+    "data" : "2017",
+    "year" : "2017",
+    "typeWork" : "typeWork-5",
+    "solutions" : "solutions-5"
+  },
+  {
+    "title" : "Строительство главной понизительной подстанции 110/10 кВ «Окский берег»",
+    "href" : "#",
+    "src" : "../../components/object-card/images/card6.jpg",
+    "data" : "2017",
+    "year" : "2017",
+    "typeWork" : "typeWork-6",
+    "solutions" : "solutions-6"
+  },
+  {
+    "title" : "Строительство ПС 110/6 кВ «Радуга» за полярным кругом",
+    "href" : "#",
+    "src" : "../../components/object-card/images/card7.jpg",
+    "data" : "2017",
+    "year" : "2017",
+    "typeWork" : "typeWork-7",
+    "solutions" : "solutions-7"
+  }
+]

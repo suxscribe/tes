@@ -1,0 +1,205 @@
+.subscribe-to-news {
+    $root: &;
+    padding: 8vh 0;
+    position: relative;
+
+    &_offset &__row {
+        padding-right: $grid-side-offset;
+    }
+
+    &__bg {
+        background-color: $color-1;
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        will-change: transform;
+    }
+
+    &__animation-textfield-bg {
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: calc(#{$col-width} * 5);
+        transform: scaleX(.5);
+        opacity: 0;
+        visibility: hidden;
+        transform-origin: left center;
+        background-color: white;
+    }
+
+    &__label,
+    &__textfield-wrapper,
+    &__button-wrapper {
+        display: flex;
+    }
+
+    &__label {
+        @include font-7;
+        color: white;
+        box-sizing: content-box;
+        margin-bottom: 3vh;
+
+        &_inner {
+            margin-left: $col-width;
+            margin-bottom: 0;
+            width: calc(#{$col-width} * 3);
+        }
+    }
+
+    &__col-right {
+        position: relative;
+        display: flex;
+        margin-left: $col-width;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 12px;
+            left: 0;
+            width: 100%;
+            height: 0;
+            border-bottom: 1px solid $color-7;
+            transform: perspective(1px);
+        }
+    }
+
+    &__textfield-wrapper {
+        width: 100%;
+
+        &_inner {
+            width: $col-width;
+        }
+    }
+
+    &__right {
+        position: relative;
+        width: $col-width;
+    }
+
+    &__button-wrapper {
+        padding-left: .7vw;
+        flex-grow: 1;
+        background-color: white;
+        justify-content: center;
+        position: relative;
+        right: 1px;
+    }
+
+    &__label,
+    &__animation-textfield-bg,
+    &__textfield,
+    &__button-wrapper {
+        will-change: opacity, visibility;
+    }
+
+    &__button.animate &__arrow {
+        will-change: transform;
+        animation: arrow-anim .5s infinite alternate ease-in;
+    }
+
+    &__refresh {
+        height: 20px;
+        width: 20px;
+        display: none;
+        fill: rgba(red, .6);
+    }
+
+    &.fail {
+        #{$root}__button-text {
+            color: rgba(red, .6);
+        }
+        #{$root}__arrow {
+            display: none;
+        }
+        #{$root}__refresh {
+            display: block;
+        }
+    }
+
+    .textfield__input {
+        &.hf-invalid {
+            & ~ .textfield__label {
+                transform: translateY(-40%) scale(.75);
+            }
+        }
+    }
+
+    @include media-breakpoint-up(md) {
+        &__textfield label {
+            top: smooth-value(21px, 18px, $screen-md-min, $fhd-width, 'w');
+        }
+    }
+
+    @include media-breakpoint-up(xl) {
+        &__label {
+            margin-bottom: 0;
+        }
+        &__animation-textfield-bg {
+            width: calc(#{$col-width} * 4);
+        }
+    }
+
+    @include media-breakpoint-up(xxl) {
+        &__button-wrapper {
+            justify-content: flex-start;
+        }
+    }
+
+    @include media-breakpoint-down(lg) {
+        &__label {
+            &_inner {
+                width: 100%;
+                margin-bottom: 19px;
+            }
+        }
+        &__textfield-wrapper {
+            &_inner {
+                width: 50%;
+            }
+        }
+        &__right {
+            width: 25%;
+        }
+        &__col-right {
+            width: 100%;
+            justify-content: space-between;
+            margin-right: $col-width;;
+        }
+    }
+
+    @include media-breakpoint-down(sm) {
+        @include container-fluid-cancel-fix;
+        margin-right: $grid-side-offset;
+        margin-left: $grid-side-offset;
+        padding-top: 12vh;
+        padding-bottom: 12vh;
+
+        &__label {
+            &_inner {
+                margin-left: 0;
+            }
+        }
+        &__textfield-wrapper {
+            &_inner {
+                margin-left: 0;
+            }
+        }
+        &__right {
+            width: 50%;
+        }
+        &__col-right {
+            margin: 0;
+        }
+        &__button-wrapper {
+            justify-content: flex-start;
+        }
+    }
+}
+
+@keyframes arrow-anim {
+    from { transform: translateX(0); }
+    to { transform: translateX($link-icon-margin-right); }
+}

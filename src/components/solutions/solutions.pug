@@ -1,0 +1,16 @@
+include ../solution/solution
+include ../solutions-navigation/solutions-navigation
+include ../mobile-slider-navigation/mobile-slider-navigation
+
+mixin solutions(args)
+    .solutions&attributes(attributes)
+        .swiper-container.solutions__slider
+            .swiper-wrapper.solutions__slider-warpper
+                each solution in data.solutions[0].items
+                    if solution.slider
+                        +solution({ solution: solution }).swiper-slide.solutions__solution
+        +solutions-navigation({
+          positionRight: true,
+          data: data.solutions[0].items
+        })
+        +mobile-slider-navigation({ total: '03' })

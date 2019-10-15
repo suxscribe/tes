@@ -1,0 +1,22 @@
+.modal {
+    &-content {
+        border-radius: 0;
+    }
+    &-content,
+    &-header {
+        border: none;
+    }
+
+    .modal-dialog {
+        max-width: none;
+        margin-top: calc(#{$col-width} * .25);
+        width: calc(100vw - #{$col-width} * .5);
+        margin-bottom: 0;
+    }
+
+    &__close {
+        position: absolute;
+        top: calc(#{$col-width} * .25);
+        right: calc(#{$col-width} * .5);
+    }
+}

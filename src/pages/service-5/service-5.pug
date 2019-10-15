@@ -1,0 +1,45 @@
+extends ../../layout/layout
+include ../../components/info-block-8/info-block-8
+include ../../components/info-block-1/info-block-1
+include ../../components/gallery/gallery
+include ../../components/advantages/advantages
+include ../../components/projects/projects
+include ../../components/adjacent-page/adjacent-page
+include ../../components/feedback/feedback
+include ../../components/static-footer/static-footer
+
+block content
+    div#barba-wrapper
+        .barba-container(data-namespace='service')
+            +info-block-8({
+              title: 'Строительство ТП&nbsp;и&nbsp;РП среднего класса напряжений 35, 6(10) кВ',
+              image: './images/head.jpg'
+            })
+            +info-block-1({
+              title: 'Описание',
+              text1: 'Группа компаний &laquo;Таврида Энерго Строй&raquo; обладает солидным опытом в&nbsp;области строительства трансформаторных подстанций и&nbsp;распределительных пунктов.',
+              text2: 'Подстанции и&nbsp;распределительные пункты могут выполняться как в&nbsp;модульных зданиях (КТПМ и&nbsp;КРУМ), так и&nbsp;в&nbsp;бетонной оболочке (БКТП).'
+            })(class='info-block-1_offset-vertical-top')
+            +gallery({
+              total: '03',
+              data: data.gallery.service5
+            })
+            .container-fluid.service-4__text-1
+                .row
+                    .col-md-6.offset-md-1.tpg__p1 &laquo;Таврида Энерго Строй&raquo; является производителем данного оборудования и&nbsp;предлагает комплексные решения, отличающиеся высокой надежностью и&nbsp;минимальными сроками ввода в&nbsp;эксплуатацию
+            +advantages({
+              title: 'Преимущества',
+              total: '03',
+              data: data.advantages.service5,
+              white: true
+            })
+            +projects.projects_product
+            +adjacent-page({
+              title: 'Проектно-изыскательские работы до&nbsp;500&nbsp;кВ',
+              hrefBack: '#',
+              hrefNext: '#',
+              anchor: 'Назад к услугам',
+              bg: './images/page-next.jpg'
+            })
+            +feedback
+            +static-footer

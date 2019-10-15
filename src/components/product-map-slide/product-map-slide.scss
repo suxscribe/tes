@@ -1,0 +1,250 @@
+.product-map-slide {
+  $root: &;
+  display: flex;
+  padding-top: 19vh;
+  padding-bottom: 23vh;
+  background-color: $color-7;
+  max-height: 100%;
+
+  &__container-fluid {
+    display: flex;
+    flex-direction: column;
+    //height: 100%;
+    padding-top: 5vh;
+  }
+
+  &__row {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__image {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  &__bg-wrapper {
+    position: relative;
+    height: 100%;
+    margin-right: calc(#{$col-width} / 2.35);
+    overflow: hidden;
+  }
+
+  &__bg {
+    &_desktop {
+      //display: block;
+      //max-width: 100%;
+      //height: auto;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
+      object-position: top left;
+    }
+    &_mobile {
+      display: none;
+    }
+  }
+
+  &__col {
+    position: relative;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-right: $col-width;
+    //padding-bottom: 8.5vh;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  &__top-space {
+    flex: 100 100 1px;
+  }
+
+  &__bottom-space {
+    flex: 120 120 1px;
+  }
+
+  &__name {
+    margin-bottom: 20px;
+    @include font-3;
+    line-height: 1.5;
+    color: $color-2;
+  }
+
+  &__kw {
+    margin-bottom: 20px;
+    @include font-3;
+    line-height: 1.5;
+    color: transparent;
+    -webkit-text-stroke: 1px $color-2;
+  }
+
+  &__text {
+    margin-bottom: 40px;
+    @include font-4;
+    line-height: 1.5;
+    color: $color-2;
+
+    & > p {
+      margin-bottom: 30px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__link {
+    @include font-9;
+    line-height: 1.5;
+    color: $color-1;
+
+    &:focus,
+    &:hover,
+    &:active {
+      color: $color-1;
+    }
+  }
+
+  @include media-breakpoint-down(lg) {
+    &__col {
+      justify-content: center;
+      padding-right: 0;
+    }
+  }
+  @include media-breakpoint-down(sm) {
+    padding: 0;
+    height: auto;
+    overflow: hidden;
+    &__image {
+      display: none;
+    }
+    &__bg {
+      &_desktop {
+        display: none;
+      }
+      &_mobile {
+        position: absolute;
+        top: 5%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: contain;
+        object-position: top;
+      }
+    }
+    &__row {
+      padding-top: 107vw;
+      padding-bottom: 25vw;
+    }
+    &__title {
+      margin-bottom: 7px;
+      @include font-7;
+      line-height: 1.5;
+    }
+    &__desc {
+      position: relative;
+      max-height: 32vw;
+      margin-bottom: 15px;
+      @include font-4;
+      line-height: 1.5;
+      overflow: hidden;
+      transition: .7s max-height;
+
+      &::after {
+        content: '';
+        position: absolute;
+        z-index: 1;
+        bottom: 0;
+        left: 0;
+        pointer-events: none;
+        background-image: linear-gradient(to bottom, rgba($color-10, 0), rgba($color-10, 1) 90%);
+        width: 100%;
+        height: 10em;
+        opacity: 0;
+        visibility: hidden;
+        transition: 1s all;
+      }
+
+      p {
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      & + #{$root}__toggle {
+        span {
+          &:first-child {
+            display: block;
+          }
+          &:last-child {
+            display: none;
+          }
+        }
+      }
+
+      &_show {
+        max-height: 100%;
+
+        &::after {
+          opacity: 0;
+          visibility: hidden;
+        }
+
+        & + #{$root}__toggle {
+          span {
+            &:first-child {
+              display: none;
+            }
+            &:last-child {
+              display: block;
+            }
+          }
+        }
+      }
+
+      &_max-height {
+
+        &::after {
+          opacity: 1;
+          visibility: visible;
+        }
+        
+        &#{$root}__desc_show {
+
+          &::after {
+            opacity: 0;
+            visibility: hidden;
+          }
+        }
+      }
+    }
+  }
+  &__toggle {
+    display: none;
+    @include font-42;
+    font-size: 16px;
+    line-height: 1.2;
+    color: $color-1;
+    cursor: pointer;
+
+    &_active {
+      display: block;
+    }
+  }
+}
+
+.ie {
+  .product-map-slide {
+
+    &__kw {
+      color: $color-7;
+      text-shadow: -1px -1px 0 $color-2, 1px -1px 0 $color-2, -1px 1px 0 $color-2, 1px 1px 0 $color-2;
+    }
+  }
+}

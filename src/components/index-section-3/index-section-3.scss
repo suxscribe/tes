@@ -1,0 +1,12 @@
+.index-section-3 {
+    position: relative;
+    overflow: hidden;
+
+    .simplebar-track {
+        display: none;
+    }
+
+    &__wrapper {
+        position: relative;
+    }
+}

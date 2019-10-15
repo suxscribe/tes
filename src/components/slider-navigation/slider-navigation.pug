@@ -1,0 +1,14 @@
+mixin slider-navigation(args)
+    if args && args.class
+        - attributes.class = "slider-navigation_" + args.class;
+    .slider-navigation&attributes(attributes)
+        .slider-navigation__arrows
+            .slider-navigation__arrow.slider-navigation__arrow_prev
+                .slider-navigation__arrow-space
+                .slider-navigation__arrow-wrapper
+                    +svg({ name: 'arrow-left' })
+            .slider-navigation__arrow.slider-navigation__arrow_next
+                .slider-navigation__arrow-space
+                .slider-navigation__arrow-wrapper
+                    +svg({ name: 'arrow-right' })
+        .slider-navigation__text Или используйте клавиатуру

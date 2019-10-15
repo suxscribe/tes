@@ -1,0 +1,11 @@
+include ../link/link
+
+mixin cookie-message(args)
+    .cookie-message.container-fluid.hidden&attributes(attributes)
+        .row
+            .col-8.col-md-5.justify-content-md-center.col-xxl-4.offset-xxl-1.d-flex.align-items-center.cookie-message__text-col
+                .cookie-message__text Для улучшения произоводительности, мы&nbsp;используем на&nbsp;сайте файлы cookie
+            .col-8.col-md-3.justify-content-center.col-xxl-2.justify-content-xxl-start.d-flex.align-items-center
+                +link.cookie-message__btn-accept
+                    +svg({ name: 'arrow-right' }).link__icon
+                    | Хорошо, я согласен

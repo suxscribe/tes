@@ -1,0 +1,7 @@
+include ../video/video
+
+mixin video-block(args)
+    .video-block.container-fluid&attributes(attributes)
+        .row
+            .col-8.col-md-6.offset-md-1
+                +video(args).video-block__video

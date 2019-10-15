@@ -1,0 +1,23 @@
+extends ../../layout/layout
+include ../../components/solution-group-inner/solution-group-inner
+include ../../components/static-footer/static-footer
+include ../../components/feedback/feedback
+include ../../components/page-navigation/page-navigation
+
+block content
+    div#barba-wrapper
+        .barba-container(data-namespace='404')
+            .p404
+                .p404__wrap
+                    .p404__l
+                        .p404__l__404
+                            div 4
+                            +svg({ name: 'lightning' })
+                            div 4
+                        .p404__l__text Страница не найдена
+                    .p404__r
+                        .p404__r__text К сожалению, данная страница не найдена или больше недоступна. Воспользуйтесь кнопкой меню или перейдите на главную страницу.
+                        a.p404__r__link(href='/')
+                            +svg({ name: 'arrow-right' }).p404__r__link__arrow
+                            | Перейти на главную
+

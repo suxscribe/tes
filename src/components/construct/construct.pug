@@ -1,0 +1,10 @@
+include ../spoiler-list/spoiler-list
+
+mixin construct(args)
+    .construct&attributes(attributes)
+        .construct__content.container-fluid
+            .row.construct__row
+                .col-8.construct__title-1!=args.title1
+                .col-8
+                    +spoiler-list({info: args.data, name: args.name, firstSpoiler: args.firstSpoiler})(id=args.name).spoiler-list_construct
+                .col-8.construct__title-2!=args.title2

@@ -1,0 +1,60 @@
+$sandwich-line-height: 3px;
+$sandwich-line-gap: 5px;
+$sandwich-width: 28px;
+$sandwich-height: 20px;
+
+.sandwich-button {
+    cursor: pointer;
+    width: $sandwich-width;
+    height: $sandwich-height;
+    color: $color-2;
+
+    &.contrast {
+        color: white;
+    }
+
+    &__line {
+        height: $sandwich-line-height;
+        transition: transform $sandwich-anim-duration-s ease-out;
+        background-color: currentColor;
+        will-change: transform;
+        position: relative;
+        z-index: 1;
+        margin-top: $sandwich-line-gap;
+        &_top {
+            margin-top: 0;
+        }
+        &_bottom {
+            transform: scaleX(.33);
+        }
+        &_top,
+        &_bottom {
+            transform-origin: right center;
+        }
+    }
+
+    &:hover > &__line_bottom {
+        transform: scaleX(1);
+    }
+
+    &:hover > &__line_top {
+        transform: scaleX(.33);
+    }
+
+    &_state_open > &__line,
+    &_state_open:hover > &__line {
+        &_top {
+            transform-origin: center center;
+            transform: translateY($sandwich-height / 2 - $sandwich-line-height / 2) rotate(45deg);
+        }
+
+        &_middle {
+            transform: rotate(-45deg);
+        }
+
+        &_bottom {
+            transform: scaleX(0);
+        }
+    }
+}
+

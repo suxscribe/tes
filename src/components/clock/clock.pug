@@ -1,0 +1,10 @@
+mixin clock(args)
+    .clock.container-fluid.container-fluid_fix-left&attributes(attributes)
+        .clock__bg
+        .row.clock__row
+            .col-8.clock__col
+                .clock__value
+                    span.clock__hours 00
+                    span.clock__dots :
+                    span.clock__minutes 00
+                    span.clock__ampm am

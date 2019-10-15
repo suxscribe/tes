@@ -1,0 +1,23 @@
+.two-columns-paragraph {
+    margin-top: 6px;
+    margin-bottom: 126px;
+
+    &__left {
+        padding-right: calc(#{$col-width} * .25);
+    }
+
+    &__right {
+        padding-left: calc(#{$col-width} * .25);
+    }
+
+    &__p {
+        @include font-25;
+        color: $color-2;
+        margin-bottom: 39px;
+        line-height: 1.75;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}

@@ -1,0 +1,68 @@
+.electro-lines {
+    $root: &;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+
+    &::before {
+        display: block;
+        position: absolute;
+        content: '';
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(ellipse at center, rgba($color-13, 0.9), $color-17);
+    }
+
+    &__static-bg {
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        object-fit: cover;
+    }
+
+    &__canvas-wrapper {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(black, .25);
+    }
+
+    @include media-breakpoint-down(sm) {
+        display: none;
+        &::before {
+            display: none;
+        }
+    }
+
+    .ie & {
+        #{$root}__canvas-wrapper {
+            display: none;
+        }
+        #{$root}__static-bg {
+            display: block;
+        }
+    }
+}

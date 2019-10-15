@@ -1,0 +1,7 @@
+include ../news-preview/news-preview
+mixin news-card-grid(args)
+    .row.news-card-grid&attributes(attributes)
+        each news in data.newsList
+            if !(news.slider)
+                .col-md-4.news-page__item.news-page__item_cut-text
+                    +news-preview(news)

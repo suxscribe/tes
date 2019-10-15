@@ -1,0 +1,132 @@
+{
+  "ktpb": [
+    {
+      "images": [
+        "../../pages/ktpb/images/gallery/1.jpg",
+        "../../pages/ktpb/images/gallery/3.jpg",
+        "../../pages/ktpb/images/gallery/4.jpg",
+        "../../pages/ktpb/images/gallery/5.jpg",
+        "../../pages/ktpb/images/gallery/6.jpg",
+        "../../pages/ktpb/images/gallery/7.jpg",
+        "../../pages/ktpb/images/gallery/8.jpg",
+        "../../pages/ktpb/images/gallery/9.jpg",
+        "../../pages/ktpb/images/gallery/11.jpg",
+        "../../pages/ktpb/images/gallery/12.jpg",
+        "../../pages/ktpb/images/gallery/13.jpg",
+        "../../pages/ktpb/images/gallery/14.jpg",
+        "../../pages/ktpb/images/gallery/15.jpg",
+        "../../pages/ktpb/images/gallery/16.jpg",
+        "../../pages/ktpb/images/gallery/17.jpg",
+        "../../pages/ktpb/images/gallery/18.jpg",
+        "../../pages/ktpb/images/gallery/19.jpg",
+        "../../pages/ktpb/images/gallery/20.jpg",
+        "../../pages/ktpb/images/gallery/21.jpg",
+        "../../pages/ktpb/images/gallery/22.jpg",
+        "../../pages/ktpb/images/gallery/23.jpg",
+        "../../pages/ktpb/images/gallery/24.jpg",
+        "../../pages/ktpb/images/gallery/100.jpg",
+        "../../pages/ktpb/images/gallery/121.jpg"
+      ]
+    }
+  ],
+  "ktpm": [
+    {
+      "images": [
+        "../../pages/ktpm/images/gallery/01.jpg",
+        "../../pages/ktpm/images/gallery/02.jpg",
+        "../../pages/ktpm/images/gallery/002.jpg",
+        "../../pages/ktpm/images/gallery/03.jpg",
+        "../../pages/ktpm/images/gallery/04.jpg",
+        "../../pages/ktpm/images/gallery/05.jpg",
+        "../../pages/ktpm/images/gallery/07.jpg",
+        "../../pages/ktpm/images/gallery/08.jpg",
+        "../../pages/ktpm/images/gallery/9.jpg",
+        "../../pages/ktpm/images/gallery/10.jpg",
+        "../../pages/ktpm/images/gallery/12.jpg",
+        "../../pages/ktpm/images/gallery/14.jpg",
+        "../../pages/ktpm/images/gallery/15.jpg",
+        "../../pages/ktpm/images/gallery/16.jpg",
+        "../../pages/ktpm/images/gallery/17.jpg",
+        "../../pages/ktpm/images/gallery/18.jpg",
+        "../../pages/ktpm/images/gallery/19.jpg",
+        "../../pages/ktpm/images/gallery/20.jpg",
+        "../../pages/ktpm/images/gallery/21.jpg",
+        "../../pages/ktpm/images/gallery/22.jpg",
+        "../../pages/ktpm/images/gallery/23.jpg",
+        "../../pages/ktpm/images/gallery/24.jpg",
+        "../../pages/ktpm/images/gallery/25.jpg",
+        "../../pages/ktpm/images/gallery/26.jpg"
+      ]
+    }
+  ],
+  "service1": [
+    {
+      "images": [
+        "../../pages/service-1/images/gallery/1.jpg",
+        "../../pages/service-1/images/gallery/2.jpg",
+        "../../pages/service-1/images/gallery/3.jpg"
+      ]
+    }
+  ],
+  "service2": [
+    {
+      "images": [
+        "../../pages/service-2/images/gallery/1.jpg",
+        "../../pages/service-2/images/gallery/2.jpg",
+        "../../pages/service-2/images/gallery/3.jpg"
+      ]
+    }
+  ],
+  "service3": [
+    {
+      "images": [
+        "../../pages/service-3/images/gallery/1.jpg",
+        "../../pages/service-3/images/gallery/2.jpg",
+        "../../pages/service-3/images/gallery/3.jpg"
+      ]
+    }
+  ],
+  "service4": [
+    {
+      "images": [
+        "../../pages/service-4/images/gallery/1.jpg",
+        "../../pages/service-4/images/gallery/2.jpg",
+        "../../pages/service-4/images/gallery/3.jpg"
+      ]
+    }
+  ],
+  "service5": [
+    {
+      "images": [
+        "../../pages/service-5/images/gallery/1.jpg",
+        "../../pages/service-5/images/gallery/2.jpg",
+        "../../pages/service-5/images/gallery/3.jpg"
+      ]
+    }
+  ],
+  "ksoNovation": [
+    {
+      "images": [
+        "../../pages/kso-novation/images/gallery/1.jpg",
+        "../../pages/kso-novation/images/gallery/2.jpg",
+        "../../pages/kso-novation/images/gallery/3.jpg",
+        "../../pages/kso-novation/images/gallery/1.jpg",
+        "../../pages/kso-novation/images/gallery/2.jpg",
+        "../../pages/kso-novation/images/gallery/3.jpg",
+        "../../pages/kso-novation/images/gallery/1.jpg",
+        "../../pages/kso-novation/images/gallery/2.jpg",
+        "../../pages/kso-novation/images/gallery/3.jpg",
+        "../../pages/kso-novation/images/gallery/1.jpg"
+      ]
+    }
+  ],
+  "objectCard": [
+    {
+      "images": [
+        "../../pages/object-card/images/gallery/1.jpg",
+        "../../pages/object-card/images/gallery/2.jpg",
+        "../../pages/object-card/images/gallery/3.jpg"
+      ]
+    }
+  ]
+}

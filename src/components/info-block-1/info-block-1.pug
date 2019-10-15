@@ -1,0 +1,10 @@
+mixin info-block-1(args)
+    .info-block-1.container-fluid&attributes(attributes)
+        .row
+            .col-8.col-md-6.offset-md-1
+                if(args.title)
+                    .info-block-1__title!= args.title
+                if(args.text1)
+                    .info-block-1__text-1!= args.text1
+                if(args.text2)
+                    .info-block-1__text-2!= args.text2

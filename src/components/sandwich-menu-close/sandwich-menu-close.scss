@@ -1,0 +1,49 @@
+.sandwich-menu-close {
+  $root: &;
+  position: relative;
+  @include sandwich-close-size;
+  color: $color-2;
+  border: 1px solid currentColor;
+  cursor: pointer;
+
+  &__line {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 1px;
+    margin-left: -20px;
+    background-color: currentColor;
+    transition: transform .75s;
+
+    &_top {
+      transform: rotate(45deg);
+    }
+
+    &_bottom {
+      transform: rotate(-45deg);
+    }
+  }
+
+  &:hover {
+    & #{$root}__line {
+
+      &_top {
+        transform: rotate(180deg);
+      }
+
+      &_bottom {
+        transform: rotate(0deg);
+      }
+    }
+  }
+
+  &_contrast {
+    color: white;
+  }
+
+  @include media-breakpoint-down(lg) {
+    width: 80px;
+    height: 80px;
+  }
+}

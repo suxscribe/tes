@@ -1,0 +1,21 @@
+include ../gallery-navigation/gallery-navigation
+include ../mobile-slider-navigation/mobile-slider-navigation
+
+mixin news-slider(args)
+    .news-slider&attributes(attributes)
+        +gallery-navigation.gallery-navigation_news-slider
+        +mobile-slider-navigation({ total: args.total }).mobile-slider-navigation_news-slider
+        .swiper-container.news-slider__swiper-container
+            .swiper-wrapper.news-slider__swiper-wrapper
+                each item in args.data
+                    if item.slider
+                        .swiper-slide.news-slider__slide
+                            a(href=item.link).news-slider__wrapper
+                                .news-slider__bg-wrapper
+                                    +img({ path: item.img }).news-slider__bg(data-object-fit='cover')
+                                .container-fluid
+                                    .row
+                                        .col-xl-4.col-md-5.offset-md-2.offset-xl-1
+                                            .news-slider__date!=item.date
+                                            .news-slider__title!=item.title
+                                            .news-slider__text!=item.text

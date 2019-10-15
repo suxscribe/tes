@@ -1,0 +1,10 @@
+mixin solution-inner(args)
+    a.solution-inner.container-fluid.d-block(href=args.link)&attributes(attributes)
+        .row
+            .solution-inner__col-1
+                .solution-inner__kw!= args.kw
+                .solution-inner__full-name!= args.fullName
+                +link({ tagName: 'span' }).solution-inner__link Подробнее
+            .solution-inner__col-2
+                +img({ path: args.innerBg }).solution-inner__bg
+                .solution-inner__name!= args.name

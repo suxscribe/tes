@@ -1,0 +1,82 @@
+.clock {
+    $root: &;
+    color: transparent;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: $color-9;
+    position: relative;
+    z-index: 2;
+
+    &__value {
+        white-space: nowrap;
+        font-size: 0; // чтобы не было пробелов между span-ами
+        & > * {
+            @include font-12;
+            line-height: 1.3em;
+        }
+    }
+
+    .ie & {
+        color: $color-9;
+    }
+
+    &__bg {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        height: 44%;
+        left: 0;
+        right: 0;
+        background-color: $color-2;
+        transform: translateY(2px);
+    }
+
+    &__time {
+        line-height: 1.54;
+        position: relative;
+        left: -15px;
+    }
+
+    &__dots {
+        animation: dots-anim 1s infinite;
+    }
+
+    @include media-breakpoint-down(sm) {
+        -webkit-text-stroke-width: 1px;
+        @include container-fluid-cancel-fix;
+        &__row {
+            margin-left: -5vw;
+        }
+    }
+
+    &_contacts {
+        margin-bottom: 72px;
+        -webkit-text-stroke-color: $color-7;
+
+        .ie & {
+            color: $color-7;
+        }
+
+        #{$root}__col {
+            @include make-col-offset(1);
+            @include make-col(7);
+        }
+        #{$root}__bg {
+            background-color: transparent;
+        }
+
+        @include media-breakpoint-down(sm) {
+            margin-bottom: 19px;
+
+            #{$root}__col {
+                @include make-col-offset(0);
+                @include make-col(8);
+            }
+        }
+    }
+}
+
+@keyframes dots-anim {
+    from { opacity: 1; }
+    50% { opacity: 0; }
+    to { opacity: 1; }
+}

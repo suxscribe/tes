@@ -1,0 +1,7 @@
+mixin select(args)
+    .select&attributes(attributes)
+        +svg({name: 's-arrow'}).select__arrow
+        select.select__select(name!=args.name)
+            each elem, index in args.options
+                option(value=elem.value)!= elem.text
+        

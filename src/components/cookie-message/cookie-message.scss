@@ -1,0 +1,59 @@
+.cookie-message {
+    @include font-9;
+    color: white ;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    bottom: 0;
+    transition: opacity .5s, visibility .5s;
+    will-change: opacity, visibility;
+
+    & [class*="col-"] {
+        height: $footer-height;
+        background-color: black;
+    }
+
+    &.hidden {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    &__text-col {
+        padding: 0 calc(#{$col-width} / 2);
+
+        @include media-breakpoint-up(xl) {
+            padding: 0;
+        }
+    }
+
+    &__btn-accept {
+        padding-left: calc(#{$col-width} / 4);
+    }
+
+    @include media-breakpoint-up(xxl) {
+        &__btn-accept {
+            padding-left: 0;
+        }
+    }
+
+    @include media-breakpoint-down(sm) {
+        $cookie-message-mobile-v-padding: 4vh;
+        padding-left: 0;
+        padding-right: 0;
+        text-align: center;
+        & [class*="col-"] {
+            height: auto;
+        }
+        &__text-col {
+            padding-top: $cookie-message-mobile-v-padding;
+            padding-bottom: $cookie-message-mobile-v-padding;
+        }
+        &__btn-accept {
+            padding-bottom: $cookie-message-mobile-v-padding;
+            padding-left: 0;
+        }
+    }
+}

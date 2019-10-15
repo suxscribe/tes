@@ -1,0 +1,27 @@
+[
+  {
+    "text": "Проектно-изыскательные работы до&nbsp;500&nbsp;кВ",
+    "link": "/service-1.html",
+    "bg": "../../components/service-inner/images/bg-1.jpg"
+  },
+  {
+    "text": "Строительство подстанций 110/35/6(10)&nbsp;кВ",
+    "link": "/service-4.html",
+    "bg": "../../components/service-inner/images/bg-2.jpg"
+  },
+  {
+    "text": "Строительство воздушных и&nbsp;кабельных линий 6-500&nbsp;кВ",
+    "link": "/service-2.html",
+    "bg": "../../components/service-inner/images/bg-3.jpg"
+  },
+  {
+    "text": "Строительство ТП&nbsp;и&nbsp;РП среднего класса напряжений 35, 6(10)&nbsp;кВ",
+    "link": "/service-5.html",
+    "bg": "../../components/service-inner/images/bg-4.jpg"
+  },
+  {
+    "text": "Реконструкция энергетических объектов до&nbsp;500&nbsp;кВ. Монтаж и&nbsp;наладка электрооборудования",
+    "link": "/service-3.html",
+    "bg": "../../components/service-inner/images/bg-5.jpg"
+  }
+]

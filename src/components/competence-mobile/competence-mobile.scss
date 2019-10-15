@@ -1,0 +1,40 @@
+.competence-mobile {
+    position: relative;
+
+    &__text {
+        @include font-25;
+        line-height: 1.75;
+        color: $color-2;
+        margin-bottom: 80px;
+        padding: 0 $grid-side-offset;
+    }
+
+    &__wrapper {
+        padding-top: 50px;
+        padding-bottom: $vertical-offset-1;
+        position: relative;
+    }
+
+    &__bg {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    &__content {
+        position: relative;
+    }
+
+    &__title {
+        @include font-28;
+        line-height: 40px;
+        color: white;
+        margin-bottom: 25px;
+    }
+
+    @include media-breakpoint-down(sm) {
+        margin-bottom: 60px;
+    }
+}

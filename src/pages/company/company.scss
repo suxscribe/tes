@@ -1,0 +1,12 @@
+.company {
+  &__text-1 {
+    padding-top: 120px;
+    padding-bottom: 70px;
+    background-color: $color-5;
+
+    @include media-breakpoint-down(sm) {
+      padding-top: 60px;
+      padding-bottom: 0;
+    }
+  }
+}

@@ -1,0 +1,161 @@
+.header {
+    $root: &;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    z-index: 3;
+    overflow: hidden;
+
+    &__col {
+        height: $header-height;
+        display: flex;
+        align-items: center;
+    }
+
+    &__logo {
+        width: 100%;
+        height: 100%;
+        @include media-breakpoint-down(sm) {
+            height: $logo-width-mobile;
+            width: $logo-height-mobile;
+        }
+    }
+
+    &__logo,
+    &__menu,
+    &__sandwich-button {
+        opacity: 1;
+        visibility: visible;
+        transition:
+            opacity $sandwich-anim-duration-s,
+            visibility $sandwich-anim-duration-s,
+            fill $sandwich-anim-duration-s,
+            color $sandwich-anim-duration-s;
+        will-change: opacity, visibility, fill, color;
+    }
+
+    &__logo {
+        transition:
+                fill $sandwich-anim-duration-s,
+                color $sandwich-anim-duration-s;
+        will-change: fill, color;
+    }
+
+    &__logo-link {
+        will-change: opacity, visibility;
+        width: $logo-width;
+        height: $logo-height;
+
+        &,
+        &:hover {
+            fill: $color-14;
+            color: $color-14;
+        }
+        &.contrast {
+            fill: white;
+            color: white;
+        }
+        @include media-breakpoint-down(sm) {
+            width: $logo-width-mobile;
+            height: $logo-width-mobile;
+            overflow: hidden;
+        }
+    }
+
+    &__menu {
+        will-change: opacity, visibility, transform;
+    }
+
+    &__logo {
+        pointer-events: none;
+    }
+
+    &__logo-link {
+        &_disabled {
+            cursor: default;
+        }
+    }
+
+    &__click-area {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+    &__phone {
+        margin-right: 22px;
+        stroke: $color-2;
+        &.contrast {
+            stroke: white;
+        }
+        & > svg {
+            width: $phone-size;
+            height: $phone-size;
+        }
+    }
+
+    &_sticky {
+        background-color: white;
+
+        & #{$root}__col {
+            height: $header-sticky-height;
+        }
+
+        & #{$root}__logo-link {
+            width: $logo-sticky-width;
+            height: $logo-sticky-height;
+        }
+    }
+
+    &_absolute {
+        position: absolute;
+    }
+
+    @include media-breakpoint-down(sm) {
+        &__col {
+            height: $header-height-mobile;
+        }
+        &_sticky-mobile {
+            background-color: white;
+            #{$root}__col {
+                height: $header-sticky-height-mobile;
+            }
+            & #{$root}__logo-link {
+                width: 30px;
+                height: 30px;
+            }
+        }
+        &,
+        &__phone,
+        &__sandwich-button,
+        &__col {
+            transition: fill 0.5s, color 0.5s, stroke 0.5s, background-color 0.5s, height 0.5s;
+        }
+    }
+    @media screen and (max-height: $mobile-min-height) {
+        &__col {
+            height: $header-height-mobile;
+        }
+    }
+}
+.sandwich-open .header {
+    &__logo,
+    &__menu {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+.page-inner .header {
+    &__phone {
+        &.contrast {
+            stroke: $color-2;
+        }
+    }
+}
+
+.page-inner:not(.products-page) .header {
+    position: absolute;
+}

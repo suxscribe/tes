@@ -1,0 +1,16 @@
+.object-card-grid {
+    margin-left: -25px;
+    margin-right: -25px;
+    margin-bottom: 130px;
+
+    @include media-breakpoint-down(md) {
+      margin-bottom: 50px;
+    }
+
+    &__item {
+      margin-top: 50px;
+      padding-right: 25px;
+      padding-left: 25px;
+
+    }
+}

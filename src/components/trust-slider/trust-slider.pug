@@ -1,0 +1,23 @@
+include ../gallery-navigation/gallery-navigation
+include ../mobile-slider-navigation/mobile-slider-navigation
+
+mixin trust-slider(args)
+    .trust-slider&attributes(attributes)
+        +gallery-navigation.gallery-navigation_trust-slider
+        +mobile-slider-navigation({total: args.total}).mobile-slider-navigation_trust-slider
+        .trust-slider__numeration 01
+        .swiper-container.trust-slider__swiper-container
+            .swiper-wrapper.trust-slider__swiper-wrapper
+                each item in args.data
+                    .swiper-slide.trust-slider__slide
+                        .trust-slider__wrapper
+                            .trust-slider__bg-wrapper
+                                +img({path: item.img}).trust-slider__bg(data-object-fit='cover')
+                            .container-fluid
+                                .row
+                                    .col-8.col-md-6.offset-md-2.offset-xl-1.trust-slider__comment-wrapper
+                                        .trust-slider__comment!=item.comment
+                                        if(item.autor)
+                                            .trust-slider__autor!=item.autor
+                                        if(item.work)
+                                            .trust-slider__work!=item.work

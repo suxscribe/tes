@@ -1,0 +1,34 @@
+extends ../../layout/layout
+include ../../components/services-inner/services-inner
+include ../../components/competence/competence
+include ../../components/competence-mobile/competence-mobile
+include ../../components/static-footer/static-footer
+include ../../components/feedback/feedback
+include ../../components/advantages/advantages
+
+block content
+    div#barba-wrapper
+        .barba-container.barba-container-inner(data-namespace='services')
+            -var text = 'ГК&nbsp;&laquo;Таврида Энерго Строй&raquo; обладает необходимой компетенцией для осуществления деятельности на&nbsp;объектах нефтегазового и&nbsp;атомного энергетических комплексов, в&nbsp;том числе, относящихся к&nbsp;особо опасным производственным объектам.';
+            +services-inner(data-navigation-trigger)
+            +competence({
+              bgText: 'Навыки',
+              text: text,
+              title: 'Выполним все этапы работ по&nbsp;возведению энергообъекта',
+              slides: data.competence.slides,
+              pageNavItem: 'Область компетенций',
+            })
+            +competence-mobile({
+              bgText: 'Навыки',
+              text: text,
+              slides: data.competence.slides,
+              total: '04'
+            })
+            +advantages({
+              title: 'Преимущества',
+              total: '04',
+              data: data.advantages.services,
+              white: true
+            })
+            +feedback
+            +static-footer

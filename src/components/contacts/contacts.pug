@@ -1,0 +1,32 @@
+include ../link/link
+
+mixin contacts(args)
+    .contacts.container-fluid.container-fluid_fix-left&attributes(attributes)
+        .contacts__animation-bg
+        .row
+            .contacts__col.col-8.col-md-4.col-xl-3.col-xxl-2.offset-xl-1.contacts__row-1
+                +link(href='#').contacts__all Все контакты
+            .contacts__col.col-8.col-md-4.col-xl-3.offset-xxl-1.contacts__row-1
+                a(href='#', target='_blank').contacts__booklet
+                    +svg({ name: 'paper' }).contacts__icon
+                    | Буклет &laquo;Комплексные решения в&nbsp;энергетике&raquo;
+                    br.d-none.d-md-inline
+                    | (9&nbsp;МБ, PDF)
+            .contacts__col.col-8.col-md-4.col-xl-3.col-xxl-2.offset-xl-1.contacts__email-phone.contacts__row-2
+                | Т/Ф&nbsp;
+                a.contacts__phone(href='tel:+78314292929') +7 (831) 429-29-29
+                br
+                | e-mail:&nbsp;
+                a.contacts__email(href='mailto:info@tes.ru') info@tes.ru
+            .contacts__col.col-8.col-md-4.col-xl-3.offset-xxl-1.contacts__text.contacts__row-2 Работаем одновременно в&nbsp;10&nbsp;регионах России, филиалы включают маркетинговые, проектные и&nbsp;монтажные подразделения
+            .contacts__col.col-8.col-md-4.col-xl-3.col-xxl-2.offset-xl-1.contacts__row-3
+                .contacts__city Нижний Новгород
+                .contacts__address ул. Памирская, дом&nbsp;11, литер &laquo;Л&raquo; 9
+                +link(href='#').contacts__show-on-map На&nbsp;карте
+            .contacts__col.col-8.col-md-4.col-xl-3.offset-xxl-1.contacts__row-3
+                a(href='tel:88002343344').contacts__phone-2 8 (800) 234-33-44
+                .contacts__text-2
+                    | Единый многоканальный номер.
+                    br
+                    | Звонок по России бесплатный
+        .contacts__green-block

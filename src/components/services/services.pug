@@ -1,0 +1,19 @@
+include ../service/service
+include ../services-description/services-description
+include ../electro-lines/electro-lines
+include ../mobile-slider-navigation/mobile-slider-navigation
+
+mixin services(args)
+    .services&attributes(attributes)
+        +electro-lines.d-none.d-md-block
+        +img({ path: '../../components/services/images/mobile-bg.jpg' }).services__mobile-bg.d-md-none
+        .container-fluid.services__container-fluid
+            .row.services__row
+                .col-md-8.col-xxl-2
+                    +services-description.services__description
+                .col-8
+                    .row.services__items
+                        each service, i in data.services
+                            .services__service.col-2
+                                -service.index = (i + 1).toString().padStart(2, 0);
+                                +service(service)

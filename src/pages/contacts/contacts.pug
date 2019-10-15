@@ -1,0 +1,22 @@
+extends ../../layout/layout
+include ../../components/contacts-head/contacts-head
+include ../../components/company-list/company-list
+include ../../components/feedback/feedback
+include ../../components/static-footer/static-footer
+
+block content
+    div#barba-wrapper
+        .barba-container(data-namespace='contacts')
+            +contacts-head
+            +company-list({
+              title: 'Компании',
+              items: data.contactsPage.companies,
+              name: 'companies',
+            })
+            +company-list({
+              title: 'Филиалы',
+              items: data.contactsPage.branches,
+              name: 'branches',
+            })
+            +feedback
+            +static-footer

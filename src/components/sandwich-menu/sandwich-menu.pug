@@ -1,0 +1,33 @@
+include ../sandwich-menu-close/sandwich-menu-close
+
+mixin sandwich-menu(args)
+    .sandwich-menu&attributes(attributes)
+        .sandwich-menu__wrapper
+            .sandwich-menu__bg
+                +img({"path": "../../components/sandwich-menu/images/bg.jpg"})(data-object-fit='cover')
+                .sandwich-menu__mask
+            .sandwich-menu__right
+                .sandwich-menu__top-space
+                    .sandwich-menu__header
+                        .sandwich-menu__col.sandwich-menu__col_links
+                            a(href="tel:88002343344").sandwich-menu__header-link 8 (800) 234-33-44
+                            a(href="mailto:info@tes.ru").sandwich-menu__header-link info@tes.ru
+                        .sandwich-menu__col
+                            .sandwich-menu__header-logo
+                                +svg({ name: 'logo' })
+                            +sandwich-menu-close
+                .sandwich-menu__middle-space
+                    ul.sandwich-menu__list.sandwich-menu__list_scroll
+                        each menuItem in data.menu
+                            li.sandwich-menu__item
+                                a(href=menuItem.href).sandwich-menu__link!= menuItem.anchor
+                                if(menuItem.items)
+                                    ul.sandwich-menu__sublist.sandwich-menu__list_scroll
+                                        each subMenu in menuItem.items
+                                            li.sandwich-menu__subitem
+                                                a(href=subMenu.href).sandwich-menu__link!= subMenu.anchor
+                .sandwich-menu__bottom-space
+                    .sandwich-menu__footer
+                        .sandwich-menu__col
+                            a(href="tel:88002343344").sandwich-menu__header-link 8 (800) 234-33-44
+                            a(href="mailto:info@tes.ru").sandwich-menu__header-link info@tes.ru

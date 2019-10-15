@@ -1,0 +1,10 @@
+include ../object-card/object-card
+mixin object-card-grid(args)
+    .row.object-card-grid&attributes(attributes)
+        each card, index in args.data
+            if(index !==0 && index % 4 === 0)
+                .object-card-grid__item.col-8
+                    +object-card(card)
+            else
+                .object-card-grid__item.col-8.col-lg-4
+                    +object-card(card)

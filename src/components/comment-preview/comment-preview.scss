@@ -1,0 +1,91 @@
+$commPrevTr: cubic-bezier(0.19, 1, 0.22, 1);
+
+.comment-preview {
+  $root: &;
+
+  position: relative;
+  padding: 30px 35px 25px;
+  background-color: white;
+  cursor: pointer;
+
+  @include media-breakpoint-down(xs) {
+    padding: 20px;
+  }
+
+  &__title {
+    @include font-11;
+    position: relative;
+    z-index: 1;
+    color: $color-2;
+    transition: color 0.75s $commPrevTr;
+    will-change: color;
+  }
+  &__btn {
+    @include font-9;
+    padding-top: 25px;
+    color: $color-8;
+    position: relative;
+    z-index: 1;
+    transition: color 0.75s $commPrevTr;
+    will-change: color;
+
+    @include media-breakpoint-down(xs) {
+      padding-top: 7px;
+    }
+  }
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 100%;
+    top:0;
+    left: 0;
+    background-color: $color-1;
+    z-index: 0;
+
+    width: 100%;
+    transition: transform 1.5s $commPrevTr;
+    transform: scaleX(0);
+    transform-origin: bottom left;
+
+    @include media-breakpoint-down(xs) {
+      display: none;
+    }
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 100%;
+    top:0;
+    left: 0;
+    background-color: $color-1;
+    width: 3px;
+    z-index: 0;
+    @include media-breakpoint-down(xs) {
+      display: none;
+    }
+  }
+
+  &:hover {
+    &::before {
+      transform: scaleX(1);
+    }
+
+    #{$root}__btn {
+      color: white;
+      @include media-breakpoint-down(xs) {
+        color: $color-8;
+      }
+    }
+    #{$root}__title {
+      color: white;
+      @include media-breakpoint-down(xs) {
+        color: $color-2;
+      }
+    }
+
+  }
+}

@@ -1,0 +1,23 @@
+.two-columns {
+  &__row {
+    padding: 0 $col-width;
+  }
+  &__column {
+    &_right {
+      padding-left: calc(#{$col-width} / 8);
+    }
+  }
+  @include media-breakpoint-down(sm) {
+    &__row {
+      padding: 0;
+    }
+    &__column {
+      &_left {
+        margin-bottom: 20px;
+      }
+      &_right {
+        padding-left: 0;
+      }
+    }
+  }
+}

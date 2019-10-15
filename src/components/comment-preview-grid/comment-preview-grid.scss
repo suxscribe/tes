@@ -1,0 +1,30 @@
+.comment-preview-grid {
+  $root: &;
+
+  background-color: $color-5;
+  padding-bottom: 135px;
+  margin-top: 45px;
+
+  @include media-breakpoint-down(xs) {
+    margin-top: 22px;
+    padding-bottom: 50px;
+  }
+
+  &__container {
+    margin-left: -25px;
+    margin-right: -25px;
+  }
+
+  &__item {
+    margin-top: 45px;
+    padding-right: 25px;
+    padding-left: 25px;
+
+    @include media-breakpoint-down(xs) {
+      margin-top: 25px;
+    }
+  }
+
+
+
+}

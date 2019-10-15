@@ -1,0 +1,14 @@
+.solution-image {
+    position: relative;
+    background-color: $color-7;
+    overflow: hidden;
+
+    &__img {
+        position: absolute;
+        left: 0;
+        top: calc(50% + calc(-1 * #{smooth-value(211px, $fhd-height, $mobile-min-width, $fhd-width, 'w')} / 2));
+        width: 100%;
+        height: smooth-value(211px, $fhd-height, $mobile-min-width, $fhd-width, 'w');
+        object-fit: contain;
+    }
+}

@@ -1,0 +1,11 @@
+mixin document(args)
+    .document&attributes(attributes)
+        .document__wrapper
+            if(args.text)
+                .document__wrapper-inner
+                    .document__title-1!=args.title
+                    .document__text!= args.text
+            else
+                .document__title-1!=args.title
+            .document__bottom
+                a(href=args.href target="_blank").document__link!=args.size

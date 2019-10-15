@@ -1,0 +1,94 @@
+.product-map-slider {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  display: block;
+  background-color: $color-10;
+  opacity: 1;
+  visibility: visible;
+  transition: all 1s ease-out;
+
+  &__slider {
+    height: 100%;
+  }
+
+  &__container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  &_hide {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  &__fixed_top {
+    position: absolute;
+    top: 13.3vh;
+    z-index: 2;
+  }
+  &__fixed_bottom {
+    position: fixed;
+    bottom: $fixed-navigation-slider;
+    z-index: 2;
+  }
+  &__back {
+    display: flex;
+    align-items: center;
+    padding-left: 50px;
+    @include font-9;
+    line-height: 1.5;
+    color: $color-2;
+    cursor: pointer;
+
+    & > svg {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 41px;
+      height: 12px;
+      transform: translateY(-50%);
+    }
+  }
+  &__navigation-col {
+    padding-right: calc(#{$col-width} / 4);
+
+    & .slider-navigation__text {
+      white-space: nowrap;
+    }
+  }
+
+  &__title-1 {
+    padding-left: 25px;
+    @include font-3;
+    line-height: 1.5;
+    color: $color-2;
+  }
+  @include media-breakpoint-down(sm) {
+    &_hide {
+      position: relative;
+      top: auto;
+      right: auto;
+      bottom: auto;
+      left: auto;
+      z-index: 1;
+      visibility: visible;
+      opacity: 1;
+    }
+    &__fixed_top {
+      top: 100vw;
+    }
+    &__fixed_bottom,
+    &__back {
+      display: none;
+    }
+    &__title-1 {
+      padding-left: 0;
+    }
+  }
+}

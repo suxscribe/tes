@@ -1,0 +1,18 @@
+include ../competence-slider/competence-slider
+include ../../components/slider-navigation/slider-navigation
+
+mixin competence(args)
+    .competence.container-fluid.d-none.d-md-block&attributes(attributes)
+        if args && args.text
+            .row.competence__text-top
+                .col-8.col-md-6.offset-md-1!= args.text
+        .row.competence__content
+            +svg({ name: 'gradient' }).competence__bg
+            .competence__bg-text!= args.bgText
+            if args.small
+                .competence__top-title.col-8.offset-1!= args.topTitle
+            .competence__left.col-md-6.col-xl-2.offset-md-1
+                .competence__text!= args.title
+                +slider-navigation({ class: 'services slider-navigation_white d-none d-xl-block' })
+            .competence__right.col-md-6.offset-md-1.col-xl-4.offset-xl-0
+                +competence-slider(args)

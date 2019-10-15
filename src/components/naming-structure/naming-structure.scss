@@ -1,0 +1,108 @@
+.naming-structure {
+  padding-top: 8.5vh;
+  padding-bottom: $footer-height;
+  background-color: #fff;
+
+  &__title-1 {
+    margin-bottom: 5.5vh;
+    @include font-3;
+    line-height: 1.5;
+    color: $color-2;
+  }
+  &__structure {
+    display: flex;
+    margin-bottom: 100px;
+    @include media-breakpoint-up(md) {
+      letter-spacing: -1px;
+    }
+  }
+  &__item {
+    position: relative;
+    padding-bottom: 3.7vh;
+    @include font-2;
+    line-height: 1.29;
+    color: $color-10;
+    border-bottom: 1px solid $color-8;
+    transition: color .5s;
+    cursor: default;
+
+    &_active {
+      cursor: pointer;
+      border-bottom: 1px solid $color-2;
+
+      &:hover {
+        color: $color-1;
+      }
+    }
+
+    &_default {
+      border-bottom: 1px solid $color-2;
+    }
+  }
+
+  &__count {
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    @include font-11;
+    line-height: 1.875;
+    color: $color-2;
+    pointer-events: none;
+  }
+
+  &__descriptions {
+    min-height: 60px;
+    margin-bottom: 5vh;
+    position: relative;
+  }
+
+  &__description {
+    position: absolute;
+    top: 0;
+    @include font-4;
+    line-height: 1.5;
+    color: $color-6;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .5s;
+
+    &_active {
+      position: relative;
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  @include media-breakpoint-down(lg) {
+    &__item {
+      padding-bottom: 1vh;
+      font-size: 40px;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding-top: 9.5vh;
+    padding-bottom: 0;
+
+    &__item {
+      font-size: 20px;
+    }
+    &__descriptions {
+      margin-bottom: 1.5vh;
+    }
+    &__title-1 {
+      margin-bottom: 7.5vh;
+    }
+    &__count {
+      bottom: -6vh;
+    }
+    &__structure {
+      margin-bottom: 9.5vh;
+    }
+  }
+  //@include media-breakpoint-down(xxs) {
+  //  &__item {
+  //    font-size: 18px;
+  //  }
+  //}
+}

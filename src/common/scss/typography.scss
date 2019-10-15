@@ -1,0 +1,552 @@
+@import './fonts.scss';
+
+@mixin font-1 {
+    $fhd-base-size: 120px;
+    $tablet-base-size: $fhd-base-size * .6;
+    font-family: AvenirNextCyr-Bold;
+    font-size: calc(
+            #{smooth-value($tablet-base-size / 2, $fhd-base-size / 2, $screen-md-min, $fhd-width, 'w')}
+            + #{smooth-value($tablet-base-size / 2, $fhd-base-size / 2, $mobile-min-height, $fhd-height, 'h')}
+    );
+    @include media-breakpoint-down(sm) {
+        font-size: 70px;
+    }
+}
+
+/* h1 */
+@mixin font-2 {
+    $fhd-base-size: 70px;
+    $tablet-base-size: $fhd-base-size * .6;
+    font-family: AvenirNextCyr-Bold;
+    font-size: calc(
+            #{smooth-value($tablet-base-size / 2, $fhd-base-size / 2, $screen-md-min, $fhd-width, 'w')}
+            + #{smooth-value($tablet-base-size / 2, $fhd-base-size / 2, $mobile-min-height, $fhd-height, 'h')}
+    );
+    @include media-breakpoint-down(sm) {
+        font-size: 40px;
+    }
+}
+
+/* h2 */
+@mixin font-3 {
+    $fhd-base-size: 40px;
+    $tablet-base-size: $fhd-base-size * .45;
+    font-family: AvenirNextCyr-Bold;
+    font-size: calc(
+            #{smooth-value($tablet-base-size * .6, $fhd-base-size * .6, $screen-md-min, $fhd-width, 'w')}
+            + #{smooth-value($tablet-base-size * .4, $fhd-base-size * .4, $mobile-min-height, $fhd-height, 'h')}
+    );
+    @include media-breakpoint-down(sm) {
+        font-size: 30px;
+    }
+}
+
+@mixin font-4 {
+    $fhd-base-size: 20px;
+    $tablet-base-size: $fhd-base-size * .7;
+    font-family: AvenirNextCyr-Medium;
+    font-size: calc(
+            #{smooth-value($tablet-base-size / 2, $fhd-base-size / 2, $screen-md-min, $fhd-width, 'w')}
+            + #{smooth-value($tablet-base-size / 2, $fhd-base-size / 2, $mobile-min-height, $fhd-height, 'h')}
+    );
+    @include media-breakpoint-down(sm) {
+        font-size: 16px;
+    }
+}
+
+@mixin font-5 {
+    $fhd-base-size: 14px;
+    $tablet-base-size: $fhd-base-size * .7;
+    font-family: AvenirNextCyr-Regular;
+    font-size: calc(
+            #{smooth-value($tablet-base-size / 2, $fhd-base-size / 2, $screen-md-min, $fhd-width, 'w')}
+            + #{smooth-value($tablet-base-size / 2, $fhd-base-size / 2, $mobile-min-height, $fhd-height, 'h')}
+    );
+    @include media-breakpoint-down(sm) {
+        font-size: 14px;
+    }
+}
+
+@mixin font-6 {
+    $fhd-base-size: 16px;
+    $tablet-base-size: $fhd-base-size * .7;
+    font-family: AvenirNextCyr-Regular;
+    font-size: calc(
+            #{smooth-value($tablet-base-size / 2, $fhd-base-size / 2, $screen-md-min, $fhd-width, 'w')}
+            + #{smooth-value($tablet-base-size / 2, $fhd-base-size / 2, $mobile-min-height, $fhd-height, 'h')}
+    );
+    @include media-breakpoint-down(sm) {
+        font-size: 16px;
+    }
+}
+
+/* h3 */
+@mixin font-7 {
+    $fhd-base-size: 20px;
+    $tablet-base-size: $fhd-base-size * .8;
+    font-family: AvenirNextCyr-Bold;
+    font-size: calc(
+            #{smooth-value($tablet-base-size / 2, $fhd-base-size / 2, $screen-md-min, $fhd-width, 'w')}
+            + #{smooth-value($tablet-base-size / 2, $fhd-base-size / 2, $mobile-min-height, $fhd-height, 'h')}
+    );
+    @include media-breakpoint-down(sm) {
+        font-size: 16px;
+    }
+}
+
+@mixin font-8 {
+    $fhd-base-size: 390px;
+    $tablet-base-size: $fhd-base-size * .3;
+    font-family: AvenirNextCyr-Bold;
+    font-size: calc(
+            #{smooth-value($tablet-base-size * .75, $fhd-base-size *.75, $screen-md-min, $fhd-width, 'w')}
+            + #{smooth-value($tablet-base-size * .25, $fhd-base-size * .25, $mobile-min-height, $fhd-height, 'h')}
+    );
+    @include media-breakpoint-down(sm) {
+        font-size: 110px;
+    }
+}
+
+@mixin font-9 {
+    $fhd-base-size: 16px;
+    $tablet-base-size: $fhd-base-size * .7;
+    font-family: AvenirNextCyr-Medium;
+    font-size: calc(
+            #{smooth-value($tablet-base-size / 2, $fhd-base-size / 2, $screen-md-min, $fhd-width, 'w')}
+            + #{smooth-value($tablet-base-size / 2, $fhd-base-size / 2, $mobile-min-height, $fhd-height, 'h')}
+    );
+    @include media-breakpoint-down(sm) {
+        font-size: 16px;
+    }
+}
+
+@mixin font-10 {
+    $fhd-base-size: 14px;
+    $tablet-base-size: $fhd-base-size * .7;
+    font-family: AvenirNextCyr-Medium;
+    font-size: calc(
+            #{smooth-value($tablet-base-size / 2, $fhd-base-size / 2, $screen-md-min, $fhd-width, 'w')}
+            + #{smooth-value($tablet-base-size / 2, $fhd-base-size / 2, $mobile-min-height, $fhd-height, 'h')}
+    );
+}
+
+@mixin font-11 {
+    $fhd-base-size: 16px;
+    $tablet-base-size: $fhd-base-size * .7;
+    font-family: AvenirNextCyr-Bold;
+    font-size: calc(
+            #{smooth-value($tablet-base-size / 2, $fhd-base-size / 2, $screen-md-min, $fhd-width, 'w')}
+            + #{smooth-value($tablet-base-size / 2, $fhd-base-size / 2, $mobile-min-height, $fhd-height, 'h')}
+    );
+    @include media-breakpoint-down(sm) {
+        font-size: 14px;
+    }
+}
+
+@mixin font-12 {
+    $fhd-base-size: 200px;
+    $tablet-base-size: $fhd-base-size * .4;
+    font-family: AvenirNextCyr-Bold;
+    font-size: calc(
+            #{smooth-value($tablet-base-size * .75, $fhd-base-size * .75, $screen-md-min, $fhd-width, 'w')}
+            + #{smooth-value($tablet-base-size * .25, $fhd-base-size * .25, $mobile-min-height, $fhd-height, 'h')}
+    );
+    @include media-breakpoint-down(sm) {
+        font-size: 70px;
+    }
+}
+
+@mixin font-13 {
+    $fhd-base-size: 20px;
+    $tablet-base-size: $fhd-base-size * .8;
+    font-family: AvenirNextCyr-Regular;
+    font-size: calc(
+            #{smooth-value($tablet-base-size / 2, $fhd-base-size / 2, $screen-md-min, $fhd-width, 'w')}
+            + #{smooth-value($tablet-base-size / 2, $fhd-base-size / 2, $mobile-min-height, $fhd-height, 'h')}
+    );
+    @include media-breakpoint-down(sm) {
+        font-size: 16px;
+    }
+}
+
+@mixin font-14 {
+    $fhd-base-size: 14px;
+    $tablet-base-size: $fhd-base-size * .7;
+    font-family: AvenirNextCyr-Bold;
+    font-size: calc(
+            #{smooth-value($tablet-base-size / 2, $fhd-base-size / 2, $screen-md-min, $fhd-width, 'w')}
+            + #{smooth-value($tablet-base-size / 2, $fhd-base-size / 2, $mobile-min-height, $fhd-height, 'h')}
+    );
+    @include media-breakpoint-down(sm) {
+        font-size: 14px;
+    }
+}
+
+@mixin font-15 {
+    $fhd-base-size: 20px;
+    $tablet-base-size: $fhd-base-size * .8;
+    font-family: AvenirNextCyr-Demi;
+    font-size: calc(
+            #{smooth-value($tablet-base-size / 2, $fhd-base-size / 2, $screen-md-min, $fhd-width, 'w')}
+            + #{smooth-value($tablet-base-size / 2, $fhd-base-size / 2, $mobile-min-height, $fhd-height, 'h')}
+    );
+}
+
+@mixin font-16 {
+    $fhd-base-size: 25px;
+    $tablet-base-size: $fhd-base-size * .8;
+    font-family: AvenirNextCyr-Bold;
+    font-size: calc(
+            #{smooth-value($tablet-base-size / 2, $fhd-base-size / 2, $screen-md-min, $fhd-width, 'w')}
+            + #{smooth-value($tablet-base-size / 2, $fhd-base-size / 2, $mobile-min-height, $fhd-height, 'h')}
+    );
+}
+
+@mixin font-17 {
+    $fhd-base-size: 35px;
+    $tablet-base-size: $fhd-base-size * .46;
+    font-family: AvenirNextCyr-Regular;
+    font-size: calc(
+            #{smooth-value($tablet-base-size * .6, $fhd-base-size * .6, $screen-md-min, $fhd-width, 'w')}
+            + #{smooth-value($tablet-base-size * .4, $fhd-base-size * .4, $mobile-min-height, $fhd-height, 'h')}
+    );
+    @include media-breakpoint-down(sm) {
+        font-size: 25px;
+    }
+}
+
+@mixin font-18 {
+    $fhd-base-size: 25px;
+    $tablet-base-size: $fhd-base-size * .65;
+    font-family: AvenirNextCyr-Regular;
+    font-size: calc(
+            #{smooth-value($tablet-base-size / 2, $fhd-base-size / 2, $screen-md-min, $fhd-width, 'w')}
+            + #{smooth-value($tablet-base-size / 2, $fhd-base-size / 2, $mobile-min-height, $fhd-height, 'h')}
+    );
+    @include media-breakpoint-down(sm) {
+        font-size: 16px;
+    }
+}
+
+/* h3 */
+@mixin font-19 {
+    @include font-7;
+    @include media-breakpoint-down(sm) {
+        font-size: 20px;
+    }
+}
+
+@mixin font-20 {
+    @include font-3;
+    @include media-breakpoint-down(sm) {
+        font-size: 40px;
+    }
+}
+
+@mixin font-21 {
+    @include font-17;
+    @include media-breakpoint-down(sm) {
+        font-size: 18px;
+    }
+}
+
+@mixin font-22 {
+    @include font-3;
+    @include media-breakpoint-down(sm) {
+        font-size: 20px;
+    }
+}
+
+@mixin font-23 {
+    @include font-13;
+    @include media-breakpoint-down(sm) {
+        font-size: 20px;
+    }
+}
+
+@mixin font-24 {
+    @include font-4;
+    @include media-breakpoint-down(sm) {
+        font-size: 25px;
+    }
+}
+
+/* paragraph */
+@mixin font-25 {
+    $fhd-base-size: 20px;
+    $tablet-base-size: $fhd-base-size * .7;
+    font-family: AvenirNextCyr-Medium;
+    font-size: calc(
+            #{smooth-value($tablet-base-size / 2, $fhd-base-size / 2, $screen-md-min, $fhd-width, 'w')}
+            + #{smooth-value($tablet-base-size / 2, $fhd-base-size / 2, $mobile-min-height, $fhd-height, 'h')}
+    );
+    @include media-breakpoint-down(sm) {
+        font-size: 20px;
+    }
+}
+
+@mixin font-26 {
+    @include font-3;
+    @include media-breakpoint-down(sm) {
+        font-size: 40px;
+    }
+}
+
+@mixin font-27 {
+    $fhd-base-size: 280px;
+    $tablet-base-size: $fhd-base-size * .7;
+    font-family: AvenirNextCyr-Bold;
+    font-size: calc(
+            #{smooth-value($tablet-base-size / 2, $fhd-base-size / 2, $screen-md-min, $fhd-width, 'w')}
+            + #{smooth-value($tablet-base-size / 2, $fhd-base-size / 2, $mobile-min-height, $fhd-height, 'h')}
+    );
+}
+
+@mixin font-28 {
+    @include font-3;
+    @include media-breakpoint-down(sm) {
+        font-size: 30px;
+    }
+}
+
+@mixin font-29 {
+    $fhd-base-size: 20px;
+    $tablet-base-size: $fhd-base-size * .8;
+    font-family: AvenirNextCyr-Medium;
+    font-size: calc(
+            #{smooth-value($tablet-base-size / 2, $fhd-base-size / 2, $screen-md-min, $fhd-width, 'w')}
+            + #{smooth-value($tablet-base-size / 2, $fhd-base-size / 2, $mobile-min-height, $fhd-height, 'h')}
+    );
+    @include media-breakpoint-down(sm) {
+        font-size: 16px;
+    }
+}
+
+@mixin font-30 {
+    $fhd-base-size: 60px;
+    $tablet-base-size: $fhd-base-size * .6;
+    font-family: AvenirNextCyr-Bold;
+    font-size: calc(
+            #{smooth-value($tablet-base-size / 2, $fhd-base-size / 2, $screen-md-min, $fhd-width, 'w')}
+            + #{smooth-value($tablet-base-size / 2, $fhd-base-size / 2, $mobile-min-height, $fhd-height, 'h')}
+    );
+    @include media-breakpoint-down(sm) {
+        font-size: 40px;
+    }
+}
+
+@mixin font-31 {
+    @include font-30;
+    @include media-breakpoint-down(sm) {
+        font-size: 25px;
+    }
+}
+
+@mixin font-32 {
+    $fhd-base-size: 120px;
+    $tablet-base-size: $fhd-base-size * .6;
+    font-family: AvenirNextCyr-Bold;
+    font-size: calc(
+            #{smooth-value($tablet-base-size / 2, $fhd-base-size / 2, $screen-md-min, $fhd-width, 'w')}
+            + #{smooth-value($tablet-base-size / 2, $fhd-base-size / 2, $mobile-min-height, $fhd-height, 'h')}
+    );
+    @include media-breakpoint-down(sm) {
+        font-size: 40px;
+    }
+}
+
+@mixin font-33 {
+  @include font-30;
+  @include media-breakpoint-down(sm) {
+    font-size: 25px;
+  }
+}
+
+@mixin font-34 {
+    $fhd-base-size: 35px;
+    $tablet-base-size: $fhd-base-size * .46;
+    font-family: AvenirNextCyr-Medium;
+    font-size: calc(
+            #{smooth-value($tablet-base-size * .6, $fhd-base-size * .6, $screen-md-min, $fhd-width, 'w')}
+            + #{smooth-value($tablet-base-size * .4, $fhd-base-size * .4, $mobile-min-height, $fhd-height, 'h')}
+    );
+    @include media-breakpoint-down(sm) {
+        font-size: 20px;
+    }
+}
+
+@mixin font-35 {
+    $fhd-base-size: 300px;
+    $tablet-base-size: $fhd-base-size * 1.33;
+    font-family: AvenirNextCyr-Bold;
+    font-size: calc(
+            #{smooth-value($tablet-base-size / 2, $fhd-base-size / 2, $screen-md-min, $fhd-width, 'w')}
+            + #{smooth-value($tablet-base-size / 2, $fhd-base-size / 2, $mobile-min-height, $fhd-height, 'h')}
+    );
+}
+
+@mixin font-36 {
+    @include font-3;
+    @include media-breakpoint-down(sm) {
+        font-size: 16px;
+    }
+}
+
+@mixin font-37 {
+    @include font-10;
+    @include media-breakpoint-down(sm) {
+        font-size: 16px;
+    }
+}
+
+@mixin font-38 {
+    $fhd-base-size: 40px;
+    $tablet-base-size: $fhd-base-size * .45;
+    font-family: AvenirNextCyr-Bold;
+    font-size: calc(
+            #{smooth-value($tablet-base-size * .6, $fhd-base-size * .6, $screen-md-min, $fhd-width, 'w')}
+            + #{smooth-value($tablet-base-size * .4, $fhd-base-size * .4, $mobile-min-height, $fhd-height, 'h')}
+    );
+    @include media-breakpoint-down(sm) {
+        font-size: 20px;
+    }
+}
+
+
+@mixin font-39 {
+    $fhd-base-size: 20px;
+    $tablet-base-size: $fhd-base-size * .4;
+    font-family: AvenirNextCyr-Medium;
+    font-size: calc(
+            #{smooth-value($tablet-base-size / 2, $fhd-base-size / 2, $screen-md-min, $fhd-width, 'w')}
+            + #{smooth-value($tablet-base-size / 2, $fhd-base-size / 2, $mobile-min-height, $fhd-height, 'h')}
+    );
+    @include media-breakpoint-down(sm) {
+        font-size: 16px;
+    }
+}
+
+@mixin font-40 {
+    @include font-9;
+    @include media-breakpoint-down(sm) {
+        font-size: 20px;
+    }
+}
+
+@mixin font-41 {
+    $fhd-base-size: 50px;
+    $tablet-base-size: $fhd-base-size * .8;
+    font-family: AvenirNextCyr-Bold;
+    font-size: calc(
+            #{smooth-value($tablet-base-size / 2, $fhd-base-size / 2, $screen-md-min, $fhd-width, 'w')}
+            + #{smooth-value($tablet-base-size / 2, $fhd-base-size / 2, $mobile-min-height, $fhd-height, 'h')}
+    );
+    @include media-breakpoint-down(sm) {
+        font-size: 30px;
+    }
+}
+
+@mixin font-42 {
+    @include font-9;
+    @include media-breakpoint-down(sm) {
+        font-size: 14px;
+    }
+}
+
+@mixin font-43 {
+    $fhd-base-size: 450px;
+    $tablet-base-size: $fhd-base-size * .33;
+    font-family: AvenirNextCyr-Bold;
+    font-size: calc(
+            #{smooth-value($tablet-base-size / 2, $fhd-base-size / 2, $screen-md-min, $fhd-width, 'w')}
+            + #{smooth-value($tablet-base-size / 2, $fhd-base-size / 2, $mobile-min-height, $fhd-height, 'h')}
+    );
+    @include media-breakpoint-down(sm) {
+        font-size: 180px;
+    }
+}
+
+@mixin font-44 {
+    $fhd-base-size: 23px;
+    $tablet-base-size: $fhd-base-size * .6;
+    font-family: AvenirNextCyr-Bold;
+    font-size: calc(
+            #{smooth-value($tablet-base-size / 2, $fhd-base-size / 2, $screen-md-min, $fhd-width, 'w')}
+            + #{smooth-value($tablet-base-size / 2, $fhd-base-size / 2, $mobile-min-height, $fhd-height, 'h')}
+    );
+    @include media-breakpoint-down(sm) {
+        font-size: 20px;
+    }
+}
+
+@mixin font-45 {
+    $fhd-base-size: 300px;
+    $tablet-base-size: $fhd-base-size * .75;
+    font-family: AvenirNextCyr-Bold;
+    font-size: calc(
+            #{smooth-value($tablet-base-size / 2, $fhd-base-size / 2, $screen-md-min, $fhd-width, 'w')}
+            + #{smooth-value($tablet-base-size / 2, $fhd-base-size / 2, $mobile-min-height, $fhd-height, 'h')}
+    );
+}
+
+.tpg {
+    &__title {
+        @include font-2;
+        color: $color-2;
+        line-height: 1.3;
+        margin-bottom: 35px;
+
+        @include media-breakpoint-up(md) {
+            margin-bottom: 44px;
+        }
+
+        &_static-offset {
+            margin-bottom: 35px;
+        }
+    }
+
+    &__title-2 {
+        @include font-3;
+        color: $color-2;
+        margin-bottom: 43px;
+        line-height: 1;
+    }
+
+    &__p1 {
+        margin-bottom: 37px;
+        @include font-34;
+        color: $color-2;
+        line-height: 1.42;
+
+        &_big-offset {
+            margin-bottom: 103px;
+        }
+    }
+
+    &__p2 {
+        @include font-29;
+        color: $color-2;
+        line-height: 1.75;
+    }
+
+    &__img {
+        width: 100%;
+        margin-bottom: 35px;
+        max-height: 410px;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+
+        .ie & {
+            padding-top: 33.9%;
+        }
+
+        @include media-breakpoint-up(md) {
+            margin-bottom: 60px;
+        }
+    }
+}

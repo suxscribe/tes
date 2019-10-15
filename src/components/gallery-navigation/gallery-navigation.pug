@@ -1,0 +1,8 @@
+mixin gallery-navigation(args)
+    .gallery-navigation&attributes(attributes)
+        .gallery-navigation__arrow.gallery-navigation__arrow_prev
+            .gallery-navigation__arrow-wrapper
+                +svg({ name: 'arrow-left' })
+        .gallery-navigation__arrow.gallery-navigation__arrow_next
+            .gallery-navigation__arrow-wrapper
+                +svg({ name: 'arrow-right' })

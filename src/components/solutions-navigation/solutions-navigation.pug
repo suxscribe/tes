@@ -1,0 +1,11 @@
+mixin solutions-navigation(args)
+    .solutions-navigation.d-none.d-md-block&attributes(attributes)
+        .container-fluid.solutions-navigation__container-fluid
+            .row.solutions-navigation__row
+                .col-2.solutions-navigation__col(class=args.positionRight ? 'offset-6': '')
+                    each solution, i in args.data
+                        if solution.slider
+                            .solutions-navigation__item(
+                                data-index=i,
+                                class=i === 0 ? 'active' : ''
+                            )!= `${solution.name} ${solution.kw}`

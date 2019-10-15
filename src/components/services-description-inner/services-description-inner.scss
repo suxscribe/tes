@@ -1,0 +1,21 @@
+.services-description-inner {
+    will-change: opacity, visibility;
+    color: $color-2;
+
+    &__title-2 {
+        @include font-3;
+        padding-bottom: 17px;
+    }
+
+    &__text {
+        @include font-25;
+        line-height: 1.75;
+    }
+
+    @include media-breakpoint-down(sm) {
+        &__text {
+            line-height: 35px;
+            margin-bottom: $subtitle-offset;
+        }
+    }
+}

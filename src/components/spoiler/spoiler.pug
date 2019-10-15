@@ -1,0 +1,30 @@
+mixin spoiler(args, i, name, firstSpoiler)
+    .spoiler&attributes(attributes)
+        .spoiler__header.collapsed(data-toggle="collapse" href="#" + name + "-" + i aria-expanded="true")
+            .spoiler__title!= args.title
+                .spoiler__plus
+        .collapse(id=name + "-" + i data-parent="#" + name)
+            .spoiler__content
+                if firstSpoiler
+                    if i === 0
+                        .row.spoiler__row
+                            .col-8
+                                h3!=firstSpoiler.block1.title
+                                !=firstSpoiler.block1.text
+                                a(href="#" target="_blank").spoiler__link Подробнее
+                        if firstSpoiler.block2
+                            .row.spoiler__row.spoiler__row_images
+                                .col-xl-4.spoiler__image
+                                    +img({ "path": firstSpoiler.block2.image1 })
+                                .col-xl-4.spoiler__image
+                                    +img({ "path": firstSpoiler.block2.image2 })
+                        if firstSpoiler.block3
+                            .row.spoiler__row
+                                .col-8
+                                    h3!=firstSpoiler.block3.title
+                                    !=firstSpoiler.block3.text
+                                    a(href="#" target="_blank").spoiler__link Подробнее
+                    else
+                        != args.content
+                else
+                    != args.content

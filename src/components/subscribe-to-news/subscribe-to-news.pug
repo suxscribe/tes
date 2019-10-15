@@ -1,0 +1,24 @@
+include ../textfield/textfield
+include ../link/link
+
+mixin subscribe-to-news(args)
+    -
+        args = args ? args : {};
+    form.subscribe-to-news.container-fluid(
+        action='/subscribe-to-news.json',
+        method='GET',
+        class=args.indexPage ? 'container-fluid_fix-right': ''
+    )&attributes(attributes)
+        .subscribe-to-news__bg
+        .row.subscribe-to-news__row
+            .align-items-center.subscribe-to-news__label(class=args.indexPage ? 'col-xxl-2 offset-md-1 col-8 col-md-7 col-xl-2-half-only': 'subscribe-to-news__label_inner') Подпишитесь на&nbsp;наши новости
+            .align-items-center.subscribe-to-news__textfield-wrapper(class=args.indexPage ? 'offset-md-1 col-6 col-md-5 col-xl-3 offset-xl-0 col-xxl-3':
+              'subscribe-to-news__textfield-wrapper_inner')
+                .subscribe-to-news__animation-textfield-bg
+                +textfield({ placeholder: 'Ваш е-mail', id: 'email', type: 'email', name: 'email', required: true }).subscribe-to-news__textfield
+            .d-flex.justify-content-stretch.align-items-stretch(class=args.indexPage ? 'col-2 col-md-2 col-xxl-1 col-xl-1-half-only': 'subscribe-to-news__right')
+                .subscribe-to-news__button-wrapper.align-items-center
+                    +link({ tagName: 'button' }).subscribe-to-news__button(type='submit')
+                        +svg({ name: 'arrow-right' }).link__icon.subscribe-to-news__arrow
+                        +svg({ name: 'refresh' }).link__icon.subscribe-to-news__refresh
+                        span.d-md-inline.subscribe-to-news__button-text(class=args.indexPage ? 'd-none': '') Подписаться

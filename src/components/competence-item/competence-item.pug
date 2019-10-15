@@ -1,0 +1,4 @@
+mixin competence-item(args)
+    .competence-item&attributes(attributes)
+        .competence-item__index!= (args.index).toString().padStart(2, '0')
+        .competence-item__text!= args.text

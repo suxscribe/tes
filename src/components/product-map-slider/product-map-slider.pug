@@ -1,0 +1,24 @@
+include ../product-map-slide/product-map-slide
+include ../slider-navigation/slider-navigation
+include ../slider-pagination/slider-pagination
+include ../mobile-slider-navigation/mobile-slider-navigation
+
+mixin product-map-slider(args)
+    .product-map-slider&attributes(attributes).product-map-slider_hide
+        +mobile-slider-navigation({ total: args.total }).mobile-slider-navigation_map.mobile-slider-navigation_dark
+        .product-map-slider__container
+            .swiper-container.product-map-slider__slider
+                .container-fluid.product-map-slider__fixed_top
+                    .row
+                        .col-md-4.product-map-slider__title-1!=args.title1
+                        .col-4.product-map-slider__back Вернуться на экран подстанции
+                            +svg({ name: 'arrow-left' })
+                .swiper-wrapper
+                    each product in args.data
+                        +product-map-slide({ product: product }).swiper-slide
+                .container-fluid.product-map-slider__fixed_bottom
+                    .row
+                        .col-1.product-map-slider__navigation-col
+                            +slider-navigation({ "class": "map" })
+                        .col-5.offset-1
+                            +slider-pagination({ "class": "map" })

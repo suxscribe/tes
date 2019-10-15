@@ -1,0 +1,38 @@
+.competence-item {
+    margin-bottom: 45px;
+    margin-right: calc(#{$col-width} * 0.325);
+
+    &__index {
+        @include font-19;
+        color: white;
+        display: inline-block;
+        transform: rotate(-90deg);
+        margin-bottom: 25px;
+    }
+
+    &__text {
+        @include font-25;
+        position: relative;
+        padding-left: 45px;
+        color: white;
+        line-height: 1.75;
+        &::before {
+            content: '';
+            position: absolute;
+            display: block;
+            left: 1px;
+            top: 10%;
+            height: 50px;
+            border-left: thin solid white;
+        }
+    }
+
+    @include media-breakpoint-down(sm) {
+        margin-right: 0;
+        margin-bottom: 25px;
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}

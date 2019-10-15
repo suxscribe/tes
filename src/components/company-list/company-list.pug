@@ -1,0 +1,10 @@
+include ../company-list-item/company-list-item
+include ../map-modal/map-modal
+
+mixin company-list(args)
+    .company-list.container-fluid(id=args.name)&attributes(attributes)
+        +map-modal(id=`${args.name}-modal`)
+        .row
+            .col-8.col-md-6.offset-md-1.company-list__title!= args.title
+        each item, i in args.items
+            +company-list-item({ item: item, name: args.name, index: i })

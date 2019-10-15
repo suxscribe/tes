@@ -1,0 +1,11 @@
+mixin mobile-slider-navigation(args)
+    .mobile-slider-navigation&attributes(attributes)
+        div.d-flex.align-items-center.mobile-slider-navigation__bar
+            .mobile-slider-navigation__current 01
+            .mobile-slider-navigation__progress
+            .mobile-slider-navigation__total!= args.total
+        div.d-flex.d-md-none
+            .mobile-slider-navigation__prev
+                +svg({ name: 'arrow-left-short' }).mobile-slider-navigation__arrow-svg
+            .mobile-slider-navigation__next
+                +svg({ name: 'arrow-right-short' }).mobile-slider-navigation__arrow-svg

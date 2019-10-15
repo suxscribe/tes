@@ -1,0 +1,15 @@
+composer.lock
+/vendor/
+/.idea
+/node_modules
+/build
+/css
+/js
+/html*
+/media
+/bitrix
+/upload
+dataFilters.html
+dataFilters.json
+dataCommentPreview.json
+package-lock.json

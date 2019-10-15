@@ -1,0 +1,12 @@
+include ../../components/info-block-1/info-block-1
+include ../../components/solution-inner/solution-inner
+
+mixin solution-group-inner(args)
+    .solution-group-inner&attributes(attributes)
+        +info-block-1({
+          title: args.title,
+          text2: args.text,
+        })
+        .solution-group-inner__items
+            each solution in args.solutions
+                +solution-inner(solution)

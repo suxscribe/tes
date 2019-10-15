@@ -1,0 +1,16 @@
+include ../info-block-1/info-block-1
+include ../info-block-5/info-block-5
+
+mixin block-types(args)
+    .block-types(data-page-nav-item=args.title)&attributes(attributes)
+        +info-block-1({
+          title: args.title,
+          text2: args.topText,
+        })
+        .block-types__items
+            each blockType in args.items
+                +info-block-5(blockType)
+        if args.bottomText
+            .container-fluid
+                .row
+                    .col-md-6.offset-md-1.block-types__text!= args.bottomText

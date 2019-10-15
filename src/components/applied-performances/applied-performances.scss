@@ -1,0 +1,115 @@
+.applied-performances {
+  padding: 10.5vh 0 12.5vh;
+  margin-bottom: 8.8vh;
+  position: relative;
+  background-color: $color-2;
+  overflow: hidden;
+
+  &__title {
+    margin-bottom: 2.3vh;
+    @include font-28;
+    line-height: 1.5;
+    color: #fff;
+  }
+
+  &__text {
+    margin-bottom: 6vh;
+    @include font-4;
+    line-height: 1.75;
+    color: #fff;
+  }
+
+  &__bg-text {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    z-index: 0;
+    @include font-45;
+    line-height: 1;
+    color: #fff;
+    opacity: 0.1;
+    transform-origin: center;
+    transform: translate(38%, -50%) rotate(-90deg);
+  }
+
+  &__bg {
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%) scale(1.13);
+  }
+
+  &__item {
+    padding-left: calc(#{$col-width} / 8);
+    overflow: hidden;
+
+    &-title-1 {
+      @include font-31;
+      line-height: 1.5;
+      color: transparent;
+      -webkit-text-stroke: 1px white;
+    }
+
+    &-title-2 {
+      max-width: calc(#{$col-width} * 2);
+      padding-right: calc(#{$col-width} / 8);
+      margin-bottom: 3.2vh;
+      @include font-7;
+      line-height: 1.75;
+      text-transform: uppercase;
+      color: white;
+
+      @include media-breakpoint-down(lg) {
+        max-width: none;
+      }
+    }
+
+    &-text {
+      @include font-9;
+      line-height: 1.875;
+      color: white;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding: 6vh 0 16vh;
+    &__bg {
+      display: none;
+
+      &-text {
+        display: none;
+      }
+    }
+    &__title {
+      margin-bottom: 2.5vh;
+      line-height: 1.33;
+    }
+    &__text {
+      margin-bottom: 5vh;
+      line-height: 1.875;
+    }
+    &__item {
+      padding-left: 0;
+      &-title-1 {
+        margin-bottom: 1.5vh;
+      }
+      &-title-2 {
+        padding-right: 0;
+        margin-bottom: 1.5vh;
+        line-height: 1.875;
+      }
+    }
+  }
+}
+
+.ie {
+  .applied-performances {
+    &__item {
+      &-title-1 {
+        color: $color-2;
+        text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
+      }
+    }
+  }
+}

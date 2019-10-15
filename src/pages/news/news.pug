@@ -1,0 +1,24 @@
+extends ../../layout/layout
+include ../../components/news-slider/news-slider
+include ../../components/news-card-grid/news-card-grid
+include ../../components/endless-btn/endless-btn
+include ../../components/subscribe/subscribe
+include ../../components/static-footer/static-footer
+
+block content
+    div#barba-wrapper
+        .barba-container.barba-container-inner(data-namespace='news')
+            .container-fluid
+                .row.tpg__title.news-page__title
+                    .col-md-7.offset-md-1 Новости
+            +news-slider({
+              total: '03',
+              data: data.newsList
+            })
+            .container-fluid
+                .row
+                    .col-md-6.offset-md-1
+                        +news-card-grid
+            +endless-btn
+            +subscribe
+            +static-footer

@@ -1,0 +1,12 @@
+.solution-group-inner {
+    &__items {
+        margin-top: 70px;
+        margin-bottom: 140px;
+    }
+
+    @include media-breakpoint-down(sm) {
+        &__items {
+            margin-top: 42px;
+        }
+    }
+}

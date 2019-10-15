@@ -1,0 +1,32 @@
+include ../../components/document/document
+
+mixin documents(args)
+    -
+        args = args ? args : {};
+        if (args.data.length === 1) {
+            titleClass = 'col-xl-2 col-md-4 documents__main documents__main_single'
+            documentClass = 'col-md-4 document_single';
+        }
+        else if (args.data.length === 5 || args.data.length === 3|| args.data.length === 6 || args.data.length === 7) {
+            titleClass = 'col-xl-2 col-md-4 documents__main'
+            documentClass = 'col-xl-2 col-md-4';
+        }
+        documentClass += ' documents__document'
+        if(args.docClass) {
+            documentClass += ` ${args.docClass}`
+        }
+
+    .documents&attributes(attributes)
+        .container-fluid
+            .row.documents__row
+                if args.data.length === 3 || args.data.length === 6
+                    .col-md-3.col-xl-2.offset-xl-1.documents__title-1.d-flex.align-items-center!= args.title
+                    .col-md-5.col-xl-4.documents__text-1.d-flex.align-items-center!= args.text1
+                else
+                    div(class=titleClass)
+                        .documents__title-1!=args.title
+                        .documents__text-1!=args.text1
+                each document, i in args.data
+                    +document(document)(class=documentClass)
+                if args.text2
+                    .col-8.documents__text-2!=args.text2

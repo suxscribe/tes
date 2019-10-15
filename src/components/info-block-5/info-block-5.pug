@@ -1,0 +1,11 @@
+mixin info-block-5(args)
+    .info-block-5.container-fluid&attributes(attributes)
+        .row
+            .col-8.col-md-6.col-xl-3.info-block-5__col-1
+                +img({ path: args.img }).info-block-5__img
+            .col-8.col-md-6.col-xl-3.info-block-5__col-2
+                if args.title
+                    .info-block-5__title!= args.title
+                if(args.texts)
+                    each text in args.texts
+                        .info-block-5__text!= text

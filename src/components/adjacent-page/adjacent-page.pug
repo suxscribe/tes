@@ -1,0 +1,17 @@
+mixin adjacent-page(args)
+    .adjacent-page.container-fluid&attributes(attributes)
+        .adjacent-page__content
+            +img({path: args.bg}).adjacent-page__bg(data-object-fit='cover')
+            .row
+                .col-8.col-md-6.col-xl-2.offset-md-2.offset-xl-1.adjacent-page__link-wrapper
+                    a(href=args.hrefBack).adjacent-page__link.adjacent-page__link_back!=args.anchor
+                        +svg({ name: 'arrow-left' }).adjacent-page__arrow-svg
+                .col-8.col-md-5.col-xl-4.offset-md-2.offset-xl-0.adjacent-page__link-wrapper
+                    if(args.nextPage)
+                        .adjacent-page__title-1!= args.nextPage
+                    else
+                        .adjacent-page__title-1 Следующая услуга
+                        +svg({ name: 'arrow-right' }).adjacent-page__arrow-svg.adjacent-page__arrow-svg_mobile
+                    .adjacent-page__title-2!=args.title
+                    a(href=args.hrefNext).adjacent-page__link.adjacent-page__link_next Перейти
+                        +svg({ name: 'arrow-right' }).adjacent-page__arrow-svg

@@ -1,0 +1,49 @@
+include ../textfield/textfield
+include ../link/link
+
+mixin form-feedback(args)
+    .form-feedback&attributes(attributes)
+        .row
+            .col-8.form-feedback__title-1.collapsed
+                .form-feedback__show Закрыть форму
+                .form-feedback__hide Открыть форму
+            form.col-8.form-feedback__content.collapse#form-feedback(action='/subscribe-to-news.json', method='GET',)
+                .row.form-feedback__row
+                    .col-md-3.d-flex.flex-column.justify-content-end.form-feedback__name
+                        +textfield({ placeholder: 'Ваше имя', id: 'name', type: 'text', required: true }).textfield_name
+                    .col-md-5.form-feedback__text-1
+                        a.form-feedback__phone(href="tel:88002343344") 8 (800) 234-33-44
+                        span Единый многоканальный номер, звонок по России бесплатный.
+                .row.form-feedback__row
+                    .col-md-3.d-flex.flex-column.justify-content-between
+                        +textfield({
+                              placeholder: 'E-mail',
+                              id: 'email',
+                              type: 'email',
+                              required: true
+                            }).textfield_email
+                        +textfield({
+                              placeholder: 'Название компании',
+                              id: 'company',
+                              type: 'text',
+                              required: true
+                            }).textfield_company
+                        +textfield({
+                              placeholder: 'Контактный номер',
+                              id: 'tel',
+                              type: 'tel',
+                              required: true
+                            }).textfield_phone
+                    .col-md-5
+                        +textfield({ placeholder: 'Сообщение', id: 'text', required: true, textarea: true }).textfield_textarea
+                .row
+                    div
+                    .col-8
+                        .row
+                            .col-5
+                                .g-recaptcha(data-sitekey="6LdIZqQUAAAAAHSKDKK04nRFptft7gpPQ9O0Pj63")
+                            .col-3
+                                .d-flex.align-items-center.justify-content-end
+                                    +link({tagName: 'button'}).form-feedback__button.js-feedback-submit(type='submit')
+                                        +svg({name: 'refresh'}).link__icon.form-feedback__refresh
+                                        span.d-md-inline.form-feedback__button-text Отправить запрос

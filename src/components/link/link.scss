@@ -1,0 +1,33 @@
+.link {
+    @include font-9;
+    display: inline-flex;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    appearance: none;
+    align-items: center;
+    padding: 0;
+    will-change: color;
+    transition: color $link-hover-transition-duration;
+
+    &:focus {
+        outline: none;
+    }
+
+    &,
+    &:not([href]):not([tabindex]) {
+        color: $color-9;
+    }
+
+    &:hover,
+    &:not([href]):not([tabindex]):hover {
+        color: rgba($color-9, $link-hover-opacity);
+    }
+
+    &__icon {
+        width: 30px;
+        margin-right: $link-icon-margin-right;
+        height: 10px;
+        fill: $color-9;
+    }
+}

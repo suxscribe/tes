@@ -1,0 +1,70 @@
+.company-map {
+  position: relative;
+  background-color: $color-2;
+  height: 50vw;
+  overflow: hidden;
+
+  @include media-breakpoint-between(md, lg) {
+    height: 75vw;
+  }
+
+  @include media-breakpoint-down(sm) {
+    height: 85vh;
+  }
+
+  &__bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 0% 100%;
+    transform: translateX(27%) scale(1.4);
+
+    @include media-breakpoint-down(sm) {
+      object-position: 50% 50%;
+      transform: none;
+    }
+  }
+
+  &__title-1 {
+    margin: 110px 0 48px;
+    @include font-41;
+    line-height: 1.2;
+    color: white;
+
+    @include media-breakpoint-down(sm) {
+      margin: 55px 0 53px;
+      line-height: 1;
+    }
+  }
+
+  &__text-1 {
+    @include font-4;
+    line-height: 1.75;
+    color: white;
+
+    @include media-breakpoint-down(sm) {
+      line-height: 1.875;
+    }
+  }
+
+  &__text-2 {
+    position: relative;
+    padding-left: $col-width;
+    @include font-7;
+    line-height: 1.75;
+    color: $color-1;
+    text-transform: uppercase;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: calc(#{$col-width} / 6);
+      width: calc(#{$col-width} - (#{$col-width} / 4));
+      height: 1px;
+      background-color: $color-1;
+      transform: translateY(-50%);
+    }
+  }
+}

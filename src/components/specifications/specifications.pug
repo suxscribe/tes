@@ -1,0 +1,18 @@
+mixin specifications(args)
+    .specifications&attributes(attributes)
+        .specifications__content.container-fluid.container-fluid_fix-right_mobile
+            .row.specifications__row
+                .col-8.specifications__title-1!=args.title
+                .col-8
+                    block
+        .specifications__content.container-fluid
+            .row.specifications__row
+                .col-8
+                    .specifications__more.collapsed(data-toggle="collapse" href="#"+args.id aria-expanded="true")
+                        .specifications__more-show Развернуть
+                        .specifications__more-hide Свернуть
+                        .specifications__more-plus
+            if (args.caption)
+                .row.specifications__row
+                    .col-8
+                        .specifications__caption!=args.caption

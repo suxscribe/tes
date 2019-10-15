@@ -1,0 +1,29 @@
+mixin partners(args)
+    .partners(data-page-nav-item=args.pageNavItem)&attributes(attributes)
+        .container-fluid
+            .row.partners__row.partners__row_head
+                .col-md-1.offset-md-1
+                    .partners__title Лого
+                .col-md-1
+                    .partners__title Имя
+                .col-md-3.offset-md-1
+                    .partners__title Описание
+            each item in args.data
+                .row.partners__row
+                    .col-md-1.offset-md-1.partners__logo
+                        +img({path: item.logo})
+                    .col-md-1.partners__name!=item.name
+                    .col-md-3.offset-md-1!=item.desc
+            .collapse(id='partners')
+                each item in args.data
+                    .row.partners__row
+                        .col-md-1.offset-md-1.partners__logo
+                            +img({ path: item.logo })
+                        .col-md-1.partners__name!=item.name
+                        .col-md-3.offset-md-1!=item.desc
+            .row.partners__row.partners__row_more
+                .col-md-6.offset-md-1
+                    .partners__more.collapsed(data-toggle="collapse" href="#partners" aria-expanded="true")
+                        .partners__more-show Показать больше компаний
+                        .partners__more-hide Свернуть
+                        .partners__more-plus

@@ -1,0 +1,13 @@
+mixin company-map(args)
+    .company-map(data-page-nav-item=args.pageNavItem)&attributes(attributes)
+        .company-map__bg-wrapper
+            +img({ path: args.bg }).company-map__bg
+        .container-fluid
+            .row
+                .col-md-7.offset-md-1
+                    .company-map__title-1!=args.title
+            .row
+                .col-md-3.offset-md-1
+                    .company-map__text-1!=args.text
+                .col-md-4
+                    .d-none.d-md-block.company-map__text-2 Представительства компании

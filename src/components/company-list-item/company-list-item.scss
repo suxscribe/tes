@@ -1,0 +1,182 @@
+.company-list-item {
+    &::before,
+    &:last-child::after {
+        content: '';
+        display: block;
+        border-top: thin solid $color-7;
+        margin: 0 $col-width;
+    }
+
+    &__title {
+        @include font-7;
+        color: $color-2;
+        text-transform: uppercase;
+        line-height: 1.75;
+        padding-right: calc(#{$col-width} * .85);
+    }
+
+    &__address,
+    &__contacts {
+        @include font-25;
+        color: $color-2;
+        line-height: 1.75;
+
+        a {
+            color: $color-2;
+        }
+    }
+
+    &__contacts {
+        padding-right: calc(#{$col-width} * .85);
+    }
+
+    &__address {
+        margin-bottom: 28px;
+        padding-right: calc(#{$col-width} * .25);
+    }
+
+    &__toggle {
+        position: relative;
+    }
+
+    &__plus {
+        color: $color-2;
+        position: absolute;
+        right: $col-width;
+        top: 50%;
+        transform: translateY(-50%);
+        pointer-events: none;
+    }
+
+    &__title,
+    &__address-wrapper,
+    &__contacts{
+        cursor: pointer;
+        padding-top: 25px;
+        padding-bottom: 27px;
+    }
+
+    [class*="col-"]:not(.collapsed) + &__plus::after {
+        opacity: 0;
+    }
+
+    &__content {
+        & > * {
+            padding-bottom: 50px;
+        }
+    }
+
+    &__show-on-map {
+        color: $color-1!important;
+    }
+
+    @include media-breakpoint-up(xxxl) {
+        &__address-wrapper,
+        &__head-info {
+            & > * {
+                position: relative;
+                left: calc(-1 * #{$col-width} * .25);
+            }
+        }
+    }
+
+    &__head-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-right: calc(#{$col-width} * .75);
+    }
+
+    &__name {
+        @include font-19;
+        color: $color-2;
+        line-height: 1.5;
+        margin-bottom: 18px;
+    }
+
+    &__position {
+        @include font-9;
+        color: rgba($color-2, .5);
+    }
+
+    &__img {
+        width: 270px;
+    }
+
+    &__mobile-address,
+    &__mobile-contacts {
+        @include font-9;
+        line-height: 30px;
+
+        &,
+        a {
+            color: $color-2;
+        }
+    }
+
+    &__mobile-address {
+        margin-top: 10px;
+        margin-bottom: 30px;
+    }
+
+    &__mobile-contacts {
+        margin-bottom: 23px;
+    }
+
+    &__mobile-show-on-map {
+        margin-bottom: 35px;
+    }
+
+    @include media-breakpoint-down(md) {
+        &__address,
+        &__contacts {
+            hyphens: auto;
+        }
+    };
+
+    @include media-breakpoint-down(xxl) {
+        &__img-wrapper {
+            padding-right: calc(#{$col-width} * .5);
+        }
+
+        &__img {
+            width: 100%;
+        }
+    }
+
+    @include media-breakpoint-down(sm) {
+        &::before,
+        &:last-child::after {
+            margin: 0;
+        }
+
+        &__title {
+            padding-right: calc(#{$col-width} * 2);
+            line-height: 30px;
+            padding-top: 17px;
+            padding-bottom: 19px;
+        }
+
+        &__plus {
+            right: 0;
+        }
+
+        &__content {
+            & > * {
+                padding-bottom: 0px;
+            }
+        }
+
+        &__img-wrapper {
+            margin-bottom: 32px;
+        }
+
+        &__position {
+            margin-bottom: 31px;
+        }
+
+        &__img {
+            width: 270px;
+        }
+    }
+}

@@ -1,0 +1,9 @@
+mixin service-inner(args)
+    a.service-inner(href=args.link)&attributes(attributes)
+        .service-inner__shift-wrapper
+            .service-inner__bg-wrapper
+                +img({path: args.bg})(data-object-fit='cover').service-inner__bg
+            .service-inner__plus
+        .service-inner__wrapper
+            .service-inner__index!= args.index
+            .service-inner__text!= args.text

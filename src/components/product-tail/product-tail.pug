@@ -1,0 +1,12 @@
+include ../spoiler/spoiler
+include ../static-footer/static-footer
+include ../feedback/feedback
+include ../header/header
+
+mixin product-tail(args)
+    .product-tail&attributes(attributes)
+        .product-tail__wrapper
+            +header.d-none.d-md-block
+            block
+            +feedback
+            +static-footer

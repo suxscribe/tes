@@ -1,0 +1,16 @@
+include ../service-inner/service-inner
+include ../services-description-inner/services-description-inner
+
+mixin services-inner(args)
+    .services-inner&attributes(attributes)
+        +svg({ name: 'epc' }).d-none.d-md-block.services-inner__epc
+        .container-fluid.services-inner__container-fluid
+            .row.services-inner__title.tpg__title(data-page-nav-item='Услуги')
+                .col-7.offset-md-1 Услуги
+            .row.services-inner__row
+                .col-8.col-md-4.col-lg-only-third.col-xl-2.services-inner__col.services-inner__description-block
+                    +services-description-inner
+                each service, i in data.services
+                    .col-8.col-md-4.col-lg-only-third.col-xl-2.services-inner__col
+                        -service.index = (i + 1).toString().padStart(2, 0);
+                        +service-inner(service)

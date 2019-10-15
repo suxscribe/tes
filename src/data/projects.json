@@ -1,0 +1,22 @@
+[
+  {
+    "text": "Подстанция 35/6&nbsp;кВ &laquo;Гнусино&raquo;",
+    "bg": "../../components/project/images/bg-1.jpg",
+    "link": "#"
+  },
+  {
+    "text": "Панели защит в&nbsp;ОПУ ГПП-2&nbsp;110&nbsp;кВ",
+    "bg": "../../components/project/images/bg-2.jpg",
+    "link": "#"
+  },
+  {
+    "text": "Строительство  ПС&nbsp;35/6&nbsp;кВ &laquo;Наульская&raquo;",
+    "bg": "../../components/project/images/bg-3.jpg",
+    "link": "#"
+  },
+  {
+    "text": "Реконструкция ГПП 110/6&nbsp;кВ &laquo;Чермет&raquo;",
+    "bg": "../../components/project/images/bg-4.jpg",
+    "link": "#"
+  }
+]

@@ -1,0 +1,11 @@
+.map-modal {
+    &__map {
+        height: calc(100vh - calc(#{$col-width} * .5));
+        position: relative;
+    }
+
+    .sandwich-menu-close {
+        background-color: white;
+        border: none;
+    }
+}

@@ -1,0 +1,170 @@
+$textfield-error-on-light: #d50000;
+$textarea-light-background: rgba(#fff, 1);
+$textarea-disabled-background-on-light: rgba(249, 249, 249, 1);
+$left-padding: calc(#{$col-width} / 4);
+$padding-inset: 20px;
+$label-offset-y: $padding-inset - 2;
+
+.textfield {
+  display: inline-block;
+  position: relative;
+  background-color: white;
+  margin-bottom: 8px;
+  will-change: opacity, transform, color;
+
+  &:not(.textfield_textarea) {
+    padding: 0 $left-padding;
+
+    @include media-breakpoint-down(sm) {
+      padding: 0 30px;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    padding: 0 0 8px;
+    border: 0;
+    background: none;
+    appearance: none;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:invalid {
+      box-shadow: none;
+    }
+  }
+
+  &__label {
+    display: inline-flex;
+    position: absolute;
+    top: $label-offset-y;
+    bottom: auto;
+    left: $left-padding;
+    align-items: center;
+    transform-origin: left top;
+    transition: transform 180ms cubic-bezier(.4, 0, .2, 1), color 180ms cubic-bezier(.4, 0, .2, 1);
+    cursor: text;
+
+    .textfield.is-dirty &,
+    .textfield.is-focused & {
+      transform: translateY(-40%) scale(.75);
+    }
+
+    @include media-breakpoint-down(sm) {
+      left: 30px;
+    }
+  }
+
+  &__input,
+  &__label {
+    @include font-9;
+    color: $color-2;
+  }
+}
+
+.textfield__input {
+  &:-webkit-autofill + .textfield__label {
+    cursor: auto;
+  }
+}
+
+.textfield.is-invalid {
+  .textfield__label {
+    color: $textfield-error-on-light;
+  }
+
+  .textfield__input {
+    border-color: $textfield-error-on-light;
+  }
+
+  .textfield__bottom-line {
+    background-color: $textfield-error-on-light;
+  }
+}
+
+.textfield.is-invalid.textfield_textarea {
+  border-color: $textfield-error-on-light;
+}
+
+.textfield.is-disabled {
+  pointer-events: none;
+
+  .textfield__label {
+    cursor: default;
+  }
+}
+
+.textfield__input:required + .textfield__label::after,
+.textfield__input:required + .hf-warning + .textfield__label::after {
+  margin-left: 1px;
+
+  content: "*";
+
+  .textfield.is-focused & {
+    color: $textfield-error-on-light;
+  }
+}
+
+.textfield_textarea {
+  display: flex;
+  height: initial;
+  transition: none;
+  overflow: hidden;
+
+  .textfield__input {
+    padding: $padding-inset $left-padding;
+  }
+
+  .textfield__label {
+    top: $label-offset-y;
+    bottom: auto;
+  }
+
+  &.textfield_disabled {
+    background-color: $textarea-disabled-background-on-light;
+
+    .textfield__label {
+      background-color: $textarea-disabled-background-on-light;
+    }
+  }
+}
+
+.textfield_full-width {
+  width: 100%;
+
+
+  &:not(.textfield_textarea) {
+    display: block;
+    height: 60px;
+    margin: 0;
+    border: 0;
+    outline: none;
+    box-sizing: border-box;
+
+    .textfield__input {
+      width: 100%;
+      height: 100%;
+      padding: 0;
+      border: 0 !important;
+      resize: none;
+      transform: translateY(10%);
+    }
+  }
+}
+
+.textfield-helptext {
+  margin: 0;
+  font-size: .75rem;
+  opacity: 0;
+  will-change: opacity;
+
+  .textfield + & {
+    margin-bottom: 8px;
+  }
+}
+
+.form-field > .textfield + label {
+  align-self: flex-start;
+}

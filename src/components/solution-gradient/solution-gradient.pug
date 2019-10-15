@@ -1,0 +1,9 @@
+mixin solution-gradient(args)
+    svg.solution-gradient(width='100%', height='100%', fill='none', xmlns='http://www.w3.org/2000/svg')&attributes(attributes)
+        rect(width='100%', height='100%', fill='white')
+        rect(width='100%', height='100%', fill=args.gradientBg.color1)
+        rect(width='100%', height='100%', fill=`url(#${args.gradientBg.color1}${args.gradientBg.color2})`, fill-opacity='0.65')
+        defs
+            radialgradient(id=`${args.gradientBg.color1}${args.gradientBg.color2}`, cx='0', cy='0', r='1', gradientUnits='userSpaceOnUse', gradientTransform='translate(960 540) rotate(90) scale(1081.5 1922.67)')
+                stop(stop-color='white', stop-opacity='0')
+                stop(offset='0.892931', stop-color=args.gradientBg.color2)

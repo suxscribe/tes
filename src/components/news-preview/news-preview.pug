@@ -1,0 +1,10 @@
+mixin news-preview(args)
+    a(href=args.link).news-preview(class=args.img ? '' : 'news-preview_no-img')&attributes(attributes)
+        .news-preview__top
+            if args.img
+                .news-preview__wrapper
+                    .news-preview__img-wrapper
+                        .news-preview__img-space
+                        +img({ path: args.img }).news-preview__img(data-object-fit='cover')
+            .news-preview__text!= args.text
+        .news-preview__bottom!= args.date

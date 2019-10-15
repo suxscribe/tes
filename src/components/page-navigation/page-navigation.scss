@@ -1,0 +1,115 @@
+.page-navigation {
+  $root: &;
+  position: absolute;
+  //height: 100%;
+  transition: opacity 0.4s, visibility 0.4s;
+
+  &_hidden,
+  &_hide {
+    z-index: -1;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  &_fixed {
+    position: fixed;
+    z-index: 3;
+    top: 50%;
+    left: $grid-side-offset;
+    transform: translate(calc(0 - (#{$grid-side-offset} / 2)), -50%);
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    padding: $header-sticky-height 0;
+    height: inherit;
+  }
+
+  &__anchors {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-around;
+    align-items: center;
+    //width: calc(0 - (#{$grid-side-offset} / 2));
+    transform: scale(-1, -1);
+  }
+
+  &__anchor {
+    position: relative;
+    margin: 2vh 0;
+    @include font-10;
+    line-height: 1;
+    color: $color-12;
+    writing-mode: vertical-lr;
+    cursor: pointer;
+    transition: color .4s ease-in;
+
+    &:first-child {
+      margin-bottom: 0;
+    }
+    &:last-child {
+      margin-top: 0;
+    }
+
+    &_active {
+      color: #000;
+
+      #{$root}__progress {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+    &:hover, &:focus, &:active {
+      color: #000;
+    }
+  }
+
+  &__progress {
+    position: absolute;
+    height: 100%;
+    left: -5px;
+    width: 1px;
+    flex-shrink: 0;
+    background-color: transparent;
+    transform-origin: bottom;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .4s ease-in;
+  }
+
+  &__progress-value {
+    position: absolute;
+    bottom: 0;
+    height: 0;
+    width: 0;
+    border-right: 1px solid #000;
+    will-change: height;
+  }
+
+  &_contrast {
+
+    #{$root}__anchor {
+      &_active {
+        color: #fff;
+      }
+    }
+
+    #{$root}__progress-value {
+      border-right: 1px solid #fff;
+    }
+  }
+
+  @include media-breakpoint-down(lg) {
+    display: none;
+  }
+}
+.sandwich-open .page-navigation {
+  opacity: 0;
+  visibility: hidden;
+}
+.ie {
+  .page-navigation {
+    display: none;
+  }
+}

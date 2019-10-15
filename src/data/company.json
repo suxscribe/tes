@@ -1,0 +1,55 @@
+{
+  "kit": [
+    {
+      "text": "Проектный отдел и&nbsp;подразделение конструкторских разработок"
+    },
+    {
+      "text": "Служба строительства подстанций"
+    },
+    {
+      "text": "Служба строительства кабельных и&nbsp;воздушных линий"
+    },
+    {
+      "text": "Электромонтажное и&nbsp;пуско-наладочное подразделения"
+    },
+    {
+      "text": "Испытательные лаборатории"
+    },
+    {
+      "text": "СГО&nbsp;&mdash; сервисно-гарантийное обеспечение"
+    }
+  ],
+  "partners": [
+    {
+      "name": "ПАО «Россети»",
+      "desc": "Оператор энергетических сетей в&nbsp;России&nbsp;&mdash; является одной из&nbsp;крупнейших электросетевых компаний в&nbsp;мире.",
+      "logo": "../../pages/company/images/partners/1.png"
+    },
+    {
+      "name": "ПАО «ФСК ЕЭС»",
+      "desc": "Является крупнейшей в мире публичной электросетевой компанией",
+      "logo": "../../pages/company/images/partners/2.png"
+    },
+    {
+      "name": "ПАО «МРСК Центра и Поволжья»",
+      "desc": "Является крупнейшей в мире публичной электросетевой компанией",
+      "logo": "../../pages/company/images/partners/3.png"
+    }
+  ],
+  "videos": [
+    {
+      "video": "../../components/index-section-1/videos/bg.mp4",
+      "type": "inner"
+    },
+    {
+      "video": "https://www.youtube.com/embed/4Nd7hHvyQ_k",
+      "type": "youtube",
+      "id": "4Nd7hHvyQ_k"
+    },
+    {
+      "video": "https://www.youtube.com/embed/GzUfrfdzl3A",
+      "type": "youtube",
+      "id": "GzUfrfdzl3A"
+    }
+  ]
+}

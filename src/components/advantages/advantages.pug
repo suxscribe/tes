@@ -1,0 +1,29 @@
+include ../slider-navigation/slider-navigation
+include ../advantage/advantage
+include ../mobile-slider-navigation/mobile-slider-navigation
+
+mixin advantages(args)
+    -
+        args = args ? args : {};
+        if (args.white) {
+          attributes.class = 'advantages_white';
+        }
+    .advantages&attributes(attributes)
+        if (!args.white)
+            +svg({ name: 'gradient' }).advantages__bg
+        .container-fluid
+            .row
+                .advantages__title-1.col-md-5.offset-md-1!=args.title
+                .col-2.d-none.d-md-block
+                    +slider-navigation({"class": "advantages" + (!args.white ? ' slider-navigation_white' : '')})
+        .container-fluid.advantages__container
+            .row
+                .advantages__wrapper.col-md-7.offset-md-1
+                    +mobile-slider-navigation({
+                      total: args.total
+                    }).mobile-slider-navigation_advantages(class=args.white ? 'mobile-slider-navigation_dark' : '')
+                    .col__fix-right
+                        .swiper-container.advantages__swiper-container
+                            .swiper-wrapper.advantages__swiper-wrapper
+                                each advantage, i in args.data
+                                    +advantage(advantage, i+1).swiper-slide(class=args.white ? 'advantage_dark' : '')

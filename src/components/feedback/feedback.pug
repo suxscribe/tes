@@ -1,0 +1,10 @@
+include ../form-feedback/form-feedback
+
+mixin feedback(args)
+    .feedback.collapsed(data-toggle="collapse" data-target="#form-feedback")&attributes(attributes)
+        .feedback__content.container-fluid
+            .row.feedback__row
+                .feedback__wrapper
+                    .col-8.feedback__title-1 Хотите связаться с нами?
+                    .col-8
+                        +form-feedback

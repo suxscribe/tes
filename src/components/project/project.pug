@@ -1,0 +1,10 @@
+mixin project(args)
+    a.project(href=args.link)&attributes(attributes)
+        .project__space
+        .project__wrapper
+            .project__bg-wrapper
+                +img({ path: args.bg }).project__bg(data-object-fit='cover')
+                .project__shade
+            .project__content
+                .project__text!= args.text
+                .project__plus

@@ -1,0 +1,57 @@
+extends ../../layout/layout
+include ../../components/page-navigation/page-navigation
+include ../../components/static-footer/static-footer
+include ../../components/documents/documents
+include ../../components/trust-slider/trust-slider
+include ../../components/filters/filters
+include ../../components/comment-preview/comment-preview
+include ../../components/comment-preview-grid/comment-preview-grid
+include ../../components/endless-btn/endless-btn
+
+block content
+    div#barba-wrapper
+        .barba-container.barba-container-inner(data-namespace='trust')
+            +page-navigation
+            .container-fluid
+                .row
+                    .col-8.col-md-7.offset-md-1
+                        .tpg__title Доверие и компетенции
+
+            +documents({
+                title: 'Лицензии и сертификаты',
+                text1: 'Объективным подтверждением компетенции &laquo;Таврида Энерго Строй&raquo; являются лицензии и&nbsp;сертификаты.',
+                docClass: 'document_text',
+                data: data.documents.trust
+            }).documents_trust
+
+            .container-fluid
+                .row
+                    .col-8.col-md-7.offset-md-1
+                        .tpg__title-2 Отзывы
+                        .tpg__p2 Важнейшее достижение &laquo;Таврида Энерго Строй&raquo;&nbsp;&mdash; репутация компании, которой доверяют.
+
+            +trust-slider({
+                total: '03',
+                data: data.trustSlider
+            })
+
+            .trust__section-bg
+                .container-fluid
+                    .row
+                        +filters({
+                            data: data.selects[0].item,
+                            'reset': true
+                        }).col-8.col-md-6.offset-md-1.filters_trust
+
+                +comment-preview-grid({
+                     id: 'modalPreview1',
+                     data:data.commentPreview,
+                    startModalImg: '../../pages/trust/images/comm1.jpg'
+
+                })
+
+                +endless-btn.endless-btn_trust
+
+
+
+            +static-footer

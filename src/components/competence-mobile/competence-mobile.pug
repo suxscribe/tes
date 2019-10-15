@@ -1,0 +1,20 @@
+include ../mobile-slider-navigation/mobile-slider-navigation
+include ../competence-item/competence-item
+
+mixin competence-mobile(args)
+    .competence-mobile.d-md-none&attributes(attributes)
+        if args && args.text
+            .competence-mobile__text!= args.text
+        .container-fluid.competence-mobile__wrapper
+            +svg({ name: 'gradient' }).competence-mobile__bg
+            +mobile-slider-navigation({ total: args.total })
+            .competence-mobile__content
+                .competence-mobile__title!= args.title
+                .swiper-container.competence-mobile__swiper
+                    .swiper-wrapper
+                        -var index = 1;
+                        each competencesChunk in chunks(args.slides, 2)
+                            .swiper-slide
+                                each competence in competencesChunk
+                                    +competence-item({ text: competence.text, index: index })
+                                    - index++

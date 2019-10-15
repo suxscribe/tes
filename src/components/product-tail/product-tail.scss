@@ -1,0 +1,23 @@
+.product-tail {
+  position: relative;
+  overflow: hidden;
+
+  &__wrapper {
+    position: relative;
+  }
+
+  &__row {
+    padding: 0 $col-width;
+  }
+
+  &__title-1 {
+    margin-bottom: 3vh;
+    @include font-3;
+    line-height: 1.5;
+    color: $color-2;
+  }
+
+  .simplebar-track {
+    display: none;
+  }
+}

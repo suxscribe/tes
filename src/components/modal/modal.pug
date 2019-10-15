@@ -1,0 +1,12 @@
+include ../sandwich-menu-close/sandwich-menu-close
+
+mixin modal(args)
+    - args = args ? args : {};
+    .modal.fade&attributes(attributes)
+        .modal-dialog
+            .modal-content
+                block
+                +sandwich-menu-close(
+                    data-dismiss='modal',
+                    class=args.closeContrast ? 'sandwich-menu-close_contrast' : ''
+                ).modal__close

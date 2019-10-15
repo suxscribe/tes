@@ -1,0 +1,18 @@
+include ../solution-gradient/solution-gradient
+include ../button/button
+
+mixin solution(args)
+    .solution&attributes(attributes)
+        +solution-gradient({gradientBg: args.solution.gradientBg}).solution__gradient
+        .container-fluid.solution__container-fluid
+            .row.solution__row
+                .solution__bg-wrapper
+                    +img({ path: args.solution.bg }).solution__bg
+                .col-6.solution__col(data-content)
+                    .solution__top-space
+                    .solution__name!= args.solution.name
+                    .solution__bottom-space
+                    .solution__solutions-label Решения
+                    .solution__full-name!= args.solution.fullName
+                    .solution__kw!= args.solution.kw
+                    +button(href=args.solution.link).solution__link Подробнее

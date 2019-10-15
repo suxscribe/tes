@@ -1,0 +1,89 @@
+extends ../../layout/layout
+include ../../components/page-navigation/page-navigation
+include ../../components/static-footer/static-footer
+include ../../components/subscribe/subscribe
+include ../../components/info-block-8/info-block-8
+include ../../components/info-block-1/info-block-1
+include ../../components/info-block-5/info-block-5
+include ../../components/gallery/gallery
+include ../../components/adjacent-page/adjacent-page
+include ../../components/video-block/video-block
+
+block content
+    div#barba-wrapper
+        .barba-container(data-namespace='objectCard')
+            +page-navigation
+            +info-block-8({
+                title: 'Энергоснабжение стадиона &laquo;Мордовия Арена&raquo;',
+                image: './images/head.jpg'
+            })
+            +info-block-1({
+                text1: 'Инженеры ТЭС завершили строительство РП&nbsp;10&nbsp;кВ &laquo;Стадион&raquo; \n' +
+                'и&nbsp;питающих кабельных линий для электроснабжения футбольного стадиона &laquo;Мордовия Арена&raquo;.',
+                text2: 'Стадион &laquo;Мордовия Арена&raquo; возводится в&nbsp;Саранске, городе&nbsp;&mdash; участнике предстоящего Чемпионата мира по&nbsp;футболу FIFA 2018. Уже летом этого года спортивная арена примет более 44&nbsp;тысяч футбольных болельщиков.\n' +
+                'Распределительный пункт выполнен в&nbsp;модульном здании, оснащенном всеми необходимыми инженерными системами, в&nbsp;том числе системой кондиционирования и&nbsp;охранно-пожарной сигнализации.'
+            })(class='info-block-1_offset-vertical-top')
+
+            +info-block-5({
+                img: './images/img1.jpg',
+                texts: [
+                    'Директор ГК&nbsp;ТЭС Дударев Дмитрий: &laquo;Это была сложная и&nbsp;интересная задача, поставленная нашим заказчиком ПАО &laquo;МРСК Волги&raquo;.',
+                    'Всего за&nbsp;девять месяцев мы&nbsp;должны были выполнить изыскательские работы, спроектировать и&nbsp;построить по&nbsp;утвержденному государственной экспертизой проекту две кабельные линии 10&nbsp;кВ, протяженностью 3,13&nbsp;км с&nbsp;распределительным пунктом 10&nbsp;кВ &laquo;Стадион&raquo;. И&nbsp;со&nbsp;своей задачей мы&nbsp;справились на&nbsp;отлично, подав напряжение на&nbsp;стадион раньше утвержденного срока&quot;.'
+                ]
+            }).info-block-5_detail.info-block-5_detail-reverse
+
+            +info-block-1({
+                text1: 'Директор ГК ТЭС Дударев Дмитрий: «Это была сложная и интересная задача, поставленная нашим заказчиком ПАО «МРСК Волги».',
+            })(class='info-block-1_offset-vertical-top_less')
+
+            +info-block-5({
+                img: './images/img2.jpg',
+                texts: [
+                    'В&nbsp;здании размещено современное распределительное устройство из&nbsp;20&nbsp;ячеек КСО &laquo;Новация&raquo;, производства ООО &laquo;НЭТЗ&raquo; с&nbsp;необслуживаемыми вакуумными выключателями ВВ/TEL производства ГК&nbsp;&laquo;Таврида Электрик&raquo;.',
+                    'РУ&nbsp;10&nbsp;кВ дополнительно укомплектовано дуговой защитой. Оборудование РЗиА, центральной сигнализации, связи и&nbsp;рабочее место оперативного персонала находятся в&nbsp;отдельном помещении.'
+                ]
+            }).info-block-5_detail
+
+            +info-block-1({
+                text2: 'К&nbsp;объекту предъявляются особые требования по&nbsp;надежности и&nbsp;защищенности, поэтому инженеры реализовали систему охранного телевидения. Специалисты компании ТЭС применили в&nbsp;ходе строительства решения и&nbsp;оборудование, позволяющие обеспечить надежное бесперебойное электроснабжение футбольной арены и&nbsp;сопутствующей инфраструктуры.',
+            })(class='')
+
+            +gallery({
+                total: '03',
+                data: data.gallery.objectCard
+            })
+
+            //+video-block({
+            //    path: data.company.videos[0].video,
+            //    type: data.company.videos[0].type
+            //})
+
+            +video-block({
+                path: data.company.videos[2].video,
+                type: data.company.videos[2].type,
+                id: data.company.videos[2].id
+
+            })
+
+
+
+
+
+
+            +adjacent-page({
+                title: 'Строительство главной понизительной подстанции 110/10&nbsp;кВ &laquo;Окский берег&raquo;',
+                hrefBack: '#',
+                hrefNext: '#',
+                anchor: 'Назад к объктам',
+                bg: './images/img3.jpg',
+                nextPage: 'Следующий объект'
+            })
+
+
+
+
+
+
+
+            +subscribe
+            +static-footer

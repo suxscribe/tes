@@ -1,0 +1,46 @@
+extends ../../layout/layout
+include ../../components/info-block-8/info-block-8
+include ../../components/info-block-1/info-block-1
+include ../../components/gallery/gallery
+include ../../components/advantages/advantages
+include ../../components/projects/projects
+include ../../components/adjacent-page/adjacent-page
+include ../../components/feedback/feedback
+include ../../components/static-footer/static-footer
+
+block content
+    div#barba-wrapper
+        .barba-container(data-namespace='service')
+            +info-block-8({
+              title: 'Строительство воздушных и&nbsp;кабельных линий 6-500&nbsp;кВ',
+              image: './images/head.jpg'
+            })
+            +info-block-1({
+              title: 'Описание',
+              text1: 'От&nbsp;надежности линий электропередач зависит стабильность работы всей энергосистемы и&nbsp;качество снабжения конечных потребителей.',
+              text2: 'Поэтому при строительстве линейных объектов мы&nbsp;уделяем особое внимание этапу организации работ и&nbsp;работе со&nbsp;специальной техникой.'
+            })(class='info-block-1_offset-vertical-top')
+            +gallery({
+              total: '03',
+              data: data.gallery.service2
+            })
+            .container-fluid.service-2__text-1
+                .row
+                    .col-md-6.offset-md-1.tpg__p1 На&nbsp;этапе предпроектного обследования инженеры оценивают особенности трассы, рельеф, результаты геодезических изысканий, климатические и&nbsp;многие другие факторы.
+                    .col-md-6.offset-md-1.tpg__p2 Процесс монтажа также требует высоких профессиональных навыков, четкой организации работы и&nbsp;применения специальной техники и&nbsp;устройств.
+            +advantages({
+              title: 'Преимущества',
+              total: '04',
+              data: data.advantages.service2,
+              white: true
+            })
+            +projects.projects_product
+            +adjacent-page({
+              title: 'Строительство подстанций 110/35/6(10) кВ',
+              hrefBack: '#',
+              hrefNext: '#',
+              anchor: 'Назад к услугам',
+              bg: './images/page-next.jpg'
+            })
+            +feedback
+            +static-footer

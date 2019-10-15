@@ -1,0 +1,16 @@
+mixin product-head(args)
+    .product-head&attributes(attributes)
+        .product-head__content.container-fluid
+            .row.product-head__row
+                .col-xl-4.col-8
+                    .product-head__title-1!=args.title1
+                    .product-head__title-2!=args.title2
+                .col-xl-4.col-8.product-head__text-1!=args.text1
+                .col-8.product-head__text-2!=args.text2
+            .row.product-head__bottom
+                .product-head__arrow
+                .product-head__arrow-wrapper.product-head__arrow-down
+                    +svg({ name: 'arrow-down' })
+                .col-8.product-head__col
+                    .product-head__bg-wrapper
+                        +img({'path': args.image}).product-head__bg

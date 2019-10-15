@@ -1,0 +1,32 @@
+include ../product-map/product-map
+
+mixin product-section-1(args)
+    .product-section-1&attributes(attributes)
+        .product-section-1__map
+            +product-map({
+              imageFirst: args.imageFirst,
+              data: args.data
+            })
+            .product-section-1__content.container-fluid
+                .row
+                    .col-8.product-section-1__title-1!=args.title1
+                if (args.bottomBlock)
+                    .row.product-section-1__row
+                        .col-xl-2.col-lg-4.col-md-4.col-8.product-section-1__desc
+                            .product-section-1__text-1!=args.text1
+                        .col-xl-6.col-lg-4.col-md-4.col-8.product-section-1__items
+                            .product-section-1__title-2!=args.title2
+                            .row
+                                .col-xl-4.product-section-1__col
+                                    .product-section-1__title-3 35 кВ
+                                    .row.product-section-1__item
+                                        .col-md-4.product-section-1__text-2 Реклоузер SMART35 (SUB7)
+                                        .col-md-4.product-section-1__text-2 вакуумный
+                                    .row.product-section-1__item
+                                        .col-md-4.product-section-1__text-2 ВВН-СЭЩ-35
+                                        .col-md-4.product-section-1__text-2 вакуумный
+                                .col-xl-4.product-section-1__col
+                                    .product-section-1__title-3 110 кВ
+                                    .row.product-section-1__item
+                                        .col-md-4.product-section-1__text-2 ВГТ-110
+                                        .col-md-4.product-section-1__text-2 элегазовый

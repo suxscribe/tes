@@ -1,0 +1,8 @@
+mixin document-list(args)
+    .document-list&attributes(attributes).row
+        each item in data.documents
+            .col-xl-4.document-list__item
+                a(href=item.href target="_blank").document-list__link
+                    div!=item.title
+                    div!=item.size
+                    +svg({name: "icon"}).document-list__icon

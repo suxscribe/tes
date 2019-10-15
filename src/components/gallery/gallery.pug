@@ -1,0 +1,22 @@
+include ../mobile-slider-navigation/mobile-slider-navigation
+include ../gallery-navigation/gallery-navigation
+
+mixin gallery(args)
+    .gallery&attributes(attributes)
+        +gallery-navigation
+        .container-fluid
+            .row
+                .col-8
+                    .gallery__slider
+                        +mobile-slider-navigation({ total: args.total }).mobile-slider-navigation_gallery.mobile-slider-navigation_dark
+                        .gallery__content.d-flex.justify-content-between.col__fix-left.col__fix-right
+                            each i in range(data.advantageSliderCount)
+                                .swiper-container.gallery__swiper-container
+                                    .swiper-wrapper.gallery__swiper-wrapper
+                                        each item in args.data
+                                            each image in item.images
+                                                .swiper-slide.gallery__swiper-slide
+                                                    .gallery__space
+                                                    .gallery__wrapper
+                                                        .gallery__bg-wrapper
+                                                            +img({ path: image }).gallery__bg(data-object-fit='cover')

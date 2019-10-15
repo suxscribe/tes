@@ -1,0 +1,15 @@
+include ../../components/menu/menu
+include ../../components/sandwich-button/sandwich-button
+
+mixin header(args)
+    .header.container-fluid&attributes(attributes)
+        .row
+            .header__col.col-2
+                a(href='/').header__logo-link
+                    +svg({ name: 'logo' }).header__logo
+            .header__col.col-5.d-none.d-md-flex
+                +menu.header__menu
+            .header__col.col-6.col-md-1.justify-content-end
+                a.header__phone.d-md-none(href='tel:88002343344')
+                    +svg({ name: 'phone' })
+                +sandwich-button.header__sandwich-button

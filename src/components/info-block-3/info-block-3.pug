@@ -1,0 +1,10 @@
+mixin info-block-3(args)
+    .info-block-3&attributes(attributes)
+        .info-block-3__content.container-fluid
+            .row.info-block-3__row
+                .col-8.info-block-3__title-1!=args.title
+                .col-md-4
+                    .info-block-3__text-1!=args.text1
+                .col-md-4
+                    .info-block-3__text-2!=args.text2
+                    .info-block-3__text-3!=args.text3

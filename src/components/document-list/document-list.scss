@@ -1,0 +1,72 @@
+.document-list {
+
+  &__item {
+    display: flex;
+    margin-bottom: $left-padding;
+
+    &:nth-child(odd) {
+      padding-right: calc(#{$col-width} / 8);
+    }
+    &:nth-child(even) {
+      padding-left: calc(#{$col-width} / 8);
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 37px 55px 37px 85px;
+    @include font-9;
+    line-height: 1.5;
+    color: $color-2;
+    background-color: #fff;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: $color-2;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    left: 32px;
+    top: 50%;
+    width: 37px;
+    height: 48px;
+    transform: translateY(-50%);
+    fill: white;
+    stroke: $color-1;
+  }
+
+  @include media-breakpoint-down(lg) {
+    &__item {
+      &:nth-child(odd) {
+        padding-right: 0;
+      }
+      &:nth-child(even) {
+        padding-left: 0;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    &__item {
+      margin-bottom: 0;
+    }
+    &__link {
+      padding: 20px 20px 20px 75px;
+      color: white;
+      background-color: transparent;
+    }
+    &__icon {
+      left: 20px;
+      fill: $color-1;
+      stroke: white;
+    }
+  }
+}

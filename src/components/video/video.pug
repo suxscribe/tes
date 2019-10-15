@@ -1,0 +1,14 @@
+mixin video(args)
+    .video&attributes(attributes)
+        if (args.type === 'inner')
+            .video__bg-wrapper
+                .video__button
+                    +svg({ name: 'play' }).video__button-btn
+            +autoplay-video({
+              path: args.path
+            }).video__item.video__item_inner
+        else if (args.type === 'youtube')
+            +img({path: 'https://img.youtube.com/vi/'+args.id+'/maxresdefault.jpg'}).video__bg-wrapper
+            .video__button
+                +svg({ name: 'play' }).video__button-btn
+            .video__item.video__item_youtube(data-embed=args.id)

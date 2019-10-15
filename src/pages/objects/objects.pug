@@ -1,0 +1,46 @@
+extends ../../layout/layout
+include ../../components/page-navigation/page-navigation
+include ../../components/static-footer/static-footer
+include ../../components/info-block-1/info-block-1
+include ../../components/object-card-grid/object-card-grid
+include ../../components/subscribe/subscribe
+include ../../components/filters/filters
+include ../../components/endless-btn/endless-btn
+
+
+block content
+    div#barba-wrapper
+        .barba-container.barba-container-inner(data-namespace='objects')
+            +page-navigation
+            .container-fluid
+                .row
+                    .col-8.col-md-7.offset-md-1
+                        .tpg__title Объекты
+
+
+
+            +info-block-1({
+                text1: 'День за&nbsp;днем коллектив &laquo;Таврида Энерго Строй&raquo; своей работой доказывает, что декларируемые нами принципы&nbsp;&mdash; не&nbsp;просто слова.',
+                text2: 'Наш опыт, знания и&nbsp;реализуемые проекты&nbsp;&mdash; лучшее тому подтверждение, &laquo;Таврида Энерго Строй&raquo; достигла определенных успехов, ей&nbsp;есть чем гордиться.',
+            })
+
+            .container-fluid
+                .row
+                    +filters({
+                        data: data.selects[0].item,
+                        'reset':true
+                    }).col-8.col-md-6.offset-md-1.filters_objects
+
+
+                +object-card-grid({
+                    data: data.objectsCards
+                }).filters__filterable.endless-btn__container
+
+            +endless-btn
+
+
+
+
+
+            +subscribe
+            +static-footer

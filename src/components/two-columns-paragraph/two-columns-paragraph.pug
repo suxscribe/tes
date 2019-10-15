@@ -1,0 +1,9 @@
+mixin two-columns-paragraph(args)
+    .two-columns-paragraph.container-fluid&attributes(attributes)
+        .row
+            .col-3.offset-1.two-columns-paragraph__left
+                each p in args.left
+                    .two-columns-paragraph__p!= p
+            .col-3.two-columns-paragraph__right
+                each p in args.right
+                    .two-columns-paragraph__p!= p

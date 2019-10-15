@@ -1,0 +1,91 @@
+.advantage {
+  position: relative;
+  background-color: transparent;
+  color: #fff;
+  $root: &;
+  //min-height: 450px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 7px;
+    height: 7px;
+    border-radius: 100%;
+    background-color: currentColor;
+    transform: translateX(50%);
+  }
+
+  &__wrapper {
+    padding: 2.3vh 3.6vw 4.6vh 0;
+  }
+
+  &__count {
+    margin-bottom: 22px;
+    @include font-3;
+    line-height: 2.25;
+    color: transparent;
+    -webkit-text-stroke: 1px #fff;
+  }
+
+  &__title {
+    margin-bottom: 32px;
+    @include font-7;
+    line-height: 1.5;
+    text-transform: uppercase;
+  }
+
+  &__text {
+    @include font-6;
+    line-height: 1.875;
+  }
+
+  a {
+    color: currentColor;
+    text-decoration: underline;
+  }
+
+  @include media-breakpoint-down(xl) {
+    width: 33%;
+  }
+
+  @include media-breakpoint-down(lg) {
+    width: 50%;
+  }
+
+  @include media-breakpoint-down(sm) {
+    //min-height: 400px;
+
+    &__wrapper {
+      padding: 27px 27px 27px 0;
+    }
+    &__count {
+      margin-bottom: 20px;
+      font-size: 40px;
+    }
+    &__title {
+      margin-bottom: 33px;
+    }
+  }
+
+  &_dark {
+    color: $color-2;
+
+    & #{$root}__count {
+      -webkit-text-stroke-color: $color-1;
+    }
+  }
+}
+.ie {
+  .advantage {
+    &__count {
+      color: white;
+    }
+  }
+
+  .advantage_dark .advantage__count {
+    color: white;
+    text-shadow: -1px -1px 0 $color-1, 1px -1px 0 $color-1, -1px 1px 0 $color-1, 1px 1px 0 $color-1;
+  }
+}

@@ -1,0 +1,17 @@
+mixin product-map-slide(args)
+    .product-map-slide&attributes(attributes)
+        .container-fluid.product-map-slide__container-fluid
+            .row.product-map-slide__row
+                .col-sm-4.product-map-slide__image
+                    .product-map-slide__bg-wrapper
+                        +img({ path: args.product.slide.bg }).product-map-slide__bg.product-map-slide__bg_desktop
+                +img({ path: args.product.bg }).product-map-slide__bg.product-map-slide__bg_mobile
+                .col-4.product-map-slide__col.d-none.d-md-block
+                    .product-map-slide__name!= args.product.slide.name
+                    if args.product.slide.kw
+                        .product-map-slide__kw!= args.product.slide.kw
+                    .product-map-slide__text!= args.product.slide.text
+                    a(href=args.product.slide.link).product-map-slide__link Подробнее
+                .col-8.d-block.d-sm-none
+                    .product-map-slide__title!= args.product.title
+                    .product-map-slide__desc Комплектность КТПБ может изменяться в соответствии с индивидуальными требованиями проекта или заказчика

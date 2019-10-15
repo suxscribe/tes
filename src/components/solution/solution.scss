@@ -1,0 +1,259 @@
+.solution {
+    $root: &;
+    padding-top: $header-height;
+    padding-bottom: 6.4vh;
+    overflow: hidden;
+
+    &__gradient {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    &,
+    &__container-fluid,
+    &__row,
+    &__col {
+        display: flex;
+        align-items: stretch;
+        width: 100%;
+    }
+
+    &__row {
+        position: relative;
+    }
+
+    &__bg-wrapper {
+        width: 100%;
+        flex-grow: 1;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+
+    &__bg {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 0;
+        width: 177.77vh;
+        max-width: 100%;
+        z-index: 1;
+    }
+
+    &__col {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+
+        @include media-breakpoint-up(md) {
+            padding-right: calc(2 * #{$col-width});
+        }
+    }
+
+    &__top-space {
+        flex: 25 25 1px;
+    }
+
+    &__bottom-space {
+        flex: 100 100 1px;
+    }
+
+    &__name {
+        @include font-8;
+        color: white;
+        line-height: .75;
+        margin-bottom: 5vh;
+        position: relative;
+        left: -.07em;
+    }
+
+    &__solutions-label {
+        @include font-7;
+        color: white;
+        margin-bottom: 1.3vh;
+        z-index: 2;
+    }
+
+    &__full-name {
+        @include font-38;
+        color: white;
+        padding-bottom: 15px;
+        line-height: 1.25;
+        z-index: 2;
+        margin-bottom: 1.2vh;
+
+        @include media-breakpoint-down(sm) {
+            line-height: 30px;
+        }
+    }
+
+    &__kw {
+        @include font-4;
+        color: white;
+        padding-bottom: 20px;
+        z-index: 2;
+        margin-bottom: 1vh;
+    }
+
+    &__link {
+        @include font-9;
+        margin-bottom: 3vh;
+        z-index: 2;
+        &,
+        &:hover {
+            color: white;
+        }
+        will-change: color;
+        transition: color $link-hover-transition-duration;
+    }
+
+    &__name,
+    &__full-name,
+    &__kw,
+    &__link {
+        will-change: opacity, visibility, transform;
+    }
+
+    $increased-speed-factor: 0.5;
+
+    &.change-from-this {
+        & #{$root}__name {
+            animation: solution-anim 1s ease-out forwards;
+        }
+        & #{$root}__bg {
+            animation: solution-bg-anim 1s ease-out forwards;
+        }
+        & #{$root}__solutions-label {
+            animation: smooth-hide-anim .6s ease-out forwards;
+            animation-delay: .4s;
+        }
+        & #{$root}__full-name {
+            animation: solution-anim .6s ease-out forwards;
+            animation-delay: .4s;
+        }
+        & #{$root}__kw {
+            animation: solution-anim .4s ease-out forwards;
+            animation-delay: .2s;
+        }
+        & #{$root}__link {
+            animation: solution-anim .4s ease-out forwards;
+        }
+
+        &.increased-speed {
+            & #{$root}__name { animation-duration: 1s * $increased-speed-factor; }
+            & #{$root}__bg { animation-duration: 1s * $increased-speed-factor; }
+            & #{$root}__solutions-label {
+                animation-duration: .6s * $increased-speed-factor;
+                animation-delay: .4s * $increased-speed-factor;
+            }
+            & #{$root}__full-name {
+                animation-duration: .6s * $increased-speed-factor;
+                animation-delay: .4s * $increased-speed-factor;
+            }
+            & #{$root}__kw {
+                animation-duration: .4s * $increased-speed-factor;
+                animation-delay: .2s * $increased-speed-factor;
+            }
+            & #{$root}__link {animation-duration: .4s * $increased-speed-factor;}
+        }
+    }
+
+    &.change-to-this {
+        & #{$root}__name {
+            animation: solution-anim 1s ease-in reverse;
+        }
+        & #{$root}__bg {
+            animation: solution-bg-anim 1s ease-in reverse;
+        }
+        & #{$root}__solutions-label {
+            animation: smooth-show-anim .6s ease-out forwards;
+        }
+        & #{$root}__full-name {
+            animation: solution-anim .6s ease-in reverse forwards;
+        }
+        & #{$root}__kw {
+            opacity: 0;
+            animation: solution-anim .4s ease-in reverse forwards;
+            animation-delay: .4s;
+        }
+        & #{$root}__link {
+            opacity: 0;
+            animation: solution-anim .4s ease-in reverse forwards;
+            animation-delay: .6s;
+        }
+
+        &.increased-speed {
+            & #{$root}__name { animation-duration: 1s * $increased-speed-factor; }
+            & #{$root}__bg { animation-duration: 1s * $increased-speed-factor; }
+            & #{$root}__solutions-label {
+                animation-duration: .6s * $increased-speed-factor;
+            }
+            & #{$root}__full-name {
+                animation-duration: .6s * $increased-speed-factor;
+            }
+            & #{$root}__kw {
+                animation-duration: .4s * $increased-speed-factor;
+                animation-delay: .4s * $increased-speed-factor;
+            }
+            & #{$root}__link {
+                animation-duration: .4s * $increased-speed-factor;
+                animation-delay: .6s * $increased-speed-factor;
+            }
+        }
+    }
+
+    @include media-breakpoint-down(sm) {
+        padding-bottom: $mobile-slider-height;
+        &:nth-child(1) {
+            & #{$root}__bg {
+                max-width: 140%;
+                left: 50%;
+            }
+        }
+        &:nth-child(2) {
+            & #{$root}__bg {
+                max-width: 175%;
+                left: 50%;
+            }
+        }
+        &:nth-child(3) {
+            & #{$root}__bg {
+                max-width: 150%;
+                left: 40%;
+            }
+        }
+        &__bg {
+            max-width: 175%;
+            bottom: 30%;
+            left: 40%;
+        }
+        &__full-name {
+            line-height: 30px;
+        }
+        &__full-name {
+            padding-bottom: 15px;
+            margin-bottom: 0;
+        }
+        &__kw {
+            margin-bottom: 0;
+        }
+        &__link {
+            margin-bottom: 5vh;
+        }
+    }
+}
+
+@keyframes solution-anim {
+    from { opacity: 1; transform: translateY(0); }
+    to { opacity: 0; transform: translateY(100%); }
+}
+
+@keyframes solution-bg-anim {
+    from { opacity: 1; transform: translate(-50%, 0); }
+    to { opacity: 0; transform: translate(-50%, 15%); }
+}

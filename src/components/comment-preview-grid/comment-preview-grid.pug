@@ -1,0 +1,13 @@
+include ../comment-preview/comment-preview
+include ../comment-modal/comment-modal
+
+mixin comment-preview-grid(args)
+    .comment-preview-grid.container-fluid&attributes(attributes)
+        .row
+            .col-8.col-md-6.offset-md-1
+                .comment-preview-grid__modal
+                    +comment-modal({'dataSrc':args.startModalImg})(id=args.id).comment-preview__modal
+                .row.comment-preview-grid__container.filters__filterable.endless-btn__container
+                    each modalPreview, index in args.data
+                        .col-8.col-lg-4.comment-preview-grid__item
+                            +comment-preview(modalPreview).comment-preview-grid__comment

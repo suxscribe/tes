@@ -1,0 +1,65 @@
+extends ../../layout/layout
+include ../../components/info-block-8/info-block-8
+include ../../components/info-block-1/info-block-1
+include ../../components/gallery/gallery
+include ../../components/competence/competence
+include ../../components/competence-mobile/competence-mobile
+include ../../components/advantages/advantages
+include ../../components/documentation-certificates/documentation-certificates
+include ../../components/projects/projects
+include ../../components/adjacent-page/adjacent-page
+include ../../components/feedback/feedback
+include ../../components/static-footer/static-footer
+
+block content
+    div#barba-wrapper
+        .barba-container(data-namespace='service')
+            -var text = 'Компания обладает допусками к&nbsp;выполнению 240 видов работ, в&nbsp;том числе на&nbsp;особо опасных объектах.';
+            +info-block-8({
+              title: 'Проектно-изыскательские работы до&nbsp;500&nbsp;кВ',
+              image: './images/head.jpg'
+            })
+            +info-block-1({
+              title: 'Описание',
+              text1: 'В&nbsp;основе каждого успешного проекта лежит этап проектирования и&nbsp;сопутствующих подготовительных работ.',
+              text2: 'Инженеры &laquo;Таврида Энерго Строй&raquo; проводят все виды проектно-изыскательских работ на&nbsp;объектах электроэнергетики до&nbsp;500&nbsp;кВ включительно.'
+            })(class='info-block-1_offset-vertical-top')
+            +gallery({
+              total: '03',
+              data: data.gallery.service1
+            })
+            +competence({
+              title: 'Выполним все этапы проектно-изыскательных работ',
+              bgText: 'Навыки',
+              text: text,
+              slides: data.service1.kit,
+              pageNavItem: 'Область компетенций'
+            })
+            +competence-mobile({
+              title: 'Выполним все этапы проектно-изыскательных работ',
+              bgText: 'Навыки',
+              text: text,
+              slides: data.service1.kit,
+              total: '03'
+            })
+            +advantages({
+              title: 'Преимущества',
+              total: '02',
+              data: data.advantages.service1,
+              white: true
+            })
+            +documentation-certificates({
+              title: 'Лицензии и&nbsp;сертификаты',
+              text: 'Компетенция компании в&nbsp;оказании проектно-изыскательских работ подтверждена соответствующими свидетельствами СРО',
+              data: data.documents.service1
+            })
+            +projects.projects_product
+            +adjacent-page({
+              title: 'Строительство воздушных и&nbsp;кабельных линий 6-500&nbsp;кВ',
+              hrefBack: '#',
+              hrefNext: '#',
+              anchor: 'Назад к услугам',
+              bg: './images/page-next.jpg'
+            })
+            +feedback
+            +static-footer

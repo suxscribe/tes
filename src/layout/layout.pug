@@ -1,0 +1,22 @@
+include ../common/pug/mixins
+include ../common/pug/helpers
+include ../components/header/header
+include ../components/footer/footer
+include ../components/preloader/preloader
+include ../components/sandwich-menu/sandwich-menu
+include ../components/cookie-message/cookie-message
+
+doctype html
+html(lang='ru')
+    head
+        link(rel='stylesheet' href='../../common/scss/common.scss')
+        meta(name='viewport' content='width=device-width, initial-scale=1')
+        meta(charset='utf-8')
+        link(rel="shortcut icon", href="../../images/favicon-96x96.png", type="image/png")
+    body.preloading
+        +header
+        block content
+        +footer
+        +sandwich-menu
+        +cookie-message
+        +preloader

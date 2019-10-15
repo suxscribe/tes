@@ -1,0 +1,132 @@
+.index-section-1 {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    color: white;
+    overflow: hidden;
+
+    &__top-space {
+        flex-grow: 177;
+        flex-shrink: 0;
+        flex-basis: 1px;
+    }
+
+    &__content {
+        padding-top: $header-height;
+        padding-bottom: $footer-height;
+        display: flex;
+        flex-direction: column;
+        flex: 0 0 auto;
+        position: relative;
+        height: 100%;
+    }
+
+    &__bottom-space {
+        flex-grow: 115;
+        flex-shrink: 0;
+        flex-basis: 1px;
+    }
+
+    &__bg-wrapper {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    &__bg {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &__title-1 {
+        @include font-1;
+        color: white;
+        line-height: 1.08;
+        margin-bottom: 5vh;
+        padding-right: 0;
+        @include media-breakpoint-up(xl) {
+            margin-bottom: 0;
+            padding-right: $col-width;
+        }
+        @include media-breakpoint-down(sm) {
+            margin-bottom: 4vh;
+        }
+    }
+
+    &__block-1 {
+        @include media-breakpoint-up(xl) {
+            padding-top: 4vh;
+        }
+    }
+
+    &__title-2 {
+        @include font-7;
+        color: $color-1;
+        line-height: 1.2;
+        margin-bottom: 3.5vh;
+    }
+
+    &__text-1 {
+        @include font-38;
+        color: white;
+        line-height: 30px;
+        margin-bottom: 3.6vh;
+        @include media-breakpoint-up(md) {
+            line-height: 1.25;
+        }
+    }
+
+    &__title-3 {
+        @include font-3;
+        color: $color-1;
+        margin-bottom: 2.7vh;
+        padding-right: calc(#{$col-width} / 4);
+
+    }
+
+    &__text-2 {
+        @include font-6;
+        width: 100%; /* ie fix */
+        color: white;
+        line-height: 1.875;
+        padding-right: calc(#{$col-width} / 4);
+    }
+
+    &__title-1-line,
+    &__text-1-line {
+        will-change: opacity, visibility, transform;
+    }
+
+    &__title-2,
+    &__title-3,
+    &__text-2 {
+        will-change: opacity, visibility;
+    }
+
+    &__move-next {
+        position: absolute;
+        bottom: 4.25vh;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 4vh;
+        width: 4vh;
+        fill: $color-1;
+        cursor: pointer;
+
+        & > svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        @include media-breakpoint-down(sm) {
+            display: none;
+        }
+    }
+
+    .hide-video &__bg {
+        display: none;
+    }
+}

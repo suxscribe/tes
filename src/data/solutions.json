@@ -1,0 +1,110 @@
+[
+    {
+        "title": "Продукция &laquo;Таврида Энерго Строй&raquo;",
+        "shortTitle": "Продукция ТЭС",
+        "text": "При строительстве и&nbsp;реконструкции объектов электроэнергетики мы&nbsp;применяем собственные сертифицированные решения&nbsp;&mdash; современные быстровозводимые трансформаторные подстанции и&nbsp;их&nbsp;отдельные компоненты",
+        "items": [
+            {
+                "name": "КТПБ",
+                "kw": "110 кВ / 35 кВ",
+                "fullName": "Комплектные трансформаторные подстанции блочные",
+                "link": "/ktpb.html",
+                "bg": "../../components/solution/images/ktpb.png",
+                "innerBg": "../../components/solution-inner/images/ktpb.jpg",
+                "gradientBg": {
+                    "color1": "#DCE0E7",
+                    "color2": "#2E2E43"
+                },
+                "slider": true
+            },
+            {
+                "name": "КТПМ",
+                "kw": "35/6 (10)/0,4 кВ",
+                "fullName": "Комплектные трансформаторные подстанции модульные",
+                "link": "/ktpm.html",
+                "bg": "../../components/solution/images/ktpm.png",
+                "innerBg": "../../components/solution-inner/images/ktpm.jpg",
+                "gradientBg": {
+                    "color1": "#D1DFEE",
+                    "color2": "#283D56"
+                },
+                "slider": true
+            },
+            {
+                "name": "БКТП",
+                "kw": "6(10)/0,4 кВ",
+                "fullName": "Комплектные трансформаторные подстанции в&nbsp;бетонной оболочке",
+                "link": "/bktp.html",
+                "bg": "../../components/solution/images/bktp.png",
+                "innerBg": "../../components/solution-inner/images/bktp.jpg",
+                "gradientBg": {
+                    "color1": "#DFDEDA",
+                    "color2": "#464232"
+                },
+                "slider": true
+            },
+            {
+                "name": "ОРУ",
+                "kw": "110 кВ",
+                "fullName": "Открытое распределительное устройство",
+                "link": "/oru-110.html",
+                "innerBg": "../../components/solution-inner/images/oru-1.jpg",
+                "slider": false
+            },
+            {
+                "name": "ОРУ",
+                "kw": "35 кВ",
+                "fullName": "Открытое распределительное устройство",
+                "link": "/oru-35.html",
+                "innerBg": "../../components/solution-inner/images/oru-2.jpg",
+                "slider": false
+            },
+            {
+                "name": "КРУ",
+                "kw": "6(10) кВ",
+                "fullName": "Комплектное распределительное устройство серии К-104",
+                "link": "#",
+                "innerBg": "../../components/solution-inner/images/kru.jpg",
+                "slider": false
+            },
+            {
+                "name": "КРУМ",
+                "kw": "10 (6)-35кВ",
+                "fullName": "Комплектное распределительное устройство модульного типа",
+                "link": "/krum.html",
+                "innerBg": "../../components/solution-inner/images/krum.jpg",
+                "slider": false
+            }
+        ]
+    },
+    {
+        "title": "Продукция НЭТЗ",
+        "text": "Для оснащения объектов дополнительно мы&nbsp;используем продукцию Нижегородского Электротехнического завода",
+        "items": [
+            {
+                "name": "Новация",
+                "kw": "6(10) кВ",
+                "fullName": "Камеры сборные одностроннего обслуживания серии &laquo;Новация&raquo;",
+                "link": "#",
+                "innerBg": "../../components/solution-inner/images/novation.jpg",
+                "slider": false
+            },
+            {
+                "name": "Классика",
+                "kw": "6(10) кВ",
+                "fullName": "Камеры сборные одностроннего обслуживания серии &laquo;классика&raquo;",
+                "link": "#",
+                "innerBg": "../../components/solution-inner/images/classic.jpg",
+                "slider": false
+            },
+            {
+                "name": "Ретро",
+                "kw": "6(10) кВ",
+                "fullName": "ретро  Выкатные элементы до&nbsp;2&nbsp;000&nbsp;А",
+                "link": "#",
+                "innerBg": "../../components/solution-inner/images/retro.jpg",
+                "slider": false
+            }
+        ]
+    }
+]

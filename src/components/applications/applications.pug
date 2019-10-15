@@ -1,0 +1,11 @@
+include ../numeric-list/numeric-list
+
+mixin applications(args)
+    .applications.container-fluid&attributes(attributes)
+        .row
+            .applications__left.col-8.col-md-6.col-lg-3.offset-md-1
+                .applications__title Применение на&nbsp;различных этапах
+                +img({ path: '../../components/applications/images/infographic.jpg' }).applications__infographic
+            .applications__right.col-8.col-md-6.offset-md-1.col-lg-3.offset-lg-0
+                .applications__title Объекты
+                +numeric-list({ items: args.objects })

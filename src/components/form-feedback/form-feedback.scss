@@ -1,0 +1,329 @@
+.form-feedback {
+  $root: &;
+  padding: 4vh $col-width 11vh;
+  background-color: #fff;
+
+  &__title-1 {
+    position: relative;
+    padding: 0 calc(#{$col-width} - (#{$col-width} / 4));
+    @include font-7;
+    line-height: 1.2;
+    color: $color-1;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: calc(#{$col-width} / 2.7);
+      height: 1px;
+      background-color: $color-2;
+      transform: translateY(-50%);
+    }
+  }
+
+  &__show {
+    display: block;
+  }
+  &__hide {
+    display: none;
+  }
+
+  &__content {
+    padding: 11vh 0 0;
+    cursor: default;
+  }
+
+  &__row {
+    margin-bottom: 9vh;
+  }
+
+  &__phone {
+    display: block;
+    @include font-7;
+    line-height: 2;
+    color: $color-1;
+
+    &:hover, &:focus, &:active {
+      color: $color-2;
+    }
+  }
+
+  &__text-1 {
+    @include font-9;
+    line-height: 1.5;
+    color: $color-2;
+    text-align: right;
+  }
+
+  & .textfield {
+
+    &__label {
+      @include font-10;
+      top: 0;
+      left: 0;
+      opacity: .5;
+      text-transform: uppercase;
+    }
+
+    &:not(.textfield_textarea) {
+      padding: 0 $left-padding 0 0;
+      height: 30px;
+
+      .textfield__input {
+        background: linear-gradient($color-2, $color-2) no-repeat 0% 100%;
+        background-size: 0% 1px;
+        transition: background-size .5s;
+
+        &.hf-invalid {
+          background-size: 100% 1px;
+
+          & ~ .textfield__label {
+            transform: translateY(-150%);
+          }
+        }
+      }
+
+      &.is-dirty,
+      &.is-focused {
+
+        .textfield__input {
+          background-size: 100% 1px;
+        }
+      }
+
+      &.is-invalid {
+
+        .textfield__input {
+          background: linear-gradient($textfield-error-on-light, $textfield-error-on-light) no-repeat 0% 100%;
+          background-size: 100% 1px;
+        }
+      }
+
+      &.is-dirty,
+      &.is-focused,
+      &.is-invalid {
+
+        .textfield__label {
+          transform: translateY(-150%);
+        }
+      }
+    }
+
+    &.textfield_textarea {
+
+      .textfield__input {
+        &.hf-invalid {
+          border: 1px solid $color-2!important;
+
+          & ~ .textfield__label {
+            transform: translate(-30%, -300%);
+          }
+        }
+      }
+
+      &.is-dirty,
+      &.is-focused,
+      &.is-invalid {
+
+        .textfield__input {
+          border: 1px solid $color-2!important;
+        }
+
+        .textfield__label {
+          transform: translate(-30%, -300%);
+        }
+      }
+    }
+  }
+
+  & .textfield_full-width {
+
+    .textfield__input {
+      border-bottom: 1px solid $color-11!important;
+    }
+
+    &.textfield_textarea {
+      margin-top: 30px;
+      overflow: visible;
+
+      .textfield__label {
+        top: 10%;
+        left: 3.8%;
+      }
+
+      .textfield__input {
+        height: 265px;
+        padding: 25px 30px;
+        line-height: 1.5;
+        border: 1px solid $color-11!important;
+        resize: none;
+        transition: border .5s;
+      }
+    }
+  }
+
+  &__button {
+    //margin-top: 5.5vh;
+    padding: 22px $left-padding;
+    @include font-10;
+    line-height: 1;
+    color: $color-2;
+    text-transform: uppercase;
+    border: 1px solid $color-1;
+
+    &,
+    &:hover,
+    &:not([href]):not([tabindex]),
+    &:not([href]):not([tabindex]):hover {
+      color: $color-2;
+    }
+
+    &[disabled] {
+      border-color: $color-11;
+    }
+  }
+
+  &__refresh {
+    height: 20px;
+    width: 20px;
+    display: none;
+    fill: rgba(red, .6);
+  }
+
+  &.fail {
+    #{$root}__button-text {
+      color: rgba(red, .6);
+    }
+    #{$root}__refresh {
+      display: block;
+    }
+  }
+
+  @include media-breakpoint-down(lg) {
+    &__content {
+      padding: 5vh 0;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding: 4.5vh 0 0;
+
+    &__content {
+      padding: 6vh 0 0;
+    }
+
+    &__row {
+      margin-bottom: 0;
+    }
+
+    &__title-1 {
+      padding: 0;
+      text-align: right;
+      &::before {
+        width: calc(#{$col-width} * 1.8);
+      }
+    }
+    &__text-1 {
+      order: 1;
+      margin-bottom: 56px;
+      line-height: 1.63;
+      text-align: left;
+    }
+    &__name {
+      order: 2;
+    }
+    &__phone {
+      font-size: 20px;
+      color: $color-2;
+    }
+
+    & .textfield {
+      margin-bottom: 75px;
+
+      &:not(.textfield_textarea) {
+        padding: 0;
+      }
+
+      &__input,
+      &__label {
+        font-size: 14px;
+        line-height: 2;
+        letter-spacing: 1px;
+      }
+      &_company {
+        order: 1;
+      }
+      &_email {
+        order: 2;
+      }
+      &_phone {
+        order: 3;
+      }
+
+      &.textfield_textarea {
+        &.is-dirty,
+        &.is-focused,
+        &.is-invalid {
+          .textfield__label {
+            transform: translate(-10%, -200%);
+          }
+        }
+      }
+    }
+    & .textfield_full-width {
+      &.textfield_textarea {
+        margin-top: 0;
+      }
+    }
+    &__button {
+      justify-content: center;
+      width: 100%;
+      margin-top: 32px;
+      font-size: 14px;
+    }
+
+    .g-recaptcha {
+      transform: scale(0.84);
+      display: inline-block;
+      transform: translateX(-50%) scale(0.84);
+      position: relative;
+      left: 50%;
+    }
+
+    &__content > .row > * {
+      width: 100%;
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    &__content {
+      & > .row {
+        &:not(:last-child) {
+          & > *:first-child {
+            width: calc(#{$col-width} * 2);
+          }
+          & > *:last-child {
+            width: calc(#{$col-width} * 4);
+          }
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    &__content {
+      & > .row {
+        &:last-child {
+          & > *:first-child {
+            width: calc(#{$col-width} * 2);
+          }
+          & > *:last-child {
+            width: calc(#{$col-width} * 4);
+            flex: 0 0 calc(#{$col-width} * 4);
+          }
+        }
+      }
+    }
+  }
+}

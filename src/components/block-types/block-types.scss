@@ -1,0 +1,19 @@
+.block-types {
+    &__items {
+        margin-top: 68px;
+        margin-bottom: 124px;
+    }
+
+    &__text {
+        @include font-34;
+        color: $color-2;
+        line-height: 1.42;
+    }
+
+    @include media-breakpoint-down(sm) {
+        &__items {
+            margin-top: 15px;
+            margin-bottom: 40px;
+        }
+    }
+}

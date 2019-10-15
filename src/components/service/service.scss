@@ -1,0 +1,28 @@
+.service {
+    $root: &;
+
+    &__index {
+        @include font-11;
+        color: white;
+        margin-bottom: 21px;
+    }
+
+    &__text {
+        @include font-44;
+        color: white;
+        letter-spacing: 0.025em;
+    }
+
+    &__index,
+    &__text {
+        will-change: color;
+        transition: color $link-hover-transition-duration;
+    }
+
+
+    &:hover {
+        #{$root}__text {
+            color: rgba(white, .5);
+        }
+    }
+}

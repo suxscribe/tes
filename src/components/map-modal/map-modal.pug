@@ -1,0 +1,5 @@
+include ../modal/modal
+
+mixin map-modal(args)
+    +modal(args).map-modal&attributes(attributes)
+        .map-modal__map

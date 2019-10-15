@@ -1,0 +1,61 @@
+.gallery-navigation {
+  $root: &;
+
+  &__arrow-wrapper {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 1px; /* Иначе на некоторых разрешениях не видно нижнюю границу */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #000;
+    background-color: transparent;
+
+    & > svg {
+      fill: #000;
+      width: 50%;
+    }
+  }
+
+  &__arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 2;
+    width: 4.2vw;
+    height: 4.2vw;
+    background-color: transparent;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    transform: translateY(-50%);
+  }
+
+  &__arrow_next,
+  &__arrow_prev {
+    will-change: opacity, visibility;
+  }
+
+  &__arrow_prev {
+    left: 0;
+  }
+
+  &__arrow_next {
+    right: 0;
+  }
+
+  &_news-slider,
+  &_trust-slider {
+    #{$root}__arrow-wrapper {
+      border-color: white;
+      & > svg {
+        fill: white;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    display: none;
+  }
+}

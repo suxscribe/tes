@@ -1,0 +1,89 @@
+.competence {
+    $root: &;
+    position: relative;
+    transform: translate3d(0, 0, 0);
+
+    &_offset-top {
+        margin-top: 155px;
+    }
+
+    &_offset-vertical {
+        margin-bottom: 110px;
+    }
+
+    & > .row {
+        position: relative;
+    }
+
+    &__bg {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    &__bg-text {
+        @include font-27;
+        color: rgba(white, .1);
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    &__content {
+        padding-top: 105px;
+        padding-bottom: 105px;
+        overflow: hidden;
+    }
+
+    &__text {
+        @include font-28;
+        color: white;
+        line-height: 1.5;
+        margin-bottom: 115px;
+    }
+
+    &__left {
+        padding-right: calc(#{$col-width} * .25);
+    }
+
+    &__text-top {
+        @include font-17;
+        line-height: 1.43;
+        color: $color-2;
+        margin-bottom: 170px;
+    }
+
+    &_small {
+        #{$root}__top-title {
+            @include font-3;
+            color: white;
+            margin-bottom: 35px;
+        }
+
+        #{$root}__text {
+            @include font-7;
+            color: white;
+            line-height: 1.75;
+            text-transform: uppercase;
+            margin-bottom: 60px;
+        }
+    }
+
+    @include media-breakpoint-down(lg) {
+        &__left {
+            display: flex;
+        }
+
+        &__text {
+            width: 75%;
+            padding-right: 30px;
+        }
+
+        .slider-navigation {
+            width: 25%;
+        }
+    }
+}

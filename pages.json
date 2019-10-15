@@ -1,0 +1,74 @@
+[
+  {
+    "name": "index",
+    "title": "Главная"
+  },
+  {
+    "name": "icons",
+    "title": "Иконки"
+  },
+  {
+    "name": "services",
+    "title": "Услуги"
+  },
+  {
+    "name": "solutions",
+    "title": "Решения"
+  },
+  {
+    "name": "service-1",
+    "title": "Проектно-изыскательские работы до&nbsp;500&nbsp;кВ"
+  },
+  {
+    "name": "service-2",
+    "title": "Строительство воздушных  и&nbsp;кабельных линий 6-500&nbsp;кВ"
+  },
+  {
+    "name": "service-3",
+    "title": "Реконструкция энергетических объектов до&nbsp;500&nbsp;кВ, монтаж и&nbsp;наладка электрооборудования"
+  },
+  {
+    "name": "service-4",
+    "title": "Строительство подстанций 110/35/6(10) кВ"
+  },
+  {
+    "name": "service-5",
+    "title": "Строительство ТП&nbsp;и&nbsp;РП среднего класса напряжений 35, 6(10) кВ"
+  },
+  {
+    "name": "404",
+    "title": "page not found"
+  },
+  {
+    "name": "news",
+    "title": "Новости"
+  },
+  {
+    "name": "company",
+    "title": "О компании"
+  },
+  {
+    "name": "objects",
+    "title": "Объекты"
+  },
+  {
+    "name": "object-card",
+    "title": "Карточка"
+  },
+  {
+    "name": "contacts",
+    "title": "Контакты"
+  },
+  {
+    "name": "news-card",
+    "title": "Карточка"
+  },
+  {
+    "name": "trust",
+    "title": "Доверие"
+  },
+  {
+    "name": "solution",
+    "title": "Решение"
+  }
+]

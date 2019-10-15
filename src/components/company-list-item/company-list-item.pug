@@ -1,0 +1,40 @@
+include ../plus/plus
+
+mixin company-list-item(args)
+    .company-list-item&attributes(attributes)
+        .row.company-list-item__toggle
+            .col-8.col-md-2.offset-md-1.company-list-item__title.collapsed(
+                data-toggle='collapse',
+                data-target=`#${args.name}-${args.index}`,
+                aria-expanded='true'
+            )!= args.item.title
+            .d-none.d-md-block.col-2.company-list-item__address-wrapper.collapsed(
+                data-toggle='collapse',
+                data-target=`#${args.name}-${args.index}`,
+                aria-expanded='true'
+            )
+                .company-list-item__address!= args.item.address
+                +link({ tagName: 'span' }).company-list-item__show-on-map(
+                    data-toggle='modal', data-target=`#${args.name}-modal`, data-lat='-30.397', data-lng='150.644'
+                ) Посмотреть на&nbsp;карте
+            .d-none.d-md-block.col-2.company-list-item__contacts.collapsed(
+                data-toggle='collapse',
+                data-target=`#${args.name}-${args.index}`,
+                aria-expanded='true'
+            )!= args.item.contacts
+            +plus.company-list-item__plus.collapsed(
+                data-toggle='collapse',
+                data-target=`#${args.name}-${args.index}`,
+                aria-expanded='true'
+            )
+        .row.collapse.company-list-item__content(data-parent=`#${args.name}`, id=`${args.name}-${args.index}`)
+            .company-list-item__mobile-address.d-md-none!= args.item.address
+            .company-list-item__mobile-contacts.d-md-none!= args.item.contacts
+            +link({ tagName: 'span' }).company-list-item__mobile-show-on-map.d-md-none(
+                data-toggle='modal', data-target=`#${args.name}-modal`, data-lat='-30.397', data-lng='150.644'
+            ) Посмотреть на&nbsp;карте
+            .col-8.col-md-2.offset-md-1.company-list-item__img-wrapper
+                +img({ path: args.item.head.img }).company-list-item__img
+            .col-8.col-md-2.company-list-item__head-info
+                .company-list-item__name!= args.item.head.name
+                .company-list-item__position!= args.item.head.position

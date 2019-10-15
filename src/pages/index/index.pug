@@ -1,0 +1,13 @@
+extends ../../layout/layout
+include ../../components/index-section-1/index-section-1
+include ../../components/index-section-2/index-section-2
+include ../../components/index-section-3/index-section-3
+include ../../components/textfield/textfield
+
+block content
+    div#barba-wrapper
+        .barba-container#fullpage(data-namespace='index')
+            +index-section-1()(data-section).section
+            +index-section-2()(data-section).section
+            +index-section-3()(data-section).section
+

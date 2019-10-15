@@ -1,0 +1,16 @@
+mixin textfield(args)
+    .textfield.textfield_lablel-right.textfield_full-width&attributes(attributes)
+        -
+            var attrs = {
+                id: args.id,
+                type: args.type,
+                name: args.name
+            }
+            if (!!args.required) {
+                attrs.required = 'required';
+            }
+        if (args.textarea)
+            textarea&attributes(attrs).textfield__input
+        else
+            input&attributes(attrs).textfield__input
+        label(for=args.id).textfield__label!= args.placeholder

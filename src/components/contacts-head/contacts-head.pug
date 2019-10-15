@@ -1,0 +1,19 @@
+include ../clock/clock
+
+mixin contacts-head(args)
+    .contacts-head&attributes(attributes)
+        .container-fluid
+            .row
+                .col-8.col-md-3.offset-md-1
+                    .contacts-head__title Контактная информация
+        .contacts-head__content
+            +svg({ name: 'gradient' }).contacts-head__bg
+            .container-fluid.contacts-head__container-fluid
+                .row
+                    .col-md-6.offset-md-1.col-lg-2.contacts-head__phone-wrapper
+                        a.contacts-head__phone(href='tel:88002343344') 8 (800) 234-33-44
+                    .col-1.contacts-head__sep
+                    .col-md-6.offset-md-1.col-lg-3.offset-lg-0
+                        .contacts-head__text-1 Единый многоканальный номер, звонок по&nbsp;России бесплатный
+                        .contacts-head__text-2 Работаем одновременно в&nbsp;14&nbsp;регионах России, филиалы включают маркетинговые, проектные и&nbsp;монтажные подразделения
+            +clock.clock_contacts

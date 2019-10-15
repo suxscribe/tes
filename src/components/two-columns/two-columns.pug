@@ -1,0 +1,9 @@
+mixin two-columns(args)
+    block
+    .two-columns&attributes(attributes)
+        .container-fluid
+            .row.two-columns__row
+                .col-md-4.two-columns__column.two-columns__column_left
+                    -createBlock('left')
+                .col-md-4.two-columns__column.two-columns__column_right
+                    -createBlock('right')

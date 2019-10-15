@@ -1,0 +1,27 @@
+include ../solutions-navigation/solutions-navigation
+include ../mobile-slider-navigation/mobile-slider-navigation
+
+mixin applied-performances(args)
+    .applied-performances&attributes(attributes)
+        .container-fluid
+            +img({ path: args.bg }).applied-performances__bg
+            .row
+                .col-8.col-md-6.offset-md-1
+                    .applied-performances__title!=args.data.title
+                    .applied-performances__text!=args.data.text
+            .row
+                .col-md-2.offset-1
+                    +solutions-navigation({
+                      positionRight: false,
+                      data: args.data.items
+                    }).solutions-navigation_applied-performances
+                .col-xl-3.col-md-4.offset-md-1
+                    .swiper-container.applied-performances__slider
+                        .swiper-wrapper
+                            each solution in args.data.items
+                                if solution.slider
+                                    .swiper-slide.applied-performances__item
+                                        .applied-performances__item-title-1!=solution.kw
+                                        .applied-performances__item-title-2!=solution.fullName
+                                        .applied-performances__item-text!=solution.text
+        +mobile-slider-navigation({ total: '05' })

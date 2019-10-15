@@ -1,0 +1,32 @@
+mixin naming-structure(args)
+    .naming-structure&attributes(attributes)
+        .naming-structure__content.container-fluid
+            .row
+                .col-md-7.offset-md-1.naming-structure__title-1 Структура обозначения
+                .col-md-7.offset-md-1
+                    .naming-structure__structure
+                        .naming-structure__item.naming-structure__item_active(data-item='0')!=args.type
+                            .naming-structure__count 01
+                        .naming-structure__item —
+                        .naming-structure__item.naming-structure__item_default ТЭС
+                        .naming-structure__item —
+                        .naming-structure__item.naming-structure__item_active(data-item='1') Х/Х/Х
+                            .naming-structure__count 02
+                        .naming-structure__item —
+                        .naming-structure__item.naming-structure__item_active(data-item='2') Х
+                            .naming-structure__count 03
+                        .naming-structure__item —
+                        .naming-structure__item.naming-structure__item_active(data-item='3') Х
+                            .naming-structure__count 04
+                        .naming-structure__item —
+                        .naming-structure__item.naming-structure__item_active(data-item='4') Х
+                            .naming-structure__count 05
+                        .naming-structure__item —
+                        .naming-structure__item.naming-structure__item_active(data-item='5') Х
+                            .naming-structure__count 06
+                    .naming-structure__descriptions
+                        each item in args.data
+                            each desc, i in item.desc
+                                .naming-structure__description(data-desc=i)!=desc
+                .col-md-6.offset-md-1
+                    +spoiler-list({info: args.data, name: 'naming'})#naming.naming-structure__spoiler-list

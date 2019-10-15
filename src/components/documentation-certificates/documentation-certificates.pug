@@ -1,0 +1,11 @@
+mixin documentation-certificates(args)
+    .documentation-certificates.container-fluid&attributes(attributes)
+        .row
+            .col-8.col-md-6.offset-md-1.documentation-certificates__title.tpg__title-2!=args.title
+        .row
+            .col-md-7.col-xl-2.offset-md-1.documentation-certificates__text.tpg__p2!=args.text
+            .col-md-7.col-xl-5.offset-xl-0.offset-md-1
+                each item in args.data
+                    .documentation-certificates__item
+                        .documentation-certificates__item-title!=item.title
+                        a(href=item.href target="_blank").documentation-certificates__item-link!=item.size

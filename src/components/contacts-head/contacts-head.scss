@@ -1,0 +1,107 @@
+.contacts-head {
+    padding-top: 220px;
+
+    &__content {
+        position: relative;
+        padding-top: 160px;
+    }
+
+    &__container-fluid {
+        margin-bottom: 32px;
+    }
+
+    &__title {
+        @include font-2;
+        color: $color-2;
+        line-height: 1.3;
+        margin-bottom: 78px;
+    }
+
+    &__phone,
+    &__phone:hover {
+        @include font-3;
+        color: white;
+    }
+
+    &__sep {
+        @include font-3; // чтобы 1em здесь соответствовал 1em в телефоне
+        padding-right: calc(#{$col-width} * .25);
+        padding-top: .75em;
+
+        &::before {
+            content: '';
+            display: block;
+            border-top: thin solid white;
+        }
+    }
+
+    &__text-1 {
+        @include font-19;
+        color: white;
+        text-transform: uppercase;
+        line-height: 1.75;
+        margin-top: 15px;
+        margin-bottom: 52px;
+    }
+
+    &__text-2 {
+        @include font-25;
+        color: white;
+        line-height: 1.75;
+    }
+
+    &__bg {
+        @include font-12; // чтобы 1em здесь соответствовал 1em в clock
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: calc(100% - .66em);
+        padding: 0 $grid-side-offset;
+    }
+
+    @include media-breakpoint-down(md) {
+        &__sep {
+            display: none;
+        }
+    };
+
+    @include media-breakpoint-down(lg) {
+        &__text-1 {
+            margin-top: 0;
+        }
+    };
+
+    @include media-breakpoint-down(sm) {
+        padding-top: 105px;
+
+        &__title {
+            line-height: 1.5;
+            margin-bottom: 40px;
+        }
+
+        &__bg {
+            padding: 0;
+        }
+
+        &__content {
+            padding-top: 66px;
+        }
+
+        &__phone-wrapper {
+            margin-bottom: 57px;
+        }
+
+        &__text-1 {
+            margin-bottom: 26px;
+        }
+
+        &__text-2 {
+            line-height: 30px;
+        }
+
+        &__container-fluid {
+            margin-bottom: 44px;
+        }
+    }
+}

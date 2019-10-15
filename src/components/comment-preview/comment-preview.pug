@@ -1,0 +1,4 @@
+mixin comment-preview(args)
+    .comment-preview&attributes(attributes)(data-toggle="modal" data-img=args.img)
+        .comment-preview__title!= args.title
+        .comment-preview__btn посмотреть

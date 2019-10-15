@@ -1,0 +1,87 @@
+.services {
+    position: relative;
+    padding-top: $header-height;
+    padding-bottom: $footer-height;
+    overflow: hidden;
+
+    &__mobile-bg {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+    }
+
+    &__container-fluid {
+        padding-top: smooth-value(0px, 65px, 768px, 1080px, 'h');
+    }
+
+    &__right-col {
+        // без этого бордера не работает отрицательный margin на row
+        border: 1px solid transparent;
+    }
+
+    &__items {
+        margin: -3.5vh 0;
+    }
+
+    &__description {
+        padding-bottom: 20px;
+        margin-bottom: smooth-value(20px, 124px, 768px, 1080px, 'h');
+        padding-right: calc(#{$col-width} * 0.25);
+
+        @include media-breakpoint-down(xl) {
+            margin-bottom: 0;
+        }
+    }
+
+    &__service {
+        @include make-col-offset(1);
+        @include media-breakpoint-down(xxl) {
+            @include make-col-offset(0);
+            &:nth-child(3n + 1),
+            &:nth-child(3n) {
+                @include make-col(3);
+            }
+            &:nth-child(3n + 1) {
+                padding-right: calc(#{$col-width} * .25);
+            }
+            &:nth-child(3n) {
+                padding-left: calc(#{$col-width} * .25);
+            }
+        }
+        padding: 3.5vh 0;
+
+        &:nth-child(3n + 1) {
+            @include make-col-offset(0);
+        }
+    }
+
+    @include media-breakpoint-down(sm) {
+        padding-top: 3vh;
+        padding-bottom: 13.4vh;
+        background-color: $color-15;
+
+        &__service:nth-child(n) {
+            @include make-col(8);
+            @include make-col-offset(0);
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        &__container-fluid {
+            padding-top: 0;
+        }
+
+        &__swiper-wrapper {
+            display: block;
+        }
+
+        &__items {
+            margin: 0;
+        }
+    }
+
+    @include media-breakpoint-down(xl) {
+        padding-top: 100px;
+    }
+}

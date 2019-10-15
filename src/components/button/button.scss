@@ -1,0 +1,14 @@
+.button {
+    @include font-9;
+    padding: 17px 16px;
+    border: 1px solid white;
+    color: white;
+    cursor: pointer;
+    transition: border-color .5s, background-color .5s;
+    will-change: border-color, background-color;
+
+    &:hover {
+        background-color: $color-1;
+        border-color: $color-1;
+    }
+}

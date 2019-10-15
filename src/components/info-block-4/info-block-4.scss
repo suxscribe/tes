@@ -1,0 +1,52 @@
+.info-block-4 {
+  &__title {
+    margin-bottom: 40px;
+    @include font-33;
+    line-height: 1.2;
+    color: transparent;
+    -webkit-text-stroke: 1px $color-1;
+  }
+
+  &__text {
+    margin-bottom: 30px;
+    @include font-7;
+    line-height: 1.75;
+    color: $color-2;
+    text-transform: uppercase;
+  }
+
+  &__list {
+    @include font-9;
+    line-height: 1.875;
+    margin: 0;
+    padding: 0 0 0 20px;
+    color: $color-2;
+
+    & > li {
+      margin-bottom: 30px;
+    }
+  }
+  @include media-breakpoint-down(sm) {
+    &__title {
+      margin-bottom: 25px;
+      line-height: 1.4;
+    }
+    &__text {
+      line-height: 1.875;
+    }
+    &__list {
+      & > li {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+}
+.ie {
+  .info-block-4 {
+    &__title {
+      color: #fff;
+      text-shadow: -1px -1px 0 $color-1, 1px -1px 0 $color-1, -1px 1px 0 $color-1, 1px 1px 0 $color-1;
+    }
+  }
+}

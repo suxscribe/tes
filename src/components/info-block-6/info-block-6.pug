@@ -1,0 +1,13 @@
+include ../info-block-5/info-block-5
+
+mixin info-block-6(args)
+    .info-block-6&attributes(attributes)
+        .container-fluid
+            .row
+                .col-md-6.offset-md-1
+                    .info-block-6__title!= args.title
+                    +img({ path: args.img }).info-block-6__img
+                    .info-block-6__text!= args.text
+        .info-block-6__items
+            each block in args.items
+                +info-block-5(block)

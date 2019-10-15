@@ -1,0 +1,13 @@
+include ../select/select
+
+mixin filters(args)
+    .filters&attributes(attributes)
+        .filters__container
+            each select, index in args.data
+                +select(select).filters__select
+
+        if(args.reset)
+            .filters__reset
+                +svg({name: 'refresh'}).filters__reset-icon
+                span.filters__reset-text Сбросить фильтры
+

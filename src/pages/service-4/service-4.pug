@@ -1,0 +1,47 @@
+extends ../../layout/layout
+include ../../components/info-block-8/info-block-8
+include ../../components/info-block-1/info-block-1
+include ../../components/gallery/gallery
+include ../../components/advantages/advantages
+include ../../components/projects/projects
+include ../../components/adjacent-page/adjacent-page
+include ../../components/feedback/feedback
+include ../../components/static-footer/static-footer
+
+block content
+    div#barba-wrapper
+        .barba-container(data-namespace='service')
+            +info-block-8({
+              title: 'Строительство подстанций 110/35/6(10) кВ',
+              image: './images/head.jpg'
+            })
+            +info-block-1({
+              title: 'Описание',
+              text1: 'Возведение и&nbsp;комплектация &laquo;под ключ&raquo; подстанций&nbsp;&mdash; одно из&nbsp;основных направлений деятельности компании.',
+              text2: 'При строительстве мы используем собственные сертифицированные продукты, и в первую очередь — комплектные трансформаторные подстанции блочные 110, 35 кВ'
+            })(class='info-block-1_offset-vertical-top')
+            +gallery({
+              total: '03',
+              data: data.gallery.service4
+            })
+            .container-fluid.service-4__text-1
+                .row
+                    .col-md-6.offset-md-1.tpg__p1 Гибкий подход к&nbsp;проектированию позволяет применять различные типы оборудования и&nbsp;материалов.
+                    .col-md-6.offset-md-1.tpg__p2 Работа над объектом ориентирована на&nbsp;максимальное соответствие задачам заказчика, поэтому на&nbsp;практике принцип &laquo;индивидуальный подход&raquo; воплощается компанией в&nbsp;сбалансированном сочетании типовых решений и&nbsp;авангардных разработок.
+                    .col-md-6.offset-md-1.tpg__p2 Мы&nbsp;используем компоновочные решения с&nbsp;размещением ЗРУ и&nbsp;ОПУ как в&nbsp;быстровозводимых модульных, так и&nbsp;в&nbsp;капитальных зданиях.
+            +advantages({
+              title: 'Преимущества',
+              total: '03',
+              data: data.advantages.service4,
+              white: true
+            })
+            +projects.projects_product
+            +adjacent-page({
+              title: 'Реконструкция энергетических объектов до&nbsp;500&nbsp;кВ, монтаж и&nbsp;наладка электрооборудования',
+              hrefBack: '#',
+              hrefNext: '#',
+              anchor: 'Назад к услугам',
+              bg: './images/page-next.jpg'
+            })
+            +feedback
+            +static-footer

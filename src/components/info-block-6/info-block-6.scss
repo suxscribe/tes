@@ -1,0 +1,29 @@
+.info-block-6 {
+    &__title {
+        @include font-3;
+        color: $color-2;
+        margin-bottom: 64px;
+    }
+
+    &__img {
+        width: 100%;
+        margin-bottom: 80px;
+    }
+
+    &__text {
+        @include font-34;
+        color: $color-2;
+        line-height: 1.42;
+        margin-bottom: 80px;
+    }
+
+    &__items {
+        margin-bottom: 140px;
+    }
+
+    @include media-breakpoint-down(sm) {
+        &__items {
+            margin-bottom: 40px;
+        }
+    }
+}

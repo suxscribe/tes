@@ -1,0 +1,43 @@
+.news {
+    padding-top: 15vh;
+
+    &__col {
+        display: flex;
+        padding-right: calc(#{$col-width} / 4);
+    }
+
+    &__all-news {
+        will-change: opacity, visibility;
+    }
+
+    &__item {
+        width: 100%; /* ie fix */
+    }
+
+    @include media-breakpoint-down(xl) {
+        &__col:nth-child(4) {
+            display: none;
+        }
+    }
+
+    @include media-breakpoint-down(sm) {
+        padding-top: $vertical-offset-1 - 1vh;
+        padding-bottom: 4vh;
+        &__col {
+            padding-right: 0;
+            &:nth-child(3),
+            &:nth-child(4) {
+                display: none;
+            }
+
+            &:nth-child(1) {
+                order: 1;
+            }
+
+            &:nth-child(2) {
+                order: 0;
+                margin-bottom: 5.5vh;
+            }
+        }
+    }
+}

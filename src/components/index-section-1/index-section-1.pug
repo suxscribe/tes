@@ -1,0 +1,28 @@
+include ../shade/shade
+
+mixin index-section-1(args)
+    .index-section-1&attributes(attributes)
+        +autoplay-video({
+            path: '../../components/index-section-1/videos/bg.mp4',
+            autoplay: true
+        }).index-section-1__bg(data-object-fit='cover', data-keepplaying)
+        +shade
+        .index-section-1__content.container-fluid
+            .index-section-1__top-space
+            .row
+                .col-8.col-md-4.index-section-1__title-1 Таврида Энерго Строй
+                .index-section-1__block-1.col-8.col-lg-4
+                    .index-section-1__title-2 Компания
+                    .index-section-1__text-1 Строительство под ключ объектов электроэнергетики, комплексные решения в&nbsp;классе напряжений до 500&nbsp;кВ
+                    .row.d-none.d-md-flex
+                        .col-4.overflow-hidden.d-flex.flex-column.align-items-start
+                            .index-section-1__title-3
+                                span.index-section-1__region-value 12
+                                | &nbsp;регионов
+                            .index-section-1__text-2 Филиалы в&nbsp;12&nbsp;регионах России. Представительства включают не&nbsp;только маркетинговые подразделения, но&nbsp;и&nbsp;проектные и&nbsp;монтажные. Мы&nbsp;знаем регионы, понимаем их&nbsp;специфику
+                        .col-4.overflow-hidden.d-flex.flex-column.align-items-start
+                            .index-section-1__title-3
+                                span.index-section-1__year-value 20
+                                | +&nbsp;лет
+                            .index-section-1__text-2 Эффективной работы в&nbsp;сфере энергетического строительства
+            .index-section-1__bottom-space

@@ -1,0 +1,335 @@
+[
+  {
+    "name": "preloader"
+  },
+  {
+    "name": "header"
+  },
+  {
+    "name": "footer"
+  },
+  {
+    "name": "modal"
+  },
+  {
+    "name": "index-section-1"
+  },
+  {
+    "name": "index-section-2"
+  },
+  {
+    "name": "full-height"
+  },
+  {
+    "name": "shade"
+  },
+  {
+    "name": "menu"
+  },
+  {
+    "name": "sandwich-button"
+  },
+  {
+    "name": "sandwich-menu"
+  },
+  {
+    "name": "index-section-2-slide"
+  },
+  {
+    "name": "solutions-navigation"
+  },
+  {
+    "name": "service"
+  },
+  {
+    "name": "services-description"
+  },
+  {
+    "name": "services"
+  },
+  {
+    "name": "projects"
+  },
+  {
+    "name": "project"
+  },
+  {
+    "name": "slider-navigation"
+  },
+  {
+    "name": "product-head"
+  },
+  {
+    "name": "product-section-1"
+  },
+  {
+    "name": "product-map"
+  },
+  {
+    "name": "spoiler"
+  },
+  {
+    "name": "product-tail"
+  },
+  {
+    "name": "subscribe-to-news"
+  },
+  {
+    "name": "news"
+  },
+  {
+    "name": "news-preview"
+  },
+  {
+    "name": "link"
+  },
+  {
+    "name": "clock"
+  },
+  {
+    "name": "contacts"
+  },
+  {
+    "name": "static-footer"
+  },
+  {
+    "name": "construct"
+  },
+  {
+    "name": "documents"
+  },
+  {
+    "name": "document-list"
+  },
+  {
+    "name": "advantages"
+  },
+  {
+    "name": "advantage"
+  },
+  {
+    "name": "specifications"
+  },
+  {
+    "name": "specifications-list"
+  },
+  {
+    "name": "naming-structure"
+  },
+  {
+    "name": "spoiler-list"
+  },
+  {
+    "name": "form-feedback"
+  },
+  {
+    "name": "feedback"
+  },
+  {
+    "name": "cookie-message"
+  },
+  {
+    "name": "input"
+  },
+  {
+    "name": "index-section-2-slide-gradient"
+  },
+  {
+    "name": "page-navigation"
+  },
+  {
+    "name": "value-increaser"
+  },
+  {
+    "name": "electro-lines"
+  },
+  {
+    "name": "solutions"
+  },
+  {
+    "name": "product-map-slide"
+  },
+  {
+    "name": "slider-pagination"
+  },
+  {
+    "name": "product-map-slider"
+  },
+  {
+    "name": "advantage-slider"
+  },
+  {
+    "name": "viewport-tracker"
+  },
+  {
+    "name": "index-section-3"
+  },
+  {
+    "name": "mobile-slider-navigation"
+  },
+  {
+    "name": "sandwich-menu-close"
+  },
+  {
+    "name": "button"
+  },
+  {
+    "name": "services-inner"
+  },
+  {
+    "name": "service-inner"
+  },
+  {
+    "name": "services-description-inner"
+  },
+  {
+    "name": "competence"
+  },
+  {
+    "name": "gradient"
+  },
+  {
+    "name": "competence-slider"
+  },
+  {
+    "name": "competence-mobile"
+  },
+  {
+    "name": "gradient-mobile"
+  },
+  {
+    "name": "competence-item"
+  },
+  {
+    "name": "document"
+  },
+  {
+    "name": "gallery"
+  },
+  {
+    "name": "info-block-1"
+  },
+  {
+    "name": "info-block-2"
+  },
+  {
+    "name": "solution-group-inner"
+  },
+  {
+    "name": "info-block-3"
+  },
+  {
+    "name": "info-block-4"
+  },
+  {
+    "name": "two-columns"
+  },
+  {
+    "name": "applied-performances"
+  },
+  {
+    "name": "solution-image"
+  },
+  {
+    "name": "block-types"
+  },
+  {
+    "name": "info-block-5"
+  },
+  {
+    "name": "info-block-6"
+  },
+  {
+    "name": "info-block-8"
+  },
+  {
+    "name": "documentation-certificates"
+  },
+  {
+    "name": "adjacent-page"
+  },
+  {
+    "name": "subscribe"
+  },
+  {
+    "name": "news-slider"
+  },
+  {
+    "name": "company-inner"
+  },
+  {
+    "name": "object-card-grid"
+  },
+  {
+    "name": "object-card"
+  },
+  {
+    "name": "select"
+  },
+  {
+    "name": "filters"
+  },
+  {
+    "name": "endless-btn"
+  },
+  {
+    "name": "contacts-head"
+  },
+  {
+    "name": "company-list"
+  },
+  {
+    "name": "company-list-item"
+  },
+  {
+    "name": "plus"
+  },
+  {
+    "name": "map-modal"
+  },
+  {
+    "name": "company-map"
+  },
+  {
+    "name": "partners"
+  },
+  {
+    "name": "structure"
+  },
+  {
+    "name": "video-slider"
+  },
+  {
+    "name": "video"
+  },
+  {
+    "name": "video-block"
+  },
+  {
+    "name": "trust-slider"
+  },
+  {
+    "name": "comment-preview"
+  },
+  {
+    "name": "comment-preview-grid"
+  },
+  {
+    "name": "comment-modal"
+  },
+  {
+    "name": "applications"
+  },
+  {
+    "name": "numeric-list"
+  },
+  {
+    "name": "two-columns-paragraph"
+  },
+  {
+    "name": "callbacks"
+  },
+  {
+    "name": "news-card-grid"
+  }
+]

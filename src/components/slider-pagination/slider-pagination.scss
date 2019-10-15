@@ -1,0 +1,62 @@
+.slider-pagination {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  height: 100%;
+
+  .swiper-pagination-bullet {
+    width: auto;
+    height: auto;
+    @include font-14;
+    line-height: 1;
+    color: rgba($color-2, .3);
+    background: transparent;
+    outline: none;
+    opacity: 1;
+
+    &-active {
+      color: rgba($color-2, 1);
+    }
+  }
+
+  &_advantage {
+    position: absolute;
+    top: 0;
+    left: calc(#{$col-width} * 5);
+    z-index: 2;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: $col-width;
+    transform: translateX(-100%);
+
+    .swiper-pagination-current {
+      position: relative;
+      @include font-15;
+      color: rgba($color-2, 1);
+
+      &:not(:last-child) {
+        padding-bottom: 80px;
+        margin-bottom: 10px;
+      }
+
+      &:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 1px;
+        height: 70%;
+        background-color: rgba($color-2, .3);
+        transform: translateX(-50%);
+      }
+    }
+    .swiper-pagination-total {
+      @include font-15;
+      color: rgba($color-2, .2);
+    }
+    @include media-breakpoint-down(sm) {
+      display: none;
+    }
+  }
+}

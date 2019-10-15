@@ -1,0 +1,15 @@
+include ../news-preview/news-preview
+include ../link/link
+
+mixin news(args)
+    .news&attributes(attributes)
+        .container-fluid
+            .row
+                .col-md-2.col-xxl-1.news__col.align-items-end
+                    +link(href='#').news__all-news Все новости
+                .col-md-3.col-xxl-2.news__col.align-items-stretch
+                    +news-preview(data.news[0]).news__item
+                .col-md-3.col-xxl-2.news__col.align-items-stretch
+                    +news-preview(data.news[1]).news__item
+                .d-md-none.d-xxl-flex.col-xxl-2.news__col.align-items-stretch
+                    +news-preview(data.news[2]).news__item

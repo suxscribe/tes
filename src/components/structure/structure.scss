@@ -1,0 +1,98 @@
+.structure {
+  background-color: $color-5;
+  padding-bottom: 155px;
+
+  @include media-breakpoint-down(sm) {
+    padding-bottom: 54px;
+  }
+
+  & .tpg__title-2 {
+    padding: 68px $col-width 60px;
+    margin-bottom: 0;
+
+    @include media-breakpoint-down(sm) {
+      padding: 22px 30px 20px;
+    }
+  }
+  &__content {
+    background-color: white;
+  }
+  &__row {
+    border-top: 1px solid $color-7;
+  }
+  &__right {
+    display: flex;
+    padding-bottom: 35px;
+    border-top: 1px solid $color-7;
+
+    &:first-child {
+      border-top: none;
+    }
+
+    @include media-breakpoint-down(sm) {
+      flex-wrap: wrap;
+    }
+  }
+  &__city {
+    padding-top: 45px;
+    padding-right: calc(#{$col-width} / 3);
+    @include font-7;
+    line-height: 1.75;
+    color: $color-8;
+
+    @include media-breakpoint-down(lg) {
+      padding-right: 0;
+    }
+  }
+  &__title {
+    padding-top: 45px;
+    padding-right: calc(#{$col-width} / 3);
+    width: calc(#{$col-width} * 2);
+    @include font-7;
+    line-height: 2;
+    color: $color-2;
+    text-transform: uppercase;
+
+    @include media-breakpoint-down(lg) {
+      padding-left: calc(#{$col-width} / 3);
+    }
+    @include media-breakpoint-down(sm) {
+      padding: 27px 30px 20px;
+      width: 100%;
+      line-height: 1.5;
+      text-transform: none;
+    }
+  }
+  &__address {
+    padding-top: 50px;
+    padding-left: calc(#{$col-width} / 2.3);
+    @include font-42;
+    line-height: 1.875;
+    width: calc(#{$col-width} * 3);
+    color: $color-2;
+
+    & > p {
+      margin: 0 0 14px;
+      padding: 0;
+
+      &:last-child {
+        margin: 0;
+      }
+    }
+
+    & a {
+      color: $color-2;
+      text-decoration: none;
+
+      &:hover, &:focus, &:active {
+        color: $color-2;
+        text-decoration: none;
+      }
+    }
+    @include media-breakpoint-down(sm) {
+      width: 100%;
+      padding: 0 30px;
+      line-height: 1.71;
+    }
+  }
+}

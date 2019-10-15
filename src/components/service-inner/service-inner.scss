@@ -1,0 +1,154 @@
+.service-inner {
+    $root: &;
+    $plus-min-size-point: $screen-lg-min;
+    $plus-min-size-height: $fhd-height - 100px;
+    will-change: opacity, visibility;
+    display: block;
+    position: relative;
+    padding: 35px;
+    background-color: $color-5;
+    color: white;
+
+    &:hover, &:focus, &:active {
+        color: white;
+    }
+
+    &__shift-wrapper {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        will-change: transform;
+        transition: transform .5s;
+    }
+
+    &__bg-wrapper {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        will-change: opacity, visibility;
+        transition: opacity .5s, visibility .5s;
+        background-color: $color-3;
+    }
+
+    &__bg {
+        width: 100%;
+        height: 100%;
+        opacity: .8;
+        object-fit: cover;
+        pointer-events: none; // иначе ie делает жесткий переход на страницу вместо плавного
+    }
+
+    &__wrapper {
+        margin: 2vh 1vw;
+        position: relative;
+    }
+
+    &__index {
+        @include font-26;
+        color: currentColor;
+        padding-bottom: 20px;
+        margin-bottom: smooth-value(0, 40px, $plus-min-size-point, $fhd-width, 'w');
+        @media screen and (max-width: $plus-min-size-point - 1) {
+            margin-bottom: 0;
+        }
+    }
+
+    &__text {
+        @include font-7;
+        color: currentColor;
+        text-transform: uppercase;
+        margin-bottom: smooth-value(0, 96px, $plus-min-size-point, $fhd-width, 'w');
+        @media screen and (max-width: $plus-min-size-point - 1) {
+            margin-bottom: 0;
+        }
+    }
+
+    &__index,
+    &__text {
+        will-change: color;
+        transition: color .5s;
+    }
+
+    &__plus {
+        position: absolute;
+        right: 3%;
+        bottom: 3%;
+        transform: translate(-50%, -50%);
+        height: $plus-size;
+        width: $plus-size;
+        pointer-events: none;
+        color: currentColor;
+        will-change: opacity, visibility, transform;
+        transition: opacity .5s, visibility .5s, transform .5s;
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            background-color: currentColor;
+            width: 1px;
+            height: 100%;
+            left: 50%;
+        }
+
+        &::after {
+            transform: rotate(90deg);
+        }
+
+        @include media-breakpoint-up(xxl) {
+            right: 1%;
+            bottom: 2%;
+        }
+
+        @media screen and (max-height: $plus-min-size-point - 1) {
+            height: $plus-min-size;
+            width: $plus-min-size;
+        }
+    }
+
+    @include media-breakpoint-down(sm) {
+        height: 107vw;
+        padding: 12px 25px;
+
+        &__text {
+            line-height: 35px;
+        }
+    }
+
+    @include media-breakpoint-up(md) {
+        color: $color-2;
+
+        &:hover {
+            color: white;
+        }
+        #{$root}__bg-wrapper {
+            opacity: 0;
+            visibility: hidden;
+        }
+        &:hover {
+            // .25 / 1.75 * 100% / 2
+            #{$root}__bg-wrapper {
+                opacity: 1;
+                visibility: visible;
+            }
+
+            #{$root}__shift-wrapper {
+                transform: translate(.5 / 1.75 * 100% / 2, -.5 / 1.75 * 100% / 2);
+
+                @include media-breakpoint-up(lg) {
+                    transform: translate(.25 / 1.75 * 100% / 2, -.25 / 1.75 * 100% / 2);
+                }
+            }
+        }
+    }
+
+    @include media-breakpoint-down(xxxl) {
+        &__text {
+            hyphens: auto;
+        }
+    }
+}

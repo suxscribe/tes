@@ -1,0 +1,6 @@
+mixin numeric-list(args)
+    ol.numeric-list&attributes(attributes)
+        each item, i in args.items
+            li.numeric-list__item
+                .numeric-list__number!= (i + 1).toString().padStart(2, '0')
+                span!= item

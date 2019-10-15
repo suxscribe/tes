@@ -1,0 +1,70 @@
+.construct {
+  $root: &;
+  padding-bottom: 10px;
+  background-color: #fff;
+
+  &_vacancy {
+    background-color: $color-5;
+
+    #{$root}__title-1 {
+      margin-bottom: 65px;
+    }
+
+    #{$root}__title-2 {
+      display: none;
+    }
+  }
+
+  &__row {
+    padding: 0 $col-width;
+  }
+
+  &__title-1 {
+    margin-bottom: 2vh;
+    @include font-3;
+    line-height: 1.5;
+    color: $color-2;
+  }
+
+  &__title-2 {
+    @include font-21;
+    line-height: 1.42;
+    color: $color-2;
+  }
+
+  & a:not(.link) {
+    color: $color-2;
+
+    &:hover, &:focus, &:active {
+      color: $color-2;
+      text-decoration: none;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding-bottom: 50px;
+    margin-top: 50px;
+
+    &_vacancy {
+      margin-top: 0;
+
+      #{$root}__title-1 {
+        margin-bottom: 25px;
+      }
+
+      #{$root}__title-2 {
+        display: block;
+      }
+    }
+
+    &__row {
+      padding: 0;
+    }
+    &__title-1 {
+      margin-bottom: 3vh;
+    }
+    &__title-2 {
+      line-height: 1.5;
+    }
+  }
+}

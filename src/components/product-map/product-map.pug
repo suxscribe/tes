@@ -1,0 +1,19 @@
+include ../product-map-slider/product-map-slider
+
+mixin product-map(args)
+    .product-map&attributes(attributes)
+        .product-map__bg-wrapper
+            .product-map__content
+                +img({'path': args.imageFirst}).product-map__bg.product-map__bg_first
+                each pin in args.data
+                    +img({'path': pin.bg}).product-map__bg(data-image=pin.id)
+                .product-map__pins
+                    each pin in args.data
+                        .product-map__pin(style={top:pin.y, left:pin.x}, data-pin=pin.id)
+                            .product-map__popup
+                                .product-map__popup-text!= pin.title
+        +product-map-slider({
+          total: args.total,
+          title1: args.title1,
+          data: args.data
+        })

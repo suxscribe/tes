@@ -1,0 +1,12 @@
+include ../../components/subscribe-to-news/subscribe-to-news
+
+mixin subscribe(args)
+    .subscribe&attributes(attributes)
+        .subscribe__content.container-fluid
+            .row.subscribe__row
+                .subscribe__wrapper
+                    .col-8.subscribe__title-1 Хотите быть в&nbsp;курсе?
+                    .col-8
+                        +subscribe-to-news({
+                          indexPage: false
+                        })

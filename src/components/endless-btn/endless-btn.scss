@@ -1,0 +1,30 @@
+.endless-btn {
+  $root: &;
+
+  border: 1px solid $color-16;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px auto 100px;
+  @include media-breakpoint-down(md) {
+    margin-bottom: 70px;
+  }
+
+  &._is-hidden {
+    display: none;
+  }
+
+
+  &__icon {
+    width: 5px;
+    height: 70%;
+    fill: $color-16;
+  }
+
+  &_trust {
+      margin-top: 0;
+  }
+}

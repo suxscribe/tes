@@ -1,0 +1,71 @@
+.documentation-certificates {
+  padding-top: 90px;
+  &__title {
+    margin-bottom: 70px;
+  }
+  &__text {
+    padding-right: calc(#{$col-width} / 4);
+  }
+  &__item {
+    margin-bottom: 54px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    &-title {
+      margin-bottom: 32px;
+      @include font-36;
+      line-height: 1;
+      color: transparent;
+      -webkit-text-stroke: 1px $color-2;
+    }
+    &-link {
+      @include font-37;
+      line-height: 1.7;
+      color: $color-1;
+
+      &:hover, &:focus, &:active {
+        color: $color-1;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(lg) {
+    &__text {
+      padding-right: 0;
+      margin-bottom: 45px;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding-top: 0;
+
+    &__title {
+      margin-bottom: 30px;
+      line-height: 1.33;
+    }
+    &__text {
+      margin-bottom: 28px;
+      line-height: 1.875;
+    }
+    &__item {
+      margin-bottom: 42px;
+
+      &-title {
+        margin-bottom: 15px;
+        color: $color-2;
+        -webkit-text-stroke: 0 transparent;
+      }
+    }
+  }
+}
+
+.ie {
+  .documentation-certificates {
+    &__item {
+      &-title {
+        color: white;
+        text-shadow: -1px -1px 0 $color-2, 1px -1px 0 $color-2, -1px 1px 0 $color-2, 1px 1px 0 $color-2;
+      }
+    }
+  }
+}

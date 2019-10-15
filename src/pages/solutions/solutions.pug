@@ -1,0 +1,22 @@
+extends ../../layout/layout
+include ../../components/solution-group-inner/solution-group-inner
+include ../../components/static-footer/static-footer
+include ../../components/feedback/feedback
+include ../../components/page-navigation/page-navigation
+
+block content
+    div#barba-wrapper
+        .barba-container.barba-container-inner(data-namespace='solutions')
+            +page-navigation
+            .container-fluid
+                .row
+                    .col-8.col-md-7.offset-md-1
+                        .tpg__title Решения
+            each solutionGroup in data.solutions
+                +solution-group-inner({
+                    title: solutionGroup.title,
+                    text: solutionGroup.text,
+                    solutions: solutionGroup.items,
+                })(data-page-nav-item=solutionGroup.title)
+            +feedback
+            +static-footer
