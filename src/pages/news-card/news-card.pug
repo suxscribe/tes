@@ -1,6 +1,7 @@
 extends ../../layout/layout
 include ../../components/static-footer/static-footer
 include ../../components/subscribe/subscribe
+include ../../components/news-modal/news-modal
 include ../../components/info-block-8/info-block-8
 include ../../components/info-block-1/info-block-1
 include ../../components/info-block-5/info-block-5
@@ -11,7 +12,8 @@ include ../../components/video-block/video-block
 
 block content
     div#barba-wrapper
-        .barba-container(data-namespace='objectCard')
+        .barba-container(data-namespace='newsCard')
+            +news-modal({'dataSrc':'../../pages/trust/images/comm1.jpg'})(id='modalPreview1').news-modal__modal
             +info-block-8({
                 title: 'Энергоснабжение стадиона &laquo;Мордовия Арена&raquo;',
                 image: '../../pages/object-card/images/head.jpg',

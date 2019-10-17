@@ -1,0 +1,60 @@
+.news-modal-popup {
+  $root: &;
+
+  .modal-content {
+    background-color: transparent;
+
+    @include media-breakpoint-down(xs) {
+      padding-top: 80px;
+    }
+  }
+
+  .modal__close {
+    border-color: white;
+    top: 0;
+    right: auto;
+    left: calc(50% + 764px / 2 + 20px);
+
+    @media screen and (max-width: 950px) {
+      border-color: black;
+      right: 20px;
+      left: auto;
+      background-color: white;
+      top: 20px;
+    }
+
+    @include media-breakpoint-down(xs) {
+      border-color: white;
+      right: 0;
+      background-color: transparent;
+      width: 50px;
+      height: 50px;
+    }
+
+    .sandwich-menu-close__line {
+      background-color: white;
+
+      @media screen and (max-width: 950px) {
+        background-color: black;
+      }
+      @include media-breakpoint-down(xs) {
+        background-color: white;
+      }
+    }
+  }
+
+  &__content {
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &-img {
+      max-width: 764px;
+      @media screen and (max-width: 950px) {
+        width: 100%;
+        max-width: none;
+      }
+    }
+  }
+}

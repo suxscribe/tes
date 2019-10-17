@@ -1,0 +1,6 @@
+include ../modal/modal
+
+mixin news-modal(args)
+    +modal.news-modal-popup&attributes(attributes)
+        .news-modal-popup__content
+            +img({path: args.dataSrc})(data-object-fit='cover').news-modal-popup__content-img

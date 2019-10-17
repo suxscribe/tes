@@ -1,7 +1,7 @@
 mixin info-block-5(args)
     .info-block-5.container-fluid&attributes(attributes)
         .row
-            .col-8.col-md-6.col-xl-3.info-block-5__col-1
+            .col-8.col-md-6.col-xl-3.info-block-5__col-1.news-modal__toggle.news-modal(data-toggle='modal', data-img=`${args.img}`)
                 +img({ path: args.img }).info-block-5__img
             .col-8.col-md-6.col-xl-3.info-block-5__col-2
                 if args.title

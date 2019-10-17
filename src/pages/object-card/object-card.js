@@ -8,6 +8,8 @@ import VidoBlock from '../../components/video-block/video-block';
 import NewsPreview from '../../components/news-preview/news-preview';
 import { prepareForShiftBottomAnim, destroyShiftBottomAnim } from '../../components/header/animations';
 import ScrollingMobile from '../../components/full-height/scrolling-mobile';
+import NewsModal from '../../components/news-modal/news-modal';
+
 
 let scrolling;
 
@@ -30,6 +32,10 @@ Barba.BaseView.extend({
     }
     if(nFindComponent('news-preview', this.nRoot)) {
       this.newsPreview = new NewsPreview(nFindComponent('news-preview', this.nRoot));
+    }
+
+    if(nFindComponent('news-modal', this.nRoot)) {
+      this.newsModal = new NewsModal(nFindComponent('news-modal', this.nRoot));
     }
 
     if(nFindComponent('gallery', this.nRoot)) {
@@ -60,6 +66,9 @@ Barba.BaseView.extend({
     }
     if (this.newsPreview) {
       this.newsPreview.destroy();
+    }
+    if (this.newsModal) {
+      this.newsModal.destroy();
     }
   },
   onLeaveCompleted() {

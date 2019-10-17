@@ -17,7 +17,7 @@ class InfoBlock8 extends Component {
   }
 
   initMobile() {
-    
+
   }
 
   destroy() {

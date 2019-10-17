@@ -2,11 +2,10 @@ include ../shade/shade
 
 mixin index-section-1(args)
     .index-section-1&attributes(attributes)
-        .index-section-1__bg-wrapper
-            +autoplay-video({
-                path: '../../components/index-section-1/videos/bg.mp4',
-                autoplay: true
-            }).index-section-1__bg(data-object-fit='cover', data-keepplaying)
+        +autoplay-video({
+            path: '../../components/index-section-1/videos/bg.mp4',
+            autoplay: true
+        }).index-section-1__bg(data-object-fit='cover', data-keepplaying)
         +shade
         .index-section-1__content.container-fluid
             .index-section-1__top-space
