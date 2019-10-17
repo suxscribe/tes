@@ -3,6 +3,7 @@ include ../projects/projects
 include ../subscribe-to-news/subscribe-to-news
 include ../news/news
 include ../clock/clock
+include ../map-modal/map-modal
 include ../contacts/contacts
 include ../static-footer/static-footer
 include ../header/header
@@ -19,5 +20,6 @@ mixin index-section-3(args)
             })
             +news
             +clock
+            +map-modal(id=`map-modal`, data-lat='-30.397', data-lng='150.644')
             +contacts
             +static-footer

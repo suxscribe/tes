@@ -13,3 +13,6 @@ dataFilters.html
 dataFilters.json
 dataCommentPreview.json
 package-lock.json
+sftp-config.json
+tes.sublime-workspace
+tes.sublime-project
