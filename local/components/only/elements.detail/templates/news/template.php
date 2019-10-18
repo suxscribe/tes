@@ -12,15 +12,16 @@
 /** @global CDatabase $DB */
 
 ?>
-<div class="news-preview-grid__modal">
-    <div class="modal fade news-modal news-preview__modal" id="modalPreview1">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="news-modal__content"><img class="news-modal__content-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="media/comm1.46f9f81f.jpg" data-object-fit="cover" /></div>
-                <div class="sandwich-menu-close sandwich-menu__close modal__close" data-dismiss="modal">
-                    <div class="sandwich-menu-close__line sandwich-menu-close__line_top"></div>
-                    <div class="sandwich-menu-close__line sandwich-menu-close__line_bottom"></div>
-                </div>
+<div class="news-modal-list">
+<div class="modal fade news-modal-popup news-modal__modal" id="modalPreview1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="news-modal-popup__content"><img class="news-modal-popup__content-img" src=
+            "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src=
+            "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-object-fit="cover"></div>
+            <div class="sandwich-menu-close sandwich-menu__close modal__close" data-dismiss="modal">
+                <div class="sandwich-menu-close__line sandwich-menu-close__line_top"></div>
+                <div class="sandwich-menu-close__line sandwich-menu-close__line_bottom"></div>
             </div>
         </div>
     </div>
@@ -54,7 +55,7 @@
 <div class="info-block-5 container-fluid info-block-5_detail info-block-5_detail-reverse">
     <div class="row">
         <?if (!empty($arResult['PROPERTIES']['IMAGE_PART_1']['VALUE']['SRC'])):?>
-        <div class="col-8 col-md-6 col-xl-3 info-block-5__col-1 news-preview" data-toggle="modal" data-img="<?=$arResult['PROPERTIES']['IMAGE_PART_1']['VALUE']['SRC']?>">
+        <div class="col-8 col-md-6 col-xl-3 info-block-5__col-1 news-modal-list__modal news-modal" data-toggle="modal" data-img="<?=$arResult['PROPERTIES']['IMAGE_PART_1']['VALUE']['SRC']?>">
             <img class="info-block-5__img"
                  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
                  data-src="<?=$arResult['PROPERTIES']['IMAGE_PART_1']['VALUE']['SRC']?>"/>
@@ -85,7 +86,7 @@
 <div class="info-block-5 container-fluid info-block-5_detail">
     <div class="row">
         <?if (!empty($arResult['PROPERTIES']['IMAGE_PART_2']['VALUE'])):?>
-        <div class="col-8 col-md-6 col-xl-3 info-block-5__col-1 news-preview" data-toggle="modal" data-img="<?=$arResult['PROPERTIES']['IMAGE_PART_2']['VALUE']['SRC']?>">
+        <div class="col-8 col-md-6 col-xl-3 info-block-5__col-1 news-modal-list__modal news-modal" data-toggle="modal" data-img="<?=$arResult['PROPERTIES']['IMAGE_PART_2']['VALUE']['SRC']?>">
             <img class="info-block-5__img"
                  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
                  data-src="<?=$arResult['PROPERTIES']['IMAGE_PART_2']['VALUE']['SRC']?>"/>
@@ -115,7 +116,7 @@
     <div class="info-block-5 container-fluid info-block-5_detail info-block-5_detail-reverse">
         <div class="row">
             <?if (!empty($arResult['PROPERTIES']['IMAGE_PART_3']['VALUE']['SRC'])):?>
-                <div class="col-8 col-md-6 col-xl-3 info-block-5__col-1 news-preview" data-toggle="modal" data-img="<?=$arResult['PROPERTIES']['IMAGE_PART_3']['VALUE']['SRC']?>">
+                <div class="col-8 col-md-6 col-xl-3 info-block-5__col-1 news-modal-list__modal news-modal" data-toggle="modal" data-img="<?=$arResult['PROPERTIES']['IMAGE_PART_3']['VALUE']['SRC']?>">
                     <img class="info-block-5__img"
                          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
                          data-src="<?=$arResult['PROPERTIES']['IMAGE_PART_3']['VALUE']['SRC']?>"/>
@@ -146,7 +147,7 @@
     <div class="info-block-5 container-fluid info-block-5_detail info-block-5_detail-reverse">
         <div class="row">
             <?if (!empty($arResult['PROPERTIES']['IMAGE_PART_4']['VALUE']['SRC'])):?>
-                <div class="col-8 col-md-6 col-xl-3 info-block-5__col-1 news-preview" data-toggle="modal" data-img="<?=$arResult['PROPERTIES']['IMAGE_PART_4']['VALUE']['SRC']?>">
+                <div class="col-8 col-md-6 col-xl-3 info-block-5__col-1 news-modal-list__modal news-modal" data-toggle="modal" data-img="<?=$arResult['PROPERTIES']['IMAGE_PART_4']['VALUE']['SRC']?>">
                     <img class="info-block-5__img"
                          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
                          data-src="<?=$arResult['PROPERTIES']['IMAGE_PART_4']['VALUE']['SRC']?>"/>
@@ -175,7 +176,7 @@
         </div>
     </div>
 <?endif;?>
-
+</div>
 
 <?if (!empty($arResult['PROPERTIES']['PHOTOS']['VALUE']) && is_array($arResult['PROPERTIES']['PHOTOS']['VALUE'])):?>
 <div class="gallery gallery_nav-vertival">

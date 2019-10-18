@@ -334,5 +334,8 @@
   },
   {
     "name": "news-modal"
+  },
+  {
+    "name": "news-modal-list"
   }
 ]

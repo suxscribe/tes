@@ -7,7 +7,7 @@ import Gallery from '../../components/gallery/gallery';
 import VidoBlock from '../../components/video-block/video-block';
 import { prepareForShiftBottomAnim, destroyShiftBottomAnim } from '../../components/header/animations';
 import ScrollingMobile from '../../components/full-height/scrolling-mobile';
-import NewsModal from '../../components/news-modal/news-modal';
+import NewsModalList from '../../components/news-modal-list/news-modal-list';
 
 
 let scrolling;
@@ -35,8 +35,8 @@ Barba.BaseView.extend({
     if (nFindComponent('video-block', this.nRoot)) {
       this.videoBlock = new VidoBlock(nFindComponent('video-block', this.nRoot));
     }
-    if(nFindComponent('news-modal', this.nRoot)) {
-      this.newsModal = new NewsModal(nFindComponent('news-modal', this.nRoot));
+    if(nFindComponent('news-modal-list', this.nRoot)) {
+      this.newsModalList = new NewsModalList(nFindComponent('news-modal-list', this.nRoot));
     }
 
     if (getDeviceType() === 'mobile') {
@@ -59,8 +59,8 @@ Barba.BaseView.extend({
     if (this.videoBlock) {
       this.videoBlock.destroy();
     }
-    if (this.newsModal) {
-      this.newsModal.destroy();
+    if (this.newsModalList) {
+      this.newsModalList.destroy();
     }
 
   },

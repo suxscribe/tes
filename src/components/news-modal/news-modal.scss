@@ -1,3 +1,11 @@
+.news-modal {
+  $root: &;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
 .news-modal-popup {
   $root: &;
 
@@ -12,8 +20,8 @@
   .modal__close {
     border-color: white;
     top: 0;
-    right: auto;
-    left: calc(50% + 764px / 2 + 20px);
+    right: 0;
+    left: auto;
 
     @media screen and (max-width: 950px) {
       border-color: black;
@@ -48,9 +56,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 80px;
 
     &-img {
-      max-width: 764px;
+      max-width: 100%;
       @media screen and (max-width: 950px) {
         width: 100%;
         max-width: none;
