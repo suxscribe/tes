@@ -178,6 +178,7 @@
 <?endif;?>
 </div>
 
+
 <?if (!empty($arResult['PROPERTIES']['PHOTOS']['VALUE']) && is_array($arResult['PROPERTIES']['PHOTOS']['VALUE'])):?>
 <div class="gallery gallery_nav-vertival">
     <div class="container-fluid">
@@ -210,11 +211,11 @@
                                 <?foreach ($arResult['PROPERTIES']['PHOTOS']['VALUE'] as $arImage):?>
                                 <div class="swiper-slide gallery__swiper-slide">
                                     <div class="gallery__space"></div>
-                                    <div class="gallery__wrapper">
+                                    <a class="gallery__wrapper" href="<?=$arImage['SRC']?>">
                                         <div class="gallery__bg-wrapper">
                                             <img class="gallery__bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="<?=$arImage['SRC']?>" data-object-fit="cover"/>
                                         </div>
-                                    </div>
+                                    </a>
                                 </div>
                                 <?endforeach;?>
                             </div>
