@@ -2,21 +2,56 @@ include ../mobile-slider-navigation/mobile-slider-navigation
 include ../gallery-navigation/gallery-navigation
 
 mixin gallery(args)
-    .gallery&attributes(attributes)
-        +gallery-navigation
-        .container-fluid
-            .row
-                .col-8
-                    .gallery__slider
-                        +mobile-slider-navigation({ total: args.total }).mobile-slider-navigation_gallery.mobile-slider-navigation_dark
-                        .gallery__content.d-flex.justify-content-between.col__fix-left.col__fix-right
-                            each i in range(data.advantageSliderCount)
-                                .swiper-container.gallery__swiper-container
-                                    .swiper-wrapper.gallery__swiper-wrapper
-                                        each item in args.data
-                                            each image in item.images
-                                                .swiper-slide.gallery__swiper-slide
-                                                    .gallery__space
-                                                    .gallery__wrapper
-                                                        .gallery__bg-wrapper
-                                                            +img({ path: image }).gallery__bg(data-object-fit='cover')
+	.gallery&attributes(attributes)
+		//- +gallery-navigation
+		.container-fluid
+			.row
+				.col-8
+					.gallery__slider
+						+mobile-slider-navigation({ total: args.total }).mobile-slider-navigation_gallery.mobile-slider-navigation_dark
+						.gallery__content.d-flex.justify-content-between.col__fix-left.col__fix-right
+							each i in range(data.advantageSliderCount)
+								.swiper-container.gallery__swiper-container
+									.swiper-wrapper.gallery__swiper-wrapper
+										each item in args.data
+											- var n = 0
+											each image in item.images
+												.swiper-slide.gallery__swiper-slide
+													.gallery__space
+													.gallery__wrapper
+														- n++
+														a.gallery__bg-wrapper(data-size='1200x600',itemprop="contentUrl",href='http://placehold.it/600x300/1976D2/ffffff?text=' + n)
+															+img({ path: image }).gallery__bg(data-object-fit='cover')
+					.pswp(tabindex='-1', role='dialog', aria-hidden='true')
+						.pswp__bg
+						.pswp__scroll-wrap
+							.pswp__container
+								.pswp__item
+								.pswp__item
+								.pswp__item
+							.pswp__ui.pswp__ui--hidden
+								.pswp__top-bar
+									.pswp__counter
+									+sandwich-menu-close.modal__close.pswp__button.pswp__button--close
+									button.pswp__button.pswp__button--close(title='Close (Esc)')
+									button.pswp__button.pswp__button--share(title='Share')
+									button.pswp__button.pswp__button--fs(title='Toggle fullscreen')
+									button.pswp__button.pswp__button--zoom(title='Zoom in/out')
+									.pswp__preloader
+										.pswp__preloader__icn
+											.pswp__preloader__cut
+												.pswp__preloader__donut
+								.pswp__share-modal.pswp__share-modal--hidden.pswp__single-tap
+									.pswp__share-tooltip
+								//- button.pswp__button.pswp__button--arrow--left(title='Previous (arrow left)')
+								//- button.pswp__button.pswp__button--arrow--right(title='Next (arrow right)')
+								button.gallery-navigation__arrow.gallery-navigation__arrow_prev.pswp__button.pswp__button--arrow--left
+									.gallery-navigation__arrow-wrapper
+										svg
+											use(xlink:href='#arrow-left')
+								button.gallery-navigation__arrow.gallery-navigation__arrow_next.pswp__button.pswp__button--arrow--right
+									.gallery-navigation__arrow-wrapper
+										svg
+											use(xlink:href='#arrow-right')
+								//- .pswp__caption
+									//- .pswp__caption__center

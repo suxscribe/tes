@@ -65,4 +65,49 @@
       padding-top: $advantage-slide-ratio-factor-small * 100%;
     }
   }
+
+  .pswp {
+
+    &__bg {
+      background-color: rgba(0,0,0,0.5);
+    }
+
+    &__ui--fit {
+
+    }
+
+    &__top-bar {
+      background: none;
+    }
+
+    $arrow-side-margin: 40px;
+
+    &__button--arrow--left {
+      margin-top: 0;
+      left: $arrow-side-margin;
+    }
+    &__button--arrow--right {
+      margin-top: 0;
+      right: $arrow-side-margin;
+    }
+
+    &__button--arrow--left:before, &__button--arrow--right:before {
+      background: none;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+    }
+
+    .modal__close {
+      border-color: white;
+
+      .sandwich-menu-close__line {
+            background-color: white;
+
+      }
+    }
+
+  }
 }

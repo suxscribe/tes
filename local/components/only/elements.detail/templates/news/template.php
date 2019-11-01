@@ -211,11 +211,11 @@
                                 <?foreach ($arResult['PROPERTIES']['PHOTOS']['VALUE'] as $arImage):?>
                                 <div class="swiper-slide gallery__swiper-slide">
                                     <div class="gallery__space"></div>
-                                    <a class="gallery__wrapper" href="<?=$arImage['SRC']?>">
-                                        <div class="gallery__bg-wrapper">
+                                    <div class="gallery__wrapper">
+                                        <a class="gallery__bg-wrapper no-barba" href="<?=$arImage['SRC']?>" data-size="<?=$arImage['WIDTH']?>x<?=$arImage['HEIGHT']?>">
                                             <img class="gallery__bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="<?=$arImage['SRC']?>" data-object-fit="cover"/>
-                                        </div>
-                                    </a>
+                                        </a>
+                                    </div>
                                 </div>
                                 <?endforeach;?>
                             </div>
@@ -223,10 +223,61 @@
                         <?endfor;?>
                     </div>
                 </div>
+                <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="pswp__bg"></div>
+                    <div class="pswp__scroll-wrap">
+                        <div class="pswp__container">
+                            <div class="pswp__item"></div>
+                            <div class="pswp__item"></div>
+                            <div class="pswp__item"></div>
+                        </div>
+                        <div class="pswp__ui pswp__ui--hidden">
+                            <div class="pswp__top-bar">
+                                <div class="pswp__counter"></div>
+                                <div class="sandwich-menu-close sandwich-menu__close modal__close pswp__button pswp__button--close">
+                                    <div class="sandwich-menu-close__line sandwich-menu-close__line_top"></div>
+                                    <div class="sandwich-menu-close__line sandwich-menu-close__line_bottom"></div>
+                                </div>
+                                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                                <button class="pswp__button pswp__button--share" title="Share"></button>
+                                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                                <div class="pswp__preloader">
+                                    <div class="pswp__preloader__icn">
+                                        <div class="pswp__preloader__cut">
+                                            <div class="pswp__preloader__donut"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                                <div class="pswp__share-tooltip"></div>
+                            </div>
+                            <button class="gallery-navigation__arrow gallery-navigation__arrow_prev pswp__button pswp__button--arrow--left">
+                                <div class="gallery-navigation__arrow-wrapper">
+                                    <svg>
+                                        <use xlink:href="#arrow-left"></use>
+                                    </svg>
+                                </div>
+                            </button>
+                            <button class="gallery-navigation__arrow gallery-navigation__arrow_next pswp__button pswp__button--arrow--right">
+                                <div class="gallery-navigation__arrow-wrapper">
+                                    <svg>
+                                        <use xlink:href="#arrow-right"></use>
+                                    </svg>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
+
+
+
 <?endif;?>
 <?if (!empty($arResult['PROPERTIES']['VIDEO_LINK']['VALUE'])): ?>
     <div class="video-block container-fluid">
