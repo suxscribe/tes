@@ -37,9 +37,9 @@ class Gallery extends Component {
           el: this.mobileSliderNavigation.nFind('progress'),
           type: 'progressbar',
         },
-        keyboard: {
+        /*keyboard: {
                 enabled: true,
-        }
+        }*/
       });
     });
     this.moveNext = this.moveNext.bind(this);
@@ -168,34 +168,6 @@ class Gallery extends Component {
         return false;
       };
 
-      // parse picture index and gallery index from URL (#&pid=1&gid=2)
-      /*var photoswipeParseHash = function() {
-        var hash = window.location.hash.substring(1),
-          params = {};
-
-        if (hash.length < 5) {
-          return params;
-        }
-
-        var vars = hash.split("&");
-        for (var i = 0; i < vars.length; i++) {
-          if (!vars[i]) {
-            continue;
-          }
-          var pair = vars[i].split("=");
-          if (pair.length < 2) {
-            continue;
-          }
-          params[pair[0]] = pair[1];
-        }
-
-        if (params.gid) {
-          params.gid = parseInt(params.gid, 10);
-        }
-
-        return params;
-      };*/
-
       var openPhotoSwipe = function(index,galleryElement,disableAnimation,fromURL) {
         var pswpElement = document.querySelectorAll(".pswp")[0],
           gallery,
@@ -220,42 +192,16 @@ class Gallery extends Component {
           timeToIdle: null,
           history:false,
           allowUserZoom: false,
+          arrowKeys: false,
           /* "showHideOpacity" uncomment this If dimensions of your small thumbnail don't match dimensions of large image */
           showHideOpacity:true, //fade animation
           // define gallery index (for URL)
           galleryUID: galleryElement.getAttribute("data-pswp-uid"),
-          //disable function for zoom animation
-          /*getThumbBoundsFn: function(index) {
-            // See Options -> getThumbBoundsFn section of documentation for more info
-            var thumbnail = items[index].el.getElementsByTagName("img")[0], // find thumbnail
-              pageYScroll =
-                window.pageYOffset || document.documentElement.scrollTop,
-              rect = thumbnail.getBoundingClientRect();
 
-            return { x: rect.left, y: rect.top + pageYScroll, w: rect.width };
-          }*/
         };
 
-        // PhotoSwipe opened from URL
-        /*if (fromURL) {
-          if (options.galleryPIDs) {
-            // parse real index when custom PIDs are used
-            // http://photoswipe.com/documentation/faq.html#custom-pid-in-url
-            for (var j = 0; j < items.length; j++) {
-              if (items[j].pid == index) {
-                options.index = j;
-                break;
-              }
-            }
-          } else {
-            // in URL indexes start from 1
-            options.index = parseInt(index, 10) - 1;
-          }
-        } else {*/
+        options.index = parseInt(index, 10);
 
-          options.index = parseInt(index, 10);
-
-        // }
 
         // exit if index not found
         if (isNaN(options.index)) {
@@ -277,10 +223,12 @@ class Gallery extends Component {
         gallery.listen("unbindEvents", function() {
           // This is index of current photoswipe slide
           var getCurrentIndex = gallery.getCurrentIndex();
+
+          //document.querySelector('.pswp__button--arrow--right').removeEventListener('click', this.moveNext);
+          //document.querySelector('.pswp__button--arrow--left').removeEventListener('click', this.movePrev);
+
           // Update position of the slider
-
           // console.log(document.querySelector('.swiper-container').swiper);
-
 
 /*          const swipers = document.querySelectorAll('.swiper-container');
           let swipeObj = [];
@@ -298,10 +246,49 @@ class Gallery extends Component {
 
         });
 
+        var oldIndex = 0;
+
+
+
+        gallery.listen('beforeChange', function() {
+          var getCurrentIndex = gallery.getCurrentIndex();
+          var lastIndex = gallery.options.getNumItemsFn() - 1;
+          var isDragging = gallery.isDragging();
+          console.log(getCurrentIndex);
+          console.log('total' + lastIndex);
+          console.log(isDragging); //mouse click only. click button - true
+
+          //TODO if not click and not keypress - swipe this
+          //how to detect keypress here?
+
+
+
+          if (!isDragging ) {
+            if (getCurrentIndex == 0 && oldIndex == lastIndex) {
+              console.log('right');
+            } else if (getCurrentIndex == lastIndex && oldIndex == 0) {
+              console.log('left');
+            } else if (getCurrentIndex > oldIndex && getCurrentIndex != 0) {
+              console.log('right');
+            } else {
+              console.log('left');
+            }
+          }
+
+
+          oldIndex = getCurrentIndex;
+          // const swipers = document.querySelectorAll('.swiper-container');
+          // swipers[0].swiper.slideTo(getCurrentIndex, false);
+        });
+
+
         gallery.listen('afterChange', function() {
           var getCurrentIndex = gallery.getCurrentIndex();
           console.log(getCurrentIndex);
-          console.log(getCurrentIndex-1);
+
+
+          // console.log(gallery.isDragging());
+          // console.log(getCurrentIndex-1);
 
           //buggy when it loops
           /*const swipers = document.querySelectorAll('.swiper-container');
@@ -315,11 +302,12 @@ class Gallery extends Component {
 
           });*/
 
-          const swipers = document.querySelectorAll('.swiper-container');
+          /*const swipers = document.querySelectorAll('.swiper-container');
             swipers.forEach(item => {
               item.swiper.slideNext();
-          });
-              // swipers[0].swiper.slideNext();
+              swipers[0].swiper.slideNext();
+              //todo при клике назад делать slideprev
+          });*/
 
         });
 
@@ -333,20 +321,14 @@ class Gallery extends Component {
         galleryElements[i].onclick = onThumbnailsClick;
       }
 
-      // Parse URL and open gallery if it contains #&pid=3&gid=1
-      //var hashData = photoswipeParseHash();
-      /*if (hashData.pid && hashData.gid) {
-        openPhotoSwipe(hashData.pid, galleryElements[hashData.gid - 1], true, true);
-      }*/
-
     // }
+
 
 
     // execute above function
     // this.initPhotoSwipeFromDOM(".gallery__swiper-container");
 
-
-// END PHOTOSWIPE ==================================================
+  // END PHOTOSWIPE ==================================================
 
 
 
@@ -357,6 +339,42 @@ class Gallery extends Component {
     this.swipers.forEach((swiper) => { swiper.params.pagination.progressbarOpposite = true; });
     document.querySelector('.pswp__button--arrow--right').addEventListener('click', this.moveNext);
     document.querySelector('.pswp__button--arrow--left').addEventListener('click', this.movePrev);
+
+    document.onkeydown = checkKey;
+    function checkKey(e) {
+
+        e = e || window.event;
+
+        if (e.keyCode == '38') {
+            // up arrow
+        }
+        else if (e.keyCode == '40') {
+            // down arrow
+        }
+        else if (e.keyCode == '37') {
+           // this.movePrev;
+           console.log('moveprev');
+           document.querySelector('.pswp__button--arrow--left').click();
+        }
+        else if (e.keyCode == '39') {
+           // this.moveNext;
+           console.log('movenext');
+           document.querySelector('.pswp__button--arrow--right').click();
+        }
+    }
+    var isKey = false;
+
+    document.addEventListener("keydown", function onEvent(event) {
+        if (event.keyCode == '37') {
+          isKey = true;
+        }
+        else if (event.keyCode == '39') {
+          isKey = true;
+        }
+        console.log('isKey' + isKey);
+    });
+
+
   }
 
   initMobile() {
@@ -427,6 +445,9 @@ class Gallery extends Component {
       this.mobileSliderNavigation.nFindSingle('next').removeEventListener('click', this.moveNext);
       this.mobileSliderNavigation.nFindSingle('prev').removeEventListener('click', this.movePrev);
     }
+
+    document.querySelector('.pswp__button--arrow--right').removeEventListener('click', this.moveNext);
+    document.querySelector('.pswp__button--arrow--left').removeEventListener('click', this.movePrev);
   }
 }
 
