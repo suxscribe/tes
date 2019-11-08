@@ -37,9 +37,9 @@ class Gallery extends Component {
           el: this.mobileSliderNavigation.nFind('progress'),
           type: 'progressbar',
         },
-        /*keyboard: {
+        keyboard: {
                 enabled: true,
-        }*/
+        }
       });
     });
     this.moveNext = this.moveNext.bind(this);
@@ -192,7 +192,7 @@ class Gallery extends Component {
           timeToIdle: null,
           history:false,
           allowUserZoom: false,
-          arrowKeys: false,
+          // arrowKeys: false,
           /* "showHideOpacity" uncomment this If dimensions of your small thumbnail don't match dimensions of large image */
           showHideOpacity:true, //fade animation
           // define gallery index (for URL)
@@ -218,11 +218,25 @@ class Gallery extends Component {
 
         /* EXTRA CODE (NOT FROM THE CORE) - UPDATE SWIPER POSITION TO THE CURRENT ZOOM_IN IMAGE (BETTER UI) */
 
+        // OPEN LIGHTBOX
+        gallery.listen('initialZoomInEnd', function() {
+
+          const swipers = document.querySelectorAll('.swiper-container');
+          swipers.forEach(item => {
+            //disable swiper keyboard when open lightbox.
+            item.swiper.keyboard.disable();
+
+          });
+
+        });
+
         // photoswipe event: Gallery unbinds events
         // (triggers before closing animation)
         gallery.listen("unbindEvents", function() {
           // This is index of current photoswipe slide
           var getCurrentIndex = gallery.getCurrentIndex();
+          var lastIndex = gallery.options.getNumItemsFn() - 1;
+          // console.log('current index' + getCurrentIndex);
 
           //document.querySelector('.pswp__button--arrow--right').removeEventListener('click', this.moveNext);
           //document.querySelector('.pswp__button--arrow--left').removeEventListener('click', this.movePrev);
@@ -230,40 +244,68 @@ class Gallery extends Component {
           // Update position of the slider
           // console.log(document.querySelector('.swiper-container').swiper);
 
-/*          const swipers = document.querySelectorAll('.swiper-container');
-          let swipeObj = [];
+          const swipers = document.querySelectorAll('.swiper-container');
+          var realIndex = swipers[1].swiper.realIndex;
+
+
+          var slideTo = 0;
+          if (getCurrentIndex === 0) {
+            slideTo = lastIndex;
+            swipers[1].swiper.slideTo(slideTo, false);
+            var lastRealIndex =  swipers[1].swiper.realIndex;
+            swipers[1].swiper.slideTo(lastRealIndex, false);
+
+            //swipers[1].swiper.slidePrev();
+            // console.log('slide');
+          } else if (getCurrentIndex === lastIndex) {
+            //TODO IF CURRENT INDEX == LAST need to fix 3rd swiper
+            slideTo = lastIndex;
+            swipers[1].swiper.slideTo(slideTo, false);
+            var lastRealIndex =  swipers[1].swiper.realIndex;
+            swipers[1].swiper.slideTo(lastRealIndex-1, false);
+          } else {
+            slideTo = getCurrentIndex - 1;
+            swipers[1].swiper.slideTo(slideTo, false);
+          }
+
+          // rebind swipers to eachother and enable keyboard
+          let swiperObj = [];
+
           swipers.forEach(item => {
-            item.swiper.slideTo(getCurrentIndex, false);
-            item.swiper.slideTo(item.swiper.realIndex, false);
+            item.swiper.controller.control = null;
+            swiperObj.push(item.swiper);
+            item.swiper.keyboard.enable();
+          });
+          const swipersToControl = swiperObj.concat();
+          swipersToControl.splice(2, 1);
+          swiperObj[2].controller.control = swipersToControl;
 
-            // item.swiper.loopDestroy();
-            // item.swiper.loopCreate();
-
-          });*/
-
+          // let swipeObj = [];
           // swipeObj.forEach(swiper => swiper.update());
           // document.querySelectorAll('.swiper-container').forEach(item => item.swiper.slideTo(getCurrentIndex, false));
 
+
+
         });
 
+
         var oldIndex = 0;
-
-
-
         gallery.listen('beforeChange', function() {
-          var getCurrentIndex = gallery.getCurrentIndex();
-          var lastIndex = gallery.options.getNumItemsFn() - 1;
-          var isDragging = gallery.isDragging();
-          console.log(getCurrentIndex);
-          console.log('total' + lastIndex);
-          console.log(isDragging); //mouse click only. click button - true
+          // var getCurrentIndex = gallery.getCurrentIndex();
+          // var lastIndex = gallery.options.getNumItemsFn() - 1;
+          // var isDragging = gallery.isDragging();
+          // console.log(getCurrentIndex);
+          // console.log('total' + lastIndex);
+          // console.log(isDragging); //mouse click only. click button - true
 
           //TODO if not click and not keypress - swipe this
           //how to detect keypress here?
 
+          // Only apply transition class if difference between last and next slide is < 2
+              // If difference > 1, it means we are at the loop seam.
+              // var transition = Math.abs(gallery.getCurrentIndex()-currentSlide) < 2;
 
-
-          if (!isDragging ) {
+          /*if (!isDragging ) {
             if (getCurrentIndex == 0 && oldIndex == lastIndex) {
               console.log('right');
             } else if (getCurrentIndex == lastIndex && oldIndex == 0) {
@@ -273,18 +315,18 @@ class Gallery extends Component {
             } else {
               console.log('left');
             }
-          }
+          }*/
 
 
-          oldIndex = getCurrentIndex;
+          // oldIndex = getCurrentIndex;
           // const swipers = document.querySelectorAll('.swiper-container');
           // swipers[0].swiper.slideTo(getCurrentIndex, false);
         });
 
 
         gallery.listen('afterChange', function() {
-          var getCurrentIndex = gallery.getCurrentIndex();
-          console.log(getCurrentIndex);
+          // var getCurrentIndex = gallery.getCurrentIndex();
+          //console.log(getCurrentIndex);
 
 
           // console.log(gallery.isDragging());
@@ -337,14 +379,12 @@ class Gallery extends Component {
 
   initDesktop() {
     this.swipers.forEach((swiper) => { swiper.params.pagination.progressbarOpposite = true; });
-    document.querySelector('.pswp__button--arrow--right').addEventListener('click', this.moveNext);
+    /*document.querySelector('.pswp__button--arrow--right').addEventListener('click', this.moveNext);
     document.querySelector('.pswp__button--arrow--left').addEventListener('click', this.movePrev);
 
     document.onkeydown = checkKey;
     function checkKey(e) {
-
         e = e || window.event;
-
         if (e.keyCode == '38') {
             // up arrow
         }
@@ -362,9 +402,9 @@ class Gallery extends Component {
            document.querySelector('.pswp__button--arrow--right').click();
         }
     }
-    var isKey = false;
+    var isKey = false;*/
 
-    document.addEventListener("keydown", function onEvent(event) {
+    /*document.addEventListener("keydown", function onEvent(event) {
         if (event.keyCode == '37') {
           isKey = true;
         }
@@ -372,8 +412,9 @@ class Gallery extends Component {
           isKey = true;
         }
         console.log('isKey' + isKey);
-    });
+    });*/
 
+    //TODO add mouse drag detection here!!!
 
   }
 

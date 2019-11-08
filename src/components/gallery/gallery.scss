@@ -82,6 +82,13 @@
 
     $arrow-side-margin: 40px;
 
+    &__button {
+      opacity: 0.7;
+      &:hover {
+        opacity: 1;
+      }
+    }
+
     &__button--arrow--left {
       margin-top: 0;
       left: $arrow-side-margin;
@@ -100,8 +107,18 @@
       z-index: 2;
     }
 
+    @include media-breakpoint-down(sm) {
+
+      &__button {
+        display:none;
+      }
+
+    }
+
     .modal__close {
       border-color: white;
+      width: 50px;
+      height: 50px;
 
       .sandwich-menu-close__line {
             background-color: white;

@@ -234,7 +234,7 @@
                         <div class="pswp__ui pswp__ui--hidden">
                             <div class="pswp__top-bar">
                                 <div class="pswp__counter"></div>
-                                <div class="sandwich-menu-close sandwich-menu__close modal__close pswp__button pswp__button--close">
+                                <div class="sandwich-menu-close sandwich-menu__close modal__close pswp__button--close">
                                     <div class="sandwich-menu-close__line sandwich-menu-close__line_top"></div>
                                     <div class="sandwich-menu-close__line sandwich-menu-close__line_bottom"></div>
                                 </div>
