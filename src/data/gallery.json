@@ -123,9 +123,9 @@
   "objectCard": [
     {
       "images": [
-        "../../pages/object-card/images/gallery/1.jpg",
-        "../../pages/object-card/images/gallery/2.jpg",
-        "../../pages/object-card/images/gallery/3.jpg"
+        "http://placehold.it/600x300/1976D2/ffffff?text=1",
+        "http://placehold.it/600x300/1976D2/ffffff?text=2",
+        "http://placehold.it/600x300/1976D2/ffffff?text=3"
       ]
     }
   ]

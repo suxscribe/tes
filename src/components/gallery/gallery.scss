@@ -107,6 +107,14 @@
       z-index: 2;
     }
 
+    &__arrow-wrapper {
+      border-color: #fff;
+
+      & > svg {
+        fill: #fff;
+      }
+    }
+
     @include media-breakpoint-down(sm) {
 
       &__button {

@@ -254,14 +254,14 @@
                                 <div class="pswp__share-tooltip"></div>
                             </div>
                             <button class="gallery-navigation__arrow gallery-navigation__arrow_prev pswp__button pswp__button--arrow--left">
-                                <div class="gallery-navigation__arrow-wrapper">
+                                <div class="gallery-navigation__arrow-wrapper pswp__arrow-wrapper">
                                     <svg>
                                         <use xlink:href="#arrow-left"></use>
                                     </svg>
                                 </div>
                             </button>
                             <button class="gallery-navigation__arrow gallery-navigation__arrow_next pswp__button pswp__button--arrow--right">
-                                <div class="gallery-navigation__arrow-wrapper">
+                                <div class="gallery-navigation__arrow-wrapper pswp__arrow-wrapper">
                                     <svg>
                                         <use xlink:href="#arrow-right"></use>
                                     </svg>
