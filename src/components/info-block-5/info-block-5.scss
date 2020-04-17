@@ -95,6 +95,10 @@
         margin-top: 35px;
     }
 
+    &:last-child {
+        margin-bottom: 82px;
+    }
+
     margin-bottom: 0;
 
     .info-block-5__text:last-child::after {
