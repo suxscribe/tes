@@ -186,6 +186,14 @@ export const loadImages = (nImages = [...document.querySelectorAll('img[data-src
   return Promise.all(
     nImages
       .map(nImage => new Promise((resolve) => {
+        if (getDeviceType() === 'mobile' && getOS !== 'desktop') {
+          setTimeout(
+            () => {
+              return resolve();
+            },
+            2000
+          );
+        }
         const wrapperResolve = (...args) => {
           countProgress += 1;
           nImage.removeEventListener('load', wrapperResolve);
